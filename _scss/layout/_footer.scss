@@ -1,0 +1,43 @@
+/* Footer */
+
+footer {
+  @include rem(padding, 30px 0 30px 0);
+  background-color: #333;
+  color: #888;
+  a {
+    color: #888;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.footer-copyright {
+  float: left;
+}
+
+.footer-facebook {
+  float: right;
+  font-size: 24px;
+}
+
+.footer-twitter {
+  float: right;
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+.footer-sitemap {
+  float: right;
+}
+
+.footer-author {
+  float: right;
+}
+
+.footer-divider {
+  &:after {
+    content:"-";
+    color: #fff;
+  }
+}

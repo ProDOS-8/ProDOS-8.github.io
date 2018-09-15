@@ -1,0 +1,48 @@
+/* Top bar */
+
+.topbar {
+  @include rem(padding, 9px 0 9px 0);
+  background-color: #292929;
+  h1 {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: Futura;
+    color: #efefef;
+  }
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.phone,
+.email {
+  position: relative;
+  top: 3px;
+  float: right;
+  color: #777;
+  font-size: 16px;
+}
+
+.email {
+  @include rem(margin-right, 30px);
+  color: #777;
+  &:hover {
+    text-decoration: none;
+    color: #555;
+  }
+  i {
+    font-size: 18px;
+    position: relative;
+    @include rem(margin-right, 2px);
+  }
+}
+
+.phone {
+  i {
+    position: relative;
+    font-size: 18px;
+    top: 1px;
+  }
+}

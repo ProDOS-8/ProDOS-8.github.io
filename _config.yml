@@ -1,0 +1,25 @@
+# Site settings
+title: 'ProDOS 8'
+email: jbrooks@blueshiftinc.com
+description: >
+        ProDOS-8 is the operating system for Apple II computers.
+baseurl: ""
+url: "http://prodos8.com"
+twitter_username: JBrooksBSI
+github_username:  ProDOS-8
+
+# Build settings
+markdown: kramdown
+
+exclude:
+  - package.json
+  - package-lock.json
+  - node_modules
+  - gulpfile.js
+  - README.md
+
+keep_files:
+  - _site/css
+  - _site/js
+
+include: ['_pages']

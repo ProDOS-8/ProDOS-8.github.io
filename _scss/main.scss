@@ -1,0 +1,81 @@
+/* Bootstrap */
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+/* Font Awesome */
+$fa-font-path: "../fonts/FontAwesome";
+@import "../node_modules/font-awesome/scss/font-awesome";
+
+/* Mixins */
+@import "mixins/rem";
+@import "mixins/transitions";
+
+/* Global */
+@import "base/global";
+
+/* Page */
+@import "pages/home-page";
+
+/* Layout */
+@import "layout/topbar";
+@import "layout/header";
+@import "layout/page";
+@import "layout/page-banner";
+@import "layout/footer";
+
+/* Components */
+@import "components/navbar";
+
+/* Typography */
+@import "typography/headings";
+
+
+/* customizations */
+
+@font-face {
+  font-family: "Apple2Forever";
+  src: url("/fonts/Apple2ForeverFont/Apple2Forever80.eot");
+  src: url("/fonts/Apple2ForeverFont/Apple2Forever.ttf") format('truetype');
+}
+@font-face {
+  font-family: "Apple2Forever80";
+  src: url("/fonts/Apple2ForeverFont/Apple2Forever80.eot");
+  src: url("/fonts/Apple2ForeverFont/Apple2Forever80.ttf") format('truetype');
+}
+
+div.page-banner-background {
+  background-color: #000000;
+}
+div.page-banner, div.page-banner h1 {
+  color: #00ff95;
+  font-family: "Apple2Forever80";
+  font-size: 32pt !important;
+}
+
+ul { width:100%; }
+h2,h3 { width:100%; }
+
+div.highlight { background-color:#000000; width:100%; padding:5px; margin-left:50px; }
+div.highlight pre,
+div.highlight pre code {
+  color: #00ff95;
+  font-family: "Apple2Forever80";
+}
+
+
+/* technote credit */
+
+div#credit {
+  background-color:#efefef;
+  color:#666666;
+  border: 0.5px #d5d5d5 solid;
+  padding:5px;
+  margin:5px;
+}
+div#credit a,
+div#credit a:visited,
+div#credit a:active {
+  color:#292929;
+}
+div#credit a:hover {
+  color:#ffae36;
+}
