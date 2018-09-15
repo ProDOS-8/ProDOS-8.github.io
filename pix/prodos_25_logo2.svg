@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   viewBox="297 310 446 202"
+   width="446pt"
+   height="202pt"
+   id="svg1835"
+   sodipodi:docname="prodos_25_logo2.svg"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1446"
+     inkscape:window-height="857"
+     id="namedview1837"
+     showgrid="false"
+     inkscape:zoom="1.0896861"
+     inkscape:cx="297.33333"
+     inkscape:cy="134.66667"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1835" />
+  <metadata
+     id="metadata1795"> Produced by OmniGraffle 6.6.2 <dc:date>2018-09-03 21:32:45 +0000</dc:date>
+<rdf:RDF>
+  <cc:Work
+     rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:title></dc:title>
+  </cc:Work>
+</rdf:RDF>
+</metadata>
+  <defs
+     id="defs1801">
+    <font-face
+       font-family="Futura"
+       font-size="130"
+       panose-1="2 11 8 2 2 2 4 2 2 4"
+       units-per-em="1000"
+       underline-position="-75"
+       underline-thickness="50"
+       slope="0"
+       x-height="513"
+       cap-height="754"
+       ascent="1039.00146"
+       descent="-259.9945"
+       font-weight="bold"
+       id="font-face1797">
+      <font-face-src>
+        <font-face-name
+           name="Futura-Bold" />
+      </font-face-src>
+    </font-face>
+    <font-face
+       font-family="Shaston Hi 640"
+       font-size="70"
+       units-per-em="1000"
+       underline-position="-62.5"
+       underline-thickness="62.5"
+       slope="0"
+       x-height="625"
+       cap-height="875"
+       ascent="875"
+       descent="-125"
+       font-weight="600"
+       id="font-face1799">
+      <font-face-src>
+        <font-face-name
+           name="ShastonHi640" />
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g
+     stroke="none"
+     stroke-opacity="1"
+     stroke-dasharray="none"
+     fill="none"
+     fill-opacity="1"
+     id="g1833">
+    <title
+       id="title1803">Canvas 1</title>
+    <g
+       id="g1831">
+      <title
+         id="title1805">Layer 1</title>
+      <rect
+         x="308.25"
+         y="373.9476"
+         width="124.875"
+         height="95.625"
+         fill="black"
+         id="rect1807" />
+      <rect
+         x="308.25"
+         y="373.9476"
+         width="124.875"
+         height="95.625"
+         stroke="black"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="1"
+         id="rect1809" />
+      <g
+         aria-label="2.5"
+         transform="translate(507.875 324.99767)"
+         style="fill:#b1001c"
+         id="text1813">
+        <path
+           d="M 82.55,135 H 3.64 l 24.31,-25.22 q 9.62,-10.01 15.08,-16.9 5.46,-7.02 8.06,-11.83 2.73,-4.81 3.38,-7.8 0.65,-2.99 0.65,-5.07 0,-2.21 -0.78,-4.29 -0.65,-2.08 -2.08,-3.64 -1.43,-1.69 -3.51,-2.6 -1.95,-1.04 -4.68,-1.04 -5.2,0 -8.19,3.38 -2.86,3.38 -2.86,8.45 0,1.43 0.39,4.16 H 5.59 q 0,-8.58 2.73,-15.6 2.86,-7.02 7.93,-12.09 5.07,-5.07 11.96,-7.8 7.02,-2.73 15.34,-2.73 8.19,0 15.08,2.6 7.02,2.6 12.09,7.28 5.07,4.68 7.93,11.18 2.86,6.37 2.86,13.91 0,8.06 -3.51,14.95 -3.38,6.76 -10.92,13.91 l -16.25,15.21 h 31.72 z"
+           style="font-weight:bold;font-size:130px;font-family:Futura;fill:#b1001c"
+           id="path2395" />
+        <path
+           d="m 95.249375,122.52 q 0,-3.12 1.17,-5.85 1.17,-2.86 3.25,-4.94 2.080005,-2.08 4.810005,-3.25 2.86,-1.17 5.97999,-1.17 3.12001,0 5.85001,1.17 2.86,1.17 4.94,3.25 2.08,2.08 3.25,4.94 1.17,2.73 1.17,5.85 0,3.12 -1.17,5.98 -1.17,2.73 -3.25,4.81 -2.08,2.08 -4.94,3.25 -2.73,1.17 -5.85001,1.17 -3.11999,0 -5.97999,-1.17 -2.73,-1.17 -4.810005,-3.25 -2.08,-2.08 -3.25,-4.81 -1.17,-2.86 -1.17,-5.98 z"
+           style="font-weight:bold;font-size:130px;font-family:Futura;fill:#b1001c"
+           id="path2397" />
+        <path
+           d="m 205.33906,58.56 h -33.93 l -1.69,10.79 q 2.34,-0.26 4.29,-0.39 1.95,-0.26 4.03,-0.26 7.41,0 13.78,2.6 6.37,2.6 10.92,7.15 4.55,4.55 7.15,10.92 2.6,6.37 2.6,13.91 0,7.93 -2.99,14.3 -2.86,6.37 -8.19,10.92 -5.33,4.42 -13,6.76 -7.67,2.47 -17.03,2.47 -8.84,0 -16.9,-2.21 -7.93,-2.08 -14.95,-6.5 l 3.77,-23.92 q 6.5,5.59 13.26,8.58 6.76,2.86 12.87,2.86 7.8,0 12.35,-4.16 4.55,-4.29 4.55,-10.53 0,-7.28 -6.11,-11.7 -6.11,-4.55 -15.99,-4.55 -4.42,0 -9.1,1.04 -4.68,0.91 -9.23,2.99 l 8.19,-52.65 h 51.35 z"
+           style="font-weight:bold;font-size:130px;font-family:Futura;fill:#b1001c"
+           id="path2399" />
+      </g>
+      <g
+         aria-label="ProDOS"
+         transform="translate(321.125 388.1976)"
+         style="fill:#beb907"
+         id="text1821">
+        <path
+           d="M 4.8125,-0.25 H 24.5 v 4.375 h 4.375 V 8.5 h 2.1875 V 30.375 H 28.875 V 34.75 H 24.5 v 4.375 H 11.375 V 61 H 4.8125 Z M 24.5,12.875 H 22.3125 V 8.5 H 11.375 V 30.375 H 22.3125 V 26 H 24.5 Z"
+           style="font-weight:600;font-size:70px;font-family:'Shaston Hi 640';fill:#beb907"
+           id="path2382" />
+        <path
+           d="m 42,17.25 h 6.5625 V 26 H 50.75 v -4.375 h 4.375 V 17.25 h 8.75 V 26 h -8.75 v 4.375 H 52.9375 V 34.75 H 50.75 V 43.5 H 48.5625 V 61 H 42 Z"
+           style="font-weight:600;font-size:70px;font-family:'Shaston Hi 640';fill:#beb907"
+           id="path2384" />
+        <path
+           d="M 90.125,61 H 77 V 56.625 H 72.625 V 52.25 H 70.4375 V 26 H 72.625 V 21.625 H 77 V 17.25 h 13.125 v 4.375 H 94.5 V 26 h 2.1875 V 52.25 H 94.5 v 4.375 h -4.375 z m -2.1875,-8.75 v -4.375 h 2.1875 v -17.5 H 87.9375 V 26 h -8.75 v 4.375 H 77 v 17.5 h 2.1875 v 4.375 z"
+           style="font-weight:600;font-size:70px;font-family:'Shaston Hi 640';fill:#beb907"
+           id="path2386" />
+        <path
+           d="m 140.4375,47.875 h 2.1875 v -35 h -2.1875 V 8.5 H 129.5 v 43.75 h 10.9375 z m -17.5,-48.125 H 142.625 V 4.125 H 147 V 8.5 h 2.1875 V 52.25 H 147 v 4.375 h -2.1875 V 61 h -21.875 z"
+           style="font-weight:600;font-size:70px;font-family:'Shaston Hi 640'"
+           id="path2388" />
+        <path
+           d="M 177.625,61 H 164.5 v -4.375 h -4.375 V 52.25 h -2.1875 V 8.5 h 2.1875 V 4.125 H 164.5 V -0.25 h 13.125 V 4.125 H 182 V 8.5 h 2.1875 V 52.25 H 182 v 4.375 h -4.375 z m 0,-48.125 h -2.1875 V 8.5 h -8.75 v 4.375 H 164.5 v 35 h 2.1875 v 4.375 h 8.75 v -4.375 h 2.1875 z"
+           style="font-weight:600;font-size:70px;font-family:'Shaston Hi 640'"
+           id="path2390" />
+        <path
+           d="M 212.625,61 H 199.5 v -4.375 h -4.375 V 52.25 h -2.1875 V 43.5 H 199.5 v 4.375 h 2.1875 v 4.375 h 8.75 v -4.375 h 2.1875 v -8.75 H 208.25 V 34.75 h -8.75 v -4.375 h -4.375 V 26 h -2.1875 V 8.5 h 2.1875 V 4.125 H 199.5 V -0.25 h 13.125 V 4.125 H 217 V 8.5 h 2.1875 v 8.75 h -6.5625 v -4.375 h -2.1875 V 8.5 h -8.75 v 4.375 H 199.5 v 8.75 h 4.375 V 26 h 8.75 v 4.375 H 217 v 4.375 h 2.1875 v 17.5 H 217 v 4.375 h -4.375 z"
+           style="font-weight:600;font-size:70px;font-family:'Shaston Hi 640'"
+           id="path2392" />
+      </g>
+      <path
+         d="M 711 363.8226 L 663.75 363.8226 L 656.4375 411.0726 L 668.25 371.1351 Z"
+         fill="#f3f3f3"
+         id="path1823" />
+      <path
+         d="M 649.125 453.2601 L 652.5 434.6976 C 652.5 434.6976 665.4375 446.5101 677.8125 444.2601 C 690.1875 442.0101 673.875 445.3851 673.875 445.3851 L 654.1875 441.4476 Z"
+         fill="#f3f3f3"
+         id="path1825" />
+      <path
+         d="M 517.5 385.1976 C 517.5 385.1976 525.9375 364.3851 542.25 363.8226 C 558.5625 363.2601 565.3125 366.6351 565.3125 366.6351 C 565.3125 366.6351 545.0625 367.1976 535.5 371.1351 C 525.9375 375.0726 517.5 385.1976 517.5 385.1976 Z"
+         fill="#f3f3f3"
+         id="path1827" />
+      <path
+         d="M 615.26737 436.69046 C 618.3803 441.38981 632.1 450.82987 630 443.6976 C 627.9 436.5653 612.15442 431.9911 615.26737 436.69046 Z"
+         fill="#f3f3f3"
+         id="path1829" />
+    </g>
+  </g>
+</svg>
