@@ -134,14 +134,9 @@ jekyll serve
 
 * After running the **serve** command, Jekyll will start a webserver running on port 4000.
 * Point your web browser to http://0.0.0.0:4000/ to view the site.
+* The site you see should look something like this:
 
-
-
-
-
-## Built using Jekyll and Bootstrap 4
-
-- Built on the foundation of the **[jekyll-bootstrap-4](https://github.com/soulroll/jekyll-bootstrap-4)** theme from soulroll
+<img src="_20180915_index.png" width="1024" height="1131" />
 
 
 
