@@ -5,35 +5,47 @@ description: ProDOS 8 Technical Reference Manual Writing a ProDOS System Program
 permalink:   /docs/techref/writing-a-prodos-system-program/
 ---
 
-<A NAME="5"><H1>Chapter 5<br />Writing a ProDOS System Program</H1></A><a name="page81"></a>
+<A NAME="5"></A>
 
-<P>This chapter is about writing system programs that use the ProDOS<br />
-MLI.  It first explains the things that a program must do to qualify as a<br />
-system program.  Next it discusses some of the things that a system<br />
-program must be aware of, particularly how it should use memory.  The<br />
-end of the chapter contains several programming hints.</P><A NAME="5.1"><H2>5.1 - System Program Requirements</H2></A><P>A ProDOS system program is any program that makes calls to the<br />
-ProDOS MLI and that adheres to a set of standard system program<br />
-rules.  Each system program must have</P><UL>
+<a name="page81"></a>
 
-<LI>code to move the program from its load position to its final<br />
-execution location, if necessary
+<P>This chapter is about writing system programs that use the ProDOS MLI.  It first explains the things that a program must do to qualify as a system program.  Next it discusses some of the things that a system program must be aware of, particularly how it should use memory.  The end of the chapter contains several programming hints.</P>
 
-<LI>a version number in the system global page
+<A NAME="5.1"></A>
 
-<LI>the ability to switch to another system program.
+<H2>5.1 - System Program Requirements</H2>
+
+<P>A ProDOS system program is any program that makes calls to the ProDOS MLI and that adheres to a set of standard system program rules.  Each system program must have</P>
+
+<UL>
+
+<LI>code to move the program from its load position to its final execution location, if necessary
+
+<LI>a version number in the system global page</li>
+
+<LI>the ability to switch to another system program.</li>
 
 </UL>
 
-<P>All other aspects of the system program are up to you.</P><A NAME="5.1.1"><H3>5.1.1 - Placement in Memory</H3></A><P>System programs are always loaded into memory starting at location<br />
-$2000.  When the system is first started up, the system program used is<br />
-the first file on the startup disk with the name XXX.SYSTEM, and the<br />
-$FF filetype.  When one system program switches to another, it can<br />
-load any file of type $FF.</P><P>Figure 5-1 shows the portions of memory that are available to system<br />
-programs.  If BASIC is not being used, the area assigned to<br />
-BASIC.SYSTEM (the BASIC command interpreter) is also available.</P><P>A system program as large as $8F00 (36608) bytes can be loaded.  The<br />
-total space available to a system program is $B700 (46848) bytes.</P><a name="page82"></a>
+<P>All other aspects of the system program are up to you.</P>
 
-<A NAME="5-1"><P><B>Figure 5-1.  Memory Map</B></P></A><PRE>
+<A NAME="5.1.1"></A>
+
+><H3>5.1.1 - Placement in Memory</H3
+
+<P>System programs are always loaded into memory starting at location $2000.  When the system is first started up, the system program used is the first file on the startup disk with the name XXX.SYSTEM, and the $FF filetype.  When one system program switches to another, it can load any file of type $FF.</P>
+
+<P>Figure 5-1 shows the portions of memory that are available to system programs.  If BASIC is not being used, the area assigned to BASIC.SYSTEM (the BASIC command interpreter) is also available.</P>
+
+<P>A system program as large as $8F00 (36608) bytes can be loaded.  The total space available to a system program is $B700 (46848) bytes.</P>
+
+<A NAME="page82"></a>
+
+<A NAME="5-1"></A>
+
+<P><B>Figure 5-1.  Memory Map</B></P>
+
+<PRE>
              
              
              
@@ -123,15 +135,32 @@ total space available to a system program is $B700 (46848) bytes.</P><a name="pa
 
 <a name="page83"></a>
 
-<A NAME="5.1.2"><H3>5.1.2 - Relocating the Code</H3></A><P>The final execution location(s) to which you can relocate your code<br />
-depends on your system configuration.  The memory locations $0800<br />
-through $BEFF are available to system programs.</P><A NAME="5.1.3"><H3>5.1.3 - Updating the System Global Page</H3></A><P>The MLI global page resides in locations $BF00 through $BFFF.  These<br />
-are the locations whose values you must set:</P><P>$BF58-$BF6F - The system bit map.<br />
-$BFFD - The version number of your system program.</P><P>In addition, there is other information in the global page that your<br />
-program might find useful.  These values are documented in the section<br />
-"The System Global Page."</P><A NAME="5.1.4"><H3>5.1.4 - The System Bit Map</H3></A><P>The system bit map occupies bytes $BF58 through $BF6F in the<br />
-system global page and it represents the status of each 256-byte page<br />
-of memory from $0000 through $BFFF, as shown in Figure 5-2.</P><A NAME="5-2"><P><B>Figure 5-2.  Memory Representation in the System Bit Map</B></P></A>
+<A NAME="5.1.2"></A>
+
+<H3>5.1.2 - Relocating the Code</H3>
+
+<P>The final execution location(s) to which you can relocate your code depends on your system configuration.  The memory locations $0800 through $BEFF are available to system programs.</P>
+
+<A NAME="5.1.3"></A>
+
+<H3>5.1.3 - Updating the System Global Page</H3>
+
+<P>The MLI global page resides in locations $BF00 through $BFFF.  These are the locations whose values you must set:</P>
+
+<P>$BF58-$BF6F - The system bit map. $BFFD - The version number of your system program.</P>
+
+<P>In addition, there is other information in the global page that your program might find useful.  These values are documented in the section "The System Global Page."</P>
+
+<A NAME="5.1.4"></A>
+
+<H3>5.1.4 - The System Bit Map</H3>
+
+<P>The system bit map occupies bytes $BF58 through $BF6F in the system global page and it represents the status of each 256-byte page of memory from $0000 through $BFFF, as shown in Figure 5-2.</P>
+
+<A NAME="5-2"></A>
+
+
+<P><B>Figure 5-2.  Memory Representation in the System Bit Map</B></P>
 
 <PRE>
  Bit Map Address              Pages Represented
@@ -141,33 +170,33 @@ of memory from $0000 through $BFFF, as shown in Figure 5-2.</P><A NAME="5-2"><P>
      $BF68-$BF6F  |_|_|_|_|_|_|_|  $80-$BF
 </PRE>
 
-<P>Within each byte, the bits are used in reverse order.  Thus, bit 7 of<br />
-byte $BF58 represents the first 256 bytes of memory, and bit 0 of byte<br />
-$BF6F represents the last page before $C000.</P><P>You may have noticed that neither the Language Card area of memory<br />
-nor the extended memory of an Apple IIe or Apple IIc is included in<br />
-this map.  This is because these regions of memory cannot be directly<br />
-accessed by the MLI.  You cannot read data into or out of these areas,<br />
-and you cannot execute MLI calls from them.  More information is<br />
-given in this chapter in the sections "Using the Language Card" and<br />
-"Using the Alternate 64K RAM Bank."</P><a name="page84"></a>
+<P>Within each byte, the bits are used in reverse order.  Thus, bit 7 of byte $BF58 represents the first 256 bytes of memory, and bit 0 of byte $BF6F represents the last page before $C000.</P>
 
-<A NAME="5.1.4.1"><H4>5.1.4.1 - Using the Bit Map</H4></A><P>There are twenty-four bytes in the bit map: the high five bits of an<br />
-address select which of these bytes contains a given page.  Each byte<br />
-represents eight 256-byte pages; the next three bits of an address form<br />
-the complement of the bit number within that byte.  Thus for page $00<br />
-in memory, the high five bits are zero: byte 0 of the bit map contains<br />
-that page.  The next three bits are zero, the complement of 000 (binary)<br />
-is 111 (binary): bit 7 within byte zero contains that page.  Figure 5-3<br />
-shows this relationship.</P><A NAME="5-3"><P><B>Figure 5-3.  Page Number to Bit-Map Bit Conversion</B></P></A><PRE>
+<P>You may have noticed that neither the Language Card area of memory nor the extended memory of an Apple IIe or Apple IIc is included in this map.  This is because these regions of memory cannot be directly accessed by the MLI.  You cannot read data into or out of these areas, and you cannot execute MLI calls from them.  More information is given in this chapter in the sections "Using the Language Card" and "Using the Alternate 64K RAM Bank."</P>
+
+<A NAME="page84"></a>
+
+<A NAME="5.1.4.1"></A>
+
+<H4>5.1.4.1 - Using the Bit Map</H4>
+
+<P>There are twenty-four bytes in the bit map: the high five bits of an address select which of these bytes contains a given page.  Each byte represents eight 256-byte pages; the next three bits of an address form the complement of the bit number within that byte.  Thus for page $00 in memory, the high five bits are zero: byte 0 of the bit map contains that page.  The next three bits are zero, the complement of 000 (binary) is 111 (binary): bit 7 within byte zero contains that page.  Figure 5-3 shows this relationship.</P>
+
+<A NAME="5-3"></A>
+
+<P><B>Figure 5-3.  Page Number to Bit-Map Bit Conversion</B></P>
+
+<PRE>
  BIT       7     6     5     4     3     2     1     0
          +---------------------------------------------+
          |        Byte in Bit Map    |    Complement   |
  PAGE #  | (only 0 through 23 valid) |  of Bit in Byte |
          +---------------------------------------------+
-</PRE><P>Here is a short routine that accepts the high byte of an address in the<br />
-Accumulator.  It returns with the carry clear if the memory page is<br />
-free; the carry is set if the page is already used (or if the page is in<br />
-the Language Card).  It destroys the values in the A, X, and Y registers.</P><PRE>
+</PRE>
+
+<P>Here is a short routine that accepts the high byte of an address in the Accumulator.  It returns with the carry clear if the memory page is free; the carry is set if the page is already used (or if the page is in the Language Card).  It destroys the values in the A, X, and Y registers.</P>
+
+<PRE>
  ------------------------------------------------------------------------
 
  SOURCE   FILE #01 =&#62;PFREE
@@ -197,53 +226,62 @@ the Language Card).  It destroys the values in the A, X, and Y registers.</P><PR
  001E:60             24         RTS
 
  ------------------------------------------------------------------------
-</PRE><a name="page85"></a>
+</PRE>
 
-<A NAME="5.1.5"><H3>5.1.5 - Switching System Programs</H3></A><P>All system programs must use a standard way of starting and quitting.</P><A NAME="5.1.5.1"><H4>5.1.5.1 - Starting System Programs</H4></A><P>System programs are started in one of two ways:</P><UL>
+<a name="page85"></a>
 
-<LI>The disk containing ProDOS and the system program is started up;<br />
-ProDOS loads and runs the first XXX.SYSTEM file of type SYS($FF).<br />
-The order of search is determined by the file entries in the startup<br />
-volume directory.
+<A NAME="5.1.5"></A>
 
-<LI>The program is loaded by another program (such as the ProDOS<br />
-FILER or the BASIC.SYSTEM) or by a program dispatcher or<br />
-selector.
+<H3>5.1.5 - Switching System Programs</H3>
+
+<P>All system programs must use a standard way of starting and quitting.</P>
+
+<A NAME="5.1.5.1"></A>
+
+
+<H4>5.1.5.1 - Starting System Programs</H4>
+
+<P>System programs are started in one of two ways:</P>
+
+<UL>
+
+<LI>The disk containing ProDOS and the system program is started up; ProDOS loads and runs the first XXX.SYSTEM file of type SYS($FF). The order of search is determined by the file entries in the startup volume directory.</li>
+
+<LI>The program is loaded by another program (such as the ProDOS FILER or the BASIC.SYSTEM) or by a program dispatcher or selector.</li>
 
 </UL>
 
-<P>The system program is loaded and jumped to at $2000.  The complete<br />
-or partial pathname of the system program is stored at $280, starting<br />
-with a length byte.  The string is a full pathname if it starts with a<br />
-slash.  It is a partial pathname if it starts with a letter.</P><P>This pathname allows a system program to determine the directory<br />
-where other needed files may reside.  The program should never<br />
-assume that the files are in a specific directory or subdirectory.</P><P>There is a way to pass a second pathname to interpreters -- for<br />
-example, to language interpreters -- that like to run startup programs.<br />
-The ProDOS dispatcher does not support this mechanism but other<br />
-more sophisticated program selectors may.  It requires that the<br />
-interpreter start a certain way:</P><P><B><TT>$2000</TT></B> is a jump instruction.  <B><TT>$2003</TT></B> and <B><TT>$2004</TT></B> are <B><TT>$EE</TT></B>.</P><P>If the interpreter starts this way, byte $2005 is assumed to indicate the<br />
-length of a buffer that starts at $2006 and holds the pathname<br />
-(starting with a length byte) of the startup file.</P><P>Interpreters that support this mechanism should supply their own<br />
-default string, which should be a standard choice for a startup program<br />
-or a flag not to run a startup program.</P><P>Once gaining control, the system program sets the reset vector and<br />
-fixes the power-up byte.  Never assume the state of the machine to be<br />
-anything that is not clearly documented.</P><a name="page86"></a>
+<P>The system program is loaded and jumped to at $2000.  The complete or partial pathname of the system program is stored at $280, starting with a length byte.  The string is a full pathname if it starts with a slash.  It is a partial pathname if it starts with a letter.</P>
 
-<P><B>Important!</B><br />
-If your interpreter uses any location in the range $D100-$DFFF (the<br />
-dispatcher/selector area) in the second 4K bank of RAM, be sure that<br />
-the area is initially saved and then restored on exit.</P><A NAME="5.1.5.2"><H4>5.1.5.2 - Quitting System Programs</H4></A><P>Here is how to quit system programs:</P><OL>
+<P>This pathname allows a system program to determine the directory where other needed files may reside.  The program should never assume that the files are in a specific directory or subdirectory.</P>
 
-<LI>Do normal housekeeping.  Close files, reinstall /RAM if you have<br />
-disconnected it, and so on.
+<P>There is a way to pass a second pathname to interpreters -- for example, to language interpreters -- that like to run startup programs. The ProDOS dispatcher does not support this mechanism but other more sophisticated program selectors may.  It requires that the interpreter start a certain way:</P>
 
-<LI>Invalidate the power-up byte at $3F4.  The simplest way is either to<br />
-increment or to decrement it, which will always make it an invalid<br />
-check of the $3F2 vector.
+<P><B><TT>$2000</TT></B> is a jump instruction.  <B><TT>$2003</TT></B> and <B><TT>$2004</TT></B> are <B><TT>$EE</TT></B>.</P>
 
-<LI>Execute a ProDOS system call number $65 as follows:
+<P>If the interpreter starts this way, byte $2005 is assumed to indicate the length of a buffer that starts at $2006 and holds the pathname (starting with a length byte) of the startup file.</P>
 
-</OL>
+<P>Interpreters that support this mechanism should supply their own default string, which should be a standard choice for a startup program or a flag not to run a startup program.</P>
+
+<P>Once gaining control, the system program sets the reset vector and fixes the power-up byte.  Never assume the state of the machine to be anything that is not clearly documented.</P>
+
+<A NAME="page86"></a>
+
+<P><B>Important!</B> If your interpreter uses any location in the range $D100-$DFFF (the dispatcher/selector area) in the second 4K bank of RAM, be sure that the area is initially saved and then restored on exit.</P>
+
+<A NAME="5.1.5.2"></A>
+
+<H4>5.1.5.2 - Quitting System Programs</H4>
+
+<P>Here is how to quit system programs:</P>
+
+<OL>
+
+<LI>Do normal housekeeping.  Close files, reinstall /RAM if you have disconnected it, and so on.</li>
+
+<LI>Invalidate the power-up byte at $3F4.  The simplest way is either to increment or to decrement it, which will always make it an invalid check of the $3F2 vector.</li>
+
+<LI>Execute a ProDOS system call number $65 as follows: <br /><br />
 
 <PRE>
  EXIT       JSR  PRODOS        ;Call the MLI ($BF00)
@@ -254,78 +292,41 @@ check of the $3F2 vector.
             DW   0000          ;Pointer reserved for future use
             DFB  0             ;Byte reserved for future use
             DW   0000          ;Pointer reserved for future use
-</PRE><P>Even though most of the parameter table is reserved for future use it<br />
-must all be present.  It must consist of seven bytes: $04 followed by six<br />
-nulls ($00).</P><P>ProDOS MLI call $65, the QUIT call, moves addresses $D100 through<br />
-$D3FF from the second 4K bank of RAM of the language card to<br />
-$1000, and executes a JMP to $1000.  What initially resides in that area<br />
-is Apple's dispatcher code.</P><P>The dispatcher, once executed, does the following:</P><OL>
+</PRE>
 
-<LI>Allows the user to enter the prefix and filename of the system<br />
-program (interpreter) to be executed.
+</li>
 
-<LI>Stores the system program name at $280, starting with a length<br />
-byte.  Once the system program executes, it can find from where it<br />
-was starred, and locate any files it needs for processing.
+</OL>
 
-<LI>Closes any open files.
+<P>Even though most of the parameter table is reserved for future use it must all be present.  It must consist of seven bytes: $04 followed by six nulls ($00).</P>
 
-<LI>Clears the bit map, and protects the zero, stack, text, and ProDOS<br />
-global pages.
+<P>ProDOS MLI call $65, the QUIT call, moves addresses $D100 through $D3FF from the second 4K bank of RAM of the language card to $1000, and executes a JMP to $1000.  What initially resides in that area is Apple's dispatcher code.</P>
 
-<LI>Reads in the system file at $2000, and executes a JMP to $2000.
+<P>The dispatcher, once executed, does the following:</P>
+
+<OL>
+
+<LI>Allows the user to enter the prefix and filename of the system program (interpreter) to be executed.</li>
+
+<LI>Stores the system program name at $280, starting with a length byte.  Once the system program executes, it can find from where it was starred, and locate any files it needs for processing.</li>
+
+<LI>Closes any open files.</li>
+
+<LI>Clears the bit map, and protects the zero, stack, text, and ProDOS global pages.</li>
+
+<LI>Reads in the system file at $2000, and executes a JMP to $2000.</li>
 
 </OL>
 
 <a name="page87"></a>
 
-<P>To install your own QUIT code that loads your own selector program,<br />
-you must, at some point, store the system program name at $280, close<br />
-open files, clear the bit map, and protect the zero, stack, text, and<br />
-ProDOS global pages, as described above.  In addition, the $D100 byte<br />
-must be a CLD ($D8) instruction, so that programs can tell whether<br />
-selector code or the ProDOS dispatcher code is resident.</P><P>In addition to just leaving the pathname at $280 for the interpreter's<br />
-use, a method to enable a selector program to specify an accompanying<br />
-startup program has been defined.  Once active, an interpreter can<br />
-immediately run that program.  This involves reserving an area in the<br />
-system file, which a selector program overwrites with the startup<br />
-program's name.  The interpreter then loads and executes that specified<br />
-program.</P><P>Here is how the procedure works: the selector program looks at the<br />
-first byte of the interpreter at $2000.  If it is a JMP ($4C) instruction,<br />
-and bytes $2003 and $2004 are both $EE, then byte $2005 is<br />
-interpreted as a buffer size indicator with the buffer starting at $2006.<br />
-The string at $2006 would be the normal ProDOS pathname or partial<br />
-pathname, starting with a length byte.</P><PRE>
+<P>To install your own QUIT code that loads your own selector program, you must, at some point, store the system program name at $280, close open files, clear the bit map, and protect the zero, stack, text, and ProDOS global pages, as described above.  In addition, the $D100 byte must be a CLD ($D8) instruction, so that programs can tell whether selector code or the ProDOS dispatcher code is resident.</P>
 
+<P>In addition to just leaving the pathname at $280 for the interpreter's use, a method to enable a selector program to specify an accompanying startup program has been defined.  Once active, an interpreter can immediately run that program.  This involves reserving an area in the system file, which a selector program overwrites with the startup program's name.  The interpreter then loads and executes that specified program.</P>
 
+<P>Here is how the procedure works: the selector program looks at the first byte of the interpreter at $2000.  If it is a JMP ($4C) instruction, and bytes $2003 and $2004 are both $EE, then byte $2005 is interpreted as a buffer size indicator with the buffer starting at $2006. The string at $2006 would be the normal ProDOS pathname or partial pathname, starting with a length byte.</P>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<PRE>
 
  <B>Byte           Content</B>
 
@@ -342,82 +343,97 @@ pathname, starting with a length byte.</P><PRE>
  .
  .
  .
-</PRE><P>The two $EEs let the selector program know that this particular<br />
-interpreter can run a startup program.  The interpreters that support<br />
-this feature will supply their own default string, which may be a<br />
-startup program or a flag of your choice.</P><a name="page88"></a>
+</PRE>
 
-<A NAME="5.2"><H2>5.2 - Managing System Resources</H2></A><P>This section describes the interaction between ProDOS and the various<br />
-parts of memory.</P><A NAME="5.2.1"><H3>5.2.1 - Using the Stack</H3></A><P>In the Apple II, the stack is stored in page $01 of memory, from the<br />
-high byte of the page going down.  When an interrupt occurs, the<br />
-interrupt handler saves the low 16 bytes of the stack, but only if the<br />
-stack is more than 3/4 full.  For maximum interrupt efficiency, a system<br />
-program should not use more than the upper 3/4 of the stack.</P><P>System programs should set the stack pointer to $FF at the warm-start<br />
-entry point.</P><A NAME="5.2.2"><H3>5.2.2 - Using the Alternate 64K RAM Bank</H3></A><P>When ProDOS is started up, it checks its environment.  If it finds 128K<br />
-of memory (Apple IIe with Extended 80-column Text card, or<br />
-Apple IIc), the auxiliary 64K bank of memory is configured as a RAM<br />
-disk named /RAM.  Because the memory on the 80-column card is in<br />
-slot 3, /RAM appears as slot 3 drive 2.  Its unit number, as entered in<br />
-the ProDOS global page's device list, is $BF.</P><P>Before using the auxiliary memory for any other purpose, you must<br />
-protect your code from /RAM.  The routines described here are<br />
-examples only.</P><P><B>Note:</B> These routines are examples; they are not being specified as<br />
-suitable for any particular purpose.</P><A NAME="5.2.2.1"><H4>5.2.2.1 - Protecting Auxiliary Bank Hi-Res Graphics Pages</H4></A><P>If your use involves hi-res graphics, you may protect those areas of<br />
-auxiliary memory.  If you save a dummy 8K file as the first entry in<br />
-/RAM, it will always be saved at $2000 to $3FFF.  If you then<br />
-immediately save a second dummy 8K file to /RAM, it will be saved at<br />
-$4000 to $5FFF.  This protects the hi-res pages in auxiliary memory<br />
-while maintaining /RAM as an online storage device.</P><a name="page89"></a>
+<P>The two $EEs let the selector program know that this particular interpreter can run a startup program.  The interpreters that support this feature will supply their own default string, which may be a startup program or a flag of your choice.</P>
 
-<P>There is no formula for determining where the blocks of /RAM<br />
-physically reside in memory.  Further, the logical blocks are not<br />
-physically contiguous.  There is no guaranteed way to protect any other<br />
-fixed portions of auxiliary memory by the dummy file method.</P><A NAME="5.2.2.2"><H4>5.2.2.2 - Disconnecting /RAM</H4></A><P>To protect all of the auxiliary memory that has not been reserved for<br />
-use by Apple, you must disconnect /RAM.  Note these three areas of<br />
-the system global page:</P><UL>
+<A NAME="page88"></a>
 
-<LI>$BF10-$BF2F contains the disk device driver addresses.
+<A NAME="5.2"></A>
 
-<LI>$BF31 contains the number of devices minus one.
+<H2>5.2 - Managing System Resources</H2>
 
-<LI>$BF32-$BF3F contains the list of disk device numbers.
+<P>This section describes the interaction between ProDOS and the various parts of memory.</P>
+
+<A NAME="5.2.1"></A>
+
+<H3>5.2.1 - Using the Stack</H3>
+
+<P>In the Apple II, the stack is stored in page $01 of memory, from the high byte of the page going down.  When an interrupt occurs, the interrupt handler saves the low 16 bytes of the stack, but only if the stack is more than 3/4 full.  For maximum interrupt efficiency, a system program should not use more than the upper 3/4 of the stack.</P>
+
+<P>System programs should set the stack pointer to $FF at the warm-start entry point.</P>
+
+<A NAME="5.2.2"></A>
+
+<H3>5.2.2 - Using the Alternate 64K RAM Bank</H3>
+
+<P>When ProDOS is started up, it checks its environment.  If it finds 128K of memory (Apple IIe with Extended 80-column Text card, or Apple IIc), the auxiliary 64K bank of memory is configured as a RAM disk named /RAM.  Because the memory on the 80-column card is in slot 3, /RAM appears as slot 3 drive 2.  Its unit number, as entered in the ProDOS global page's device list, is $BF.</P>
+
+<P>Before using the auxiliary memory for any other purpose, you must protect your code from /RAM.  The routines described here are examples only.</P>
+
+<P><B>Note:</B> These routines are examples; they are not being specified as suitable for any particular purpose.</P>
+
+<A NAME="5.2.2.1"></A>
+
+<H4>5.2.2.1 - Protecting Auxiliary Bank Hi-Res Graphics Pages</H4>
+
+<P>If your use involves hi-res graphics, you may protect those areas of auxiliary memory.  If you save a dummy 8K file as the first entry in /RAM, it will always be saved at $2000 to $3FFF.  If you then immediately save a second dummy 8K file to /RAM, it will be saved at $4000 to $5FFF.  This protects the hi-res pages in auxiliary memory while maintaining /RAM as an online storage device.</P>
+
+<A NAME="page89"></a>
+
+<P>There is no formula for determining where the blocks of /RAM physically reside in memory.  Further, the logical blocks are not physically contiguous.  There is no guaranteed way to protect any other fixed portions of auxiliary memory by the dummy file method.</P>
+
+<A NAME="5.2.2.2"></A>
+
+<H4>5.2.2.2 - Disconnecting /RAM</H4>
+
+<P>To protect all of the auxiliary memory that has not been reserved for use by Apple, you must disconnect /RAM.  Note these three areas of the system global page:</P>
+
+<UL>
+
+<LI>$BF10-$BF2F contains the disk device driver addresses.</li>
+
+<LI>$BF31 contains the number of devices minus one.</li>
+
+<LI>$BF32-$BF3F contains the list of disk device numbers.</li>
 
 </UL>
 
-<P>Here is how to disconnect /RAM.  It is suggested that you read block<br />
-two on /RAM and check the FILE_COUNT field in the directory.  If<br />
-there are any files on /RAM, prompt the user either to continue with<br />
-the disconnect or to cancel the process.</P><P>Check the MACHID byte at $BF96 to see if you have 128K.  If not,<br />
-there will be no /RAM to disconnect.</P><P>The slot 0 drive 1 disk-driver vector ($BF10) will point to the "No<br />
-Device Connected" routine.  The slot 0 vectors $BF10 and $BF20 are<br />
-reserved for Apple's use: you cannot use these vectors if this<br />
-convention is to work.  If the slot 3 drive 2 vector also points to the<br />
-same address, then /RAM is already disconnected.</P><P>If /RAM is on line, you are ready to remove it.  (Note that the<br />
-following steps can be adapted to disconnecting any device.)</P><OL>
+<P>Here is how to disconnect /RAM.  It is suggested that you read block two on /RAM and check the FILE_COUNT field in the directory.  If there are any files on /RAM, prompt the user either to continue with the disconnect or to cancel the process.</P>
 
-<LI>Retrieve the slot 3 drive 2 device number you find in DEVLST, and<br />
-save it.
+<P>Check the MACHID byte at $BF96 to see if you have 128K.  If not, there will be no /RAM to disconnect.</P>
 
-<LI>Move any remaining device numbers forward in the DEVLST.
+<P>The slot 0 drive 1 disk-driver vector ($BF10) will point to the "No Device Connected" routine.  The slot 0 vectors $BF10 and $BF20 are reserved for Apple's use: you cannot use these vectors if this convention is to work.  If the slot 3 drive 2 vector also points to the same address, then /RAM is already disconnected.</P>
 
-<LI>Retrieve the slot 3 drive 2 driver vector, and save it for later<br />
-reinstallation.
+<P>If /RAM is on line, you are ready to remove it.  (Note that the following steps can be adapted to disconnecting any device.)</P>
 
-<LI>Replicate the "No Device Connected" vector in slot 0 drive 1 into<br />
-slot 3 drive 2.
+<OL>
 
-<LI>Decrement the device count (DEVCNT).
+<LI>Retrieve the slot 3 drive 2 device number you find in DEVLST, and save it.</li>
+
+<LI>Move any remaining device numbers forward in the DEVLST.</li>
+
+<LI>Retrieve the slot 3 drive 2 driver vector, and save it for later reinstallation.</li>
+
+<LI>Replicate the "No Device Connected" vector in slot 0 drive 1 into slot 3 drive 2.</li>
+
+<LI>Decrement the device count (DEVCNT).</li>
 
 </OL>
 
-<P>/RAM is now disconnected.  You are free to use the unreserved areas of<br />
-auxiliary memory.</P><P><B>Note:</B> If ProDOS has just been started up, /RAM is the last <I>disk<br />
-device</I> installed.  However, if the user has manually installed another<br />
-device(s), the device number for /RAM will not be the last entry in<br />
-the device list (DEVLST).</P><a name="page90"></a>
+<P>/RAM is now disconnected.  You are free to use the unreserved areas of auxiliary memory.</P>
 
-<A NAME="5.2.2.3"><H4>5.2.2.3 - How to Treat RAM Disks With More Than 64K</H4></A><P>If there is a device in slot 3 drive 2 that is not /RAM, or is a RAM<br />
-disk with a capacity of more than 64K, the following routine prevents<br />
-it from being disconnected.</P><PRE>
+<P><B>Note:</B> If ProDOS has just been started up, /RAM is the last <I>disk device</I> installed.  However, if the user has manually installed another device(s), the device number for /RAM will not be the last entry in the device list (DEVLST).</P>
+
+<A NAME="page90"></a>
+
+<A NAME="5.2.2.3"></a>
+
+<H4>5.2.2.3 - How to Treat RAM Disks With More Than 64K</H4>
+
+<P>If there is a device in slot 3 drive 2 that is not /RAM, or is a RAM disk with a capacity of more than 64K, the following routine prevents it from being disconnected.</P>
+
+<PRE>
  ORG $1000
  DEVCNT EQU $BF31       ; GLOBAL PAGE DEVICE COUNT
  DEVLST EQU $BF32       ; GLOBAL PAGE DEVICE LIST
@@ -495,37 +511,35 @@ it from being disconnected.</P><PRE>
  ADDRESS DW $0000      ; STORE THE DEVICE DRIVER ADDRESS HERE
  RAMUNITID DFB $00     ; STORE THE DEVICE'S UNIT NUMBER HERE
  *
-</PRE><a name="page91"></a>
+</PRE>
 
-<A NAME="5.2.2.4"><H4>5.2.2.4 - Reinstalling /RAM</H4></A><P>Part of your exit procedure should include code to reinstall /RAM,<br />
-making it available to the next application.  Be sure /RAM has been<br />
-disconnected before you reinstall it.  Applications should not begin by<br />
-reinstalling /RAM, because this would preclude passing files from one<br />
-application to the next in /RAM.</P><P>Here is how to reinstall /RAM (or any general device):</P><OL>
+<a name="page91"></a>
 
-<LI>Reinstall the device driver address you retrieved and saved as the<br />
-slot 3 drive 2 vector.
+<A NAME="5.2.2.4"></A>
 
-<LI>Increment the device count (DEVCNT).
+<H4>5.2.2.4 - Reinstalling /RAM</H4>
 
-<LI>Reinstall the device number in the device list (DEVLST).  It may be<br />
-best to reinstall the device number as the first entry in the list.  If<br />
-the user has manually installed a disk driver, he may assume that<br />
-because it was the last thing installed that it is still the last one in<br />
-the list.  It is recommended that you move all the entries in the list<br />
-down one, and reinstall the /RAM device number as the first entry.
+<P>Part of your exit procedure should include code to reinstall /RAM, making it available to the next application.  Be sure /RAM has been disconnected before you reinstall it.  Applications should not begin by reinstalling /RAM, because this would preclude passing files from one application to the next in /RAM.</P>
 
-<LI>Set up the parameters for a format request and JSR to the device<br />
-driver address you have reinstalled.  The /RAM driver will set up a<br />
-new directory and bit map.
+<P>Here is how to reinstall /RAM (or any general device):</P>
+
+<OL>
+
+<LI>Reinstall the device driver address you retrieved and saved as the slot 3 drive 2 vector.</li>
+
+<LI>Increment the device count (DEVCNT).</li>
+
+<LI>Reinstall the device number in the device list (DEVLST).  It may be best to reinstall the device number as the first entry in the list.  If the user has manually installed a disk driver, he may assume that because it was the last thing installed that it is still the last one in the list.  It is recommended that you move all the entries in the list down one, and reinstall the /RAM device number as the first entry.</li>
+
+<LI>Set up the parameters for a format request and JSR to the device driver address you have reinstalled.  The /RAM driver will set up a new directory and bit map.</li>
 
 </OL>
 
 <a name="page92"></a>
 
-<P>The following is an example of what the reinstallation code might look<br />
-like.  These routines deal specifically with /RAM but can easily be<br />
-adapted to any disk driver routines.</P><PRE>
+<P>The following is an example of what the reinstallation code might look like.  These routines deal specifically with /RAM but can easily be adapted to any disk driver routines.</P>
+
+<PRE>
  *
  * THIS IS THE EXAMPLE /RAM INSTALL ROUTINE
  *
@@ -584,21 +598,33 @@ adapted to any disk driver routines.</P><PRE>
  *
  ERROR BRK              ; YOUR ERROR HANDLER CODE WOULD GO HERE
   RTS                   ;
-</PRE><a name="page93"></a>
+</PRE>
 
-<A NAME="5.2.3"><H3>5.2.3 - The System Global Page</H3></A><P>The $BF page of memory, addresses $BF00 through $BFFF, contains<br />
-the system's global variables.  Some of them, such as the system bit<br />
-map and the date and time locations, can be set and used by system<br />
-programs.  Others, such as the machine identification byte, are<br />
-informational but are not to be changed.  Still others are for internal<br />
-use of the system only.  Follow the rules described below.</P><P>The DFB assembler directive assigns a value to the current memory<br />
-location.  The DW directive assigns a two-byte address, low byte first,<br />
-to the current location.</P><A NAME="5.2.4"><H3>5.2.4 - Rules for Using the System Global Page</H3></A><P><B>MLI entry point.</B>  This is the only address in the global page that you<br />
-should ever call:</P><PRE>
+<a name="page93"></a>
+
+<A NAME="5.2.3"></A>
+
+<H3>5.2.3 - The System Global Page</H3>
+
+<P>The $BF page of memory, addresses $BF00 through $BFFF, contains the system's global variables.  Some of them, such as the system bit map and the date and time locations, can be set and used by system programs.  Others, such as the machine identification byte, are informational but are not to be changed.  Still others are for internal use of the system only.  Follow the rules described below.</P>
+
+<P>The DFB assembler directive assigns a value to the current memory location.  The DW directive assigns a two-byte address, low byte first, to the current location.</P>
+
+<A NAME="5.2.4"></A>
+
+<H3>5.2.4 - Rules for Using the System Global Page</H3>
+
+<P><B>MLI entry point.</B>  This is the only address in the global page that you should ever call:</P>
+
+<PRE>
  BF00:        BF00    2           ORG   GLOBALS
  BF00:                3 *
  BF00:4C 4B BF        4 ENTRY     JMP   MLIENT1     ;MLI CALL ENTRY POINT
-</PRE><P><B>Other entry points.</B>  Do not use these:</P><PRE>
+</PRE>
+
+<P><B>Other entry points.</B>  Do not use these:</P>
+
+<PRE>
  BF03:4C F6 BF        5 JSPARE    JMP   SYS.RTS     ;Jump Vector to cold
                                                     ;start, selector program,
                                                     ;etc.
@@ -606,7 +632,11 @@ should ever call:</P><PRE>
  BF09:4C F8 DF        7 SYSERR    JMP   SYSERR1     ;ERROR REPORTING HOOK.
  BF0C:4C 04 E0        8 SYSDEATH  JMP   SYSDEATH1   ;SYSTEM FAILURE HOOK.
  BF0F:00              9 SERR      DFB   $00         ;ERR CODE, 0=NO ERROR.
-</PRE><P><B>Disk device driver vectors:</B></P><PRE>
+</PRE>
+
+<P><B>Disk device driver vectors:</B></P>
+
+<PRE>
  BF10:               11 *
  BF10:               12 * DEVICE DRIVER VECTORS.
  BF10:               13 *
@@ -626,13 +656,13 @@ should ever call:</P><PRE>
  BF2A:AB DE          27           DW    GNODEV      ;SLOT 5, DRIVE 2
  BF2C:AB DE          28           DW    GNODEV      ;SLOT 6, DRIVE 2
  BF2E:AB DE          29           DW    GNODEV      ;SLOT 7, DRIVE 2
-</PRE><a name="page94"></a>
+</PRE>
 
-<P><B>List of all active disk devices by unit number.</B>  When access to an<br />
-unrecognized volume is requested, devices are searched from the end<br />
-of the list to the beginning.  See also Sections 3.1, 3.2, and 4.4.6.  The<br />
-lower half of each byte in <B><TT>DEVLST</TT></B> is a device identification:<br />
-0 = Disk II, 4 = ProFile, $F = /RAM.</P><PRE>
+<a name="page94"></a>
+
+<P><B>List of all active disk devices by unit number.</B>  When access to an unrecognized volume is requested, devices are searched from the end of the list to the beginning.  See also Sections 3.1, 3.2, and 4.4.6.  The lower half of each byte in <B><TT>DEVLST</TT></B> is a device identification: 0 = Disk II, 4 = ProFile, $F = /RAM.</P>
+
+<PRE>
  BF30:               31 *
  BF30:               32 * CONFIGURED DEVICE LIST BY DEVICE NUMBER
  BF30:               33 * ACCESS ORDER IS LAST IN LIST FIRST.
@@ -647,7 +677,11 @@ lower half of each byte in <B><TT>DEVLST</TT></B> is a device identification:<br
  BF3B:00 00 00 00    39           DFB   0,0,0,0,0
 
  BF40:28 43 29 41    41           ASC   "(C)APPLE'83"
-</PRE><P><B>Routines reserved for MLI and subject to change.</B></P><PRE>
+</PRE>
+
+<P><B>Routines reserved for MLI and subject to change.</B></P>
+
+<PRE>
  BF4B:08             42 MLIENT1   PHP
  BF4C:78             43           SEI
  BF4D:4C B7 BF       44           JMP   MLICONT
@@ -656,16 +690,19 @@ lower half of each byte in <B><TT>DEVLST</TT></B> is a device identification:<br
                                                     ;Interrupt in Lang Card
  BF56:00             47 OLD45     DFB   0
  BF57:00             48 AFBANK    DFB   0
-</PRE><P><B>Memory map of the lower 48K.</B>  Each bit represents one page<br />
-(256 bytes) of memory.  Protected areas are marked with a <B><TT>1</TT></B>,<br />
-unprotected with a <B><TT>0</TT></B>.  ProDOS disallows reading into or io_buffer<br />
-allocation in protected areas.  See Section 5.1.</P><PRE>
+</PRE>
+
+<P><B>Memory map of the lower 48K.</B>  Each bit represents one page (256 bytes) of memory.  Protected areas are marked with a <B><TT>1</TT></B>, unprotected with a <B><TT>0</TT></B>.  ProDOS disallows reading into or io_buffer allocation in protected areas.  See Section 5.1.</P>
+
+<PRE>
  BF58:C0 00 00 00    56 MEMTABL   DFB   $C0,$00,$00,$00,$00,$00,$00,$00
  BF60:00 00 00 00    57           DFB   $00,$00,$00,$00,$00,$00,$00,$00
  BF68:00 00 00 00    58           DFB   $00,$00,$00,$00,$00,$00,$00,$01
-</PRE><P><B>The addresses in this table are buffer addresses for open files.</B><br />
-These are informational only; they should not be changed except using<br />
-the MLI call SET_BUF.</P><PRE>
+</PRE>
+
+<P><B>The addresses in this table are buffer addresses for open files.</B> These are informational only; they should not be changed except using the MLI call SET_BUF.</P>
+
+<PRE>
  BF70:00 00          66 GL.BUFF   DW    $0000       ;FILE NUMBER 1
  BF72:00 00          67           DW    $0000       ;FILE NUMBER 2
  BF74:00 00          68           DW    $0000       ;FILE NUMBER 3
@@ -674,16 +711,13 @@ the MLI call SET_BUF.</P><PRE>
  BF7A:00 00          71           DW    $0000       ;FILE NUMBER 6
  BF7C:00 00          72           DW    $0000       ;FILE NUMBER 7
  BF7E:00 00          73           DW    $0000       ;FILE NUMBER 8
-</PRE><a name="page95"></a>
+</PRE>
 
-<P>Interrupt vectors are stored here.  Again, these are informational and<br />
-should be changed only by a call to the MLI using<br />
-ALLOC_INTERRUPT.  <B>Values of the A, X, Y, stack, and status<br />
-registers at the time of the most recent interrupt are also stored<br />
-here.</B>  In addition, the address interrupted is preserved.  These may be<br />
-used for performance studies and debugging, but should not be changed<br />
-by the user.  The routines are polled in ascending order.  See<br />
-Section 6.2.</P><PRE>
+<a name="page95"></a>
+
+<P>Interrupt vectors are stored here.  Again, these are informational and should be changed only by a call to the MLI using ALLOC_INTERRUPT.  <B>Values of the A, X, Y, stack, and status registers at the time of the most recent interrupt are also stored here.</B>  In addition, the address interrupted is preserved.  These may be used for performance studies and debugging, but should not be changed by the user.  The routines are polled in ascending order.  See Section 6.2.</P>
+
+<PRE>
  BF80:00 00          85 INTRUPT1  DW    $0000       ;INTERRUPT ROUTINE 1
  BF82:00 00          86 INTRUPT2  DW    $0000       ;INTERRUPT ROUTINE 2
  BF84:00 00          87 INTRUPT3  DW    $0000       ;INTERRUPT ROUTINE 3
@@ -695,13 +729,21 @@ Section 6.2.</P><PRE>
  BF8C:00             93 INTPREG   DFB   $00         ;STATUS REGISTER
  BF8D:01             94 INTBANKID DFB   $01         ;ROM, RAM1, OR RAM2 ($D000 IN LC)
  BF8E:00 00          95 INTADDR   DW    $0000       ;PROGRAM COUNTER RETN ADDR
-</PRE><P><B>The following options can be changed before calls to the MLI:</B></P><PRE>
+</PRE>
+
+<P><B>The following options can be changed before calls to the MLI:</B></P>
+
+<PRE>
  BF90:00 00         101 DATELO    DW    $0000       ;BITS 15-9=YR, 8-5=MO, 4-0=DAY
  BF92:00 00         102 TIMELO    DW    $0000       ;BITS 12-8=HR, 5-0=MIN; LOW-HI FORMAT.
  BF94:00            103 LEVEL     DFB   $00         ;FILE LEVEL: USED IN OPEN, FLUSH, CLOSE.
  BF95:00            104 BUBIT     DFB   $00         ;BACKUP BIT DISABLE, SETFILEINFO ONLY.
  BF96:00 00         105 SPARE1    DFB   $00,$00     ;RESERVED FOR MLI USE
-</PRE><P><B>The definition of MACHID at $BF98 is:</B></P><PRE>
+</PRE>
+
+<P><B>The definition of MACHID at $BF98 is:</B></P>
+
+<PRE>
  BF98:              107 *
  BF98:              108 * The following are informational only.  MACHID
  BF98:              109 * identifies the System Attributes:
@@ -727,12 +769,13 @@ Section 6.2.</P><PRE>
  BF9C:00 00         129 CMDADR    DW    $0000       ;RETURN ADDRESS OF LAST CALL TO MLI.
  BF9E:00            130 SAVEX     DFB   $00         ;X-REG ON ENTRY TO MLI
  BF9F:00            131 SAVEY     DFB   $00         ;Y-REG ON ENTRY TO MLI
-</PRE><a name="page96"></a>
+</PRE>
 
-<P><B>The following space is reserved for Language Card bank-switching<br />
-routines.</B>  All routines and addresses are subject to change at any time<br />
-without notice and will, in fact, vary with system configuration.  The<br />
-routines presented here are for 64K systems only:</P><PRE>
+<a name="page96"></a>
+
+<P><B>The following space is reserved for Language Card bank-switching routines.</B>  All routines and addresses are subject to change at any time without notice and will, in fact, vary with system configuration.  The routines presented here are for 64K systems only:</P>
+
+<PRE>
  BFA0:4D 00 E0      141 EXIT      EOR   $E000       ;TEST FOR ROM ENABLE.
  BFA3:F0 05   BFAA  142           BEQ   EXIT1       ;BRANCH IF RAM ENABLED.
  BFA5:8D 82 C0      143           STA   ROMIN       ;ELSE ENABLE ROM &#38; RETURN.
@@ -754,7 +797,11 @@ routines presented here are for 64K systems only:</P><PRE>
  BFC7:AD 8B C0      159           LDA   RAMIN       ;NOW FORCE RAM CARD ON
  BFCA:AD 8B C0      160           LDA   RAMIN       ; WITH RAM WRITE ALLOWED.
  BFCD:4C 00 DE      161           JMP   ENTRYMLI
-</PRE><P><B>Interrupt exit and entry routines:</B></P><PRE>
+</PRE>
+
+<P><B>Interrupt exit and entry routines:</B></P>
+
+<PRE>
  BFD0:              163 *
  BFD0:              164 * INTERRUPT EXIT/ENTRY ROUTINES
  BFD0:              165 *
@@ -780,133 +827,131 @@ routines presented here are for 64K systems only:</P><PRE>
  BFF6:              185 **
  BFF6:2C 8B C0      186 SYS.RTS   BIT   RAMIN       ;Make certain Language card is switched in
  BFF9:4C 02 E0      187           JMP   SYS.END     ;Or anywhere else we need to go
-</PRE><P><B>Each system program should set IVERSION to its own current<br />
-version number.  ProDOS sets KVERSION to its current version<br />
-number.</B></P><PRE>
+</PRE>
+
+<P><B>Each system program should set IVERSION to its own current version number.  ProDOS sets KVERSION to its current version number.</B></P>
+
+<PRE>
  BFFC:00            188 IBAKVER   DFB   $00         ;UNDEFINED: Reserved for future use
  BFFD:00            189 IVERSION  DFB   $00         ;Version # of currently running Interpreter
  BFFE:00            191 KBAKVER   DFB   $00         ;UNDEFINED: Reserved for future use
  BFFF:02            192 KVERSION  DFB   $2          ;VERSION NO. (RELEASE ID)
-</PRE><a name="page97"></a>
+</PRE>
 
-<A NAME="5.3"><H2>5.3 - General Techniques</H2></A><P>The first part of this chapter discusses the things that a system<br />
-program must do.  This section of the manual describes some of the<br />
-things that system programs commonly do, and it gives some<br />
-techniques for implementing them.</P><A NAME="5.3.1"><H3>5.3.1 - Determining Machine Configuration</H3></A><P>It is often useful for a system program to know what type of Apple II<br />
-it is running on.  The MACHID byte in the system global page identifies<br />
-the machine type, the amount of memory, and whether an 80-column<br />
-text card or clock/calendar card was detected.</P><P>MACHID byte: see Section 5.2.3.</P><A NAME="5.3.1.1"><H4>5.3.1.1 - Machine Type</H4></A><P>Two bits distinguish an Apple II, an Apple II Plus, an Apple IIe, an<br />
-Apple IIc, or an Apple III in Apple II emulation mode.  This distinction<br />
-is most useful for two reasons:</P><OL>
+<a name="page97"></a>
 
-<LI>The Apple IIe and IIc always have lowercase available.  Screen<br />
-messages can be coded using uppercase and lowercase, and then<br />
-made all uppercase if the machine is not an Apple IIe or IIc (or if<br />
-it is a Apple II without an 80-column text card).
+<A NAME="5.3"></A>
 
-<LI>The Apple IIe and IIc have keys that are not available on earlier<br />
-versions of the Apple II (most notably [UP], [DOWN], [OA], [SA], and<br />
-[DELETE]).  Software should be coded to use the keys most<br />
-convenient for the system it is running on, and the screen messages<br />
-should be adjusted accordingly.
+<H2>5.3 - General Techniques</H2>
+
+<P>The first part of this chapter discusses the things that a system program must do.  This section of the manual describes some of the things that system programs commonly do, and it gives some techniques for implementing them.</P>
+
+<A NAME="5.3.1"></A>
+
+<H3>5.3.1 - Determining Machine Configuration</H3>
+
+<P>It is often useful for a system program to know what type of Apple II it is running on.  The MACHID byte in the system global page identifies the machine type, the amount of memory, and whether an 80-column text card or clock/calendar card was detected.</P>
+
+<P>MACHID byte: see Section 5.2.3.</P>
+
+<A NAME="5.3.1.1"></A>
+
+<H4>5.3.1.1 - Machine Type</H4>
+
+<P>Two bits distinguish an Apple II, an Apple II Plus, an Apple IIe, an Apple IIc, or an Apple III in Apple II emulation mode.  This distinction is most useful for two reasons:</P>
+
+<OL>
+
+<LI>The Apple IIe and IIc always have lowercase available.  Screen messages can be coded using uppercase and lowercase, and then made all uppercase if the machine is not an Apple IIe or IIc (or if it is a Apple II without an 80-column text card).</li>
+
+<LI>The Apple IIe and IIc have keys that are not available on earlier versions of the Apple II (most notably [UP], [DOWN], [OA], [SA], and [DELETE]).  Software should be coded to use the keys most convenient for the system it is running on, and the screen messages should be adjusted accordingly.</li>
 
 </OL>
 
-<A NAME="5.3.1.2"><H4>5.3.1.2 - Memory Size</H4></A><P>The possible memory sizes are 64K and 128K.  A system program can<br />
-use these values when deciding where to relocate itself.  Recall that the<br />
-alternate 64K bank cannot contain code that makes calls to the MLI<br />
-and it cannot be used for system buffers.</P><a name="page98"></a>
+<A NAME="5.3.1.2"></a>
 
-<A NAME="5.3.1.3"><H4>5.3.1.3 - 80-Column Text Card</H4></A><P>This bit is always set in the Apple IIc.  It is set in an Apple IIe if an<br />
-80-column text card that follows the defined protocol is in slot 3 or in<br />
-the auxiliary slot.  This protocol guarantees that the features of the<br />
-card can be turned on by a JSR to $C300, the beginning of the ROM<br />
-on the card (note that this disconnects BASIC.SYSTEM).</P><P>80-column text cards -- and other Apple IIe features -- can be turned off<br />
-using the following sequence of instructions:</P><PRE>
+<H4>5.3.1.2 - Memory Size</H4>
+
+<P>The possible memory sizes are 64K and 128K.  A system program can use these values when deciding where to relocate itself.  Recall that the alternate 64K bank cannot contain code that makes calls to the MLI and it cannot be used for system buffers.</P>
+
+<A NAME="page98"></a>
+
+<A NAME="5.3.1.3"></A>
+
+<H4>5.3.1.3 - 80-Column Text Card</H4>
+
+<P>This bit is always set in the Apple IIc.  It is set in an Apple IIe if an 80-column text card that follows the defined protocol is in slot 3 or in the auxiliary slot.  This protocol guarantees that the features of the card can be turned on by a JSR to $C300, the beginning of the ROM on the card (note that this disconnects BASIC.SYSTEM).</P>
+
+<P>80-column text cards -- and other Apple IIe features -- can be turned off using the following sequence of instructions:</P>
+
+<PRE>
  LDA #$15     ;Character that turns off video firmware
  JSR $C300   ;Print it to the video firmware
-</PRE><A NAME="5.3.2"><H3>5.3.2 - Using the Date</H3></A><P>A system program often has reason to use the current date: to mark<br />
-files with a modification date, to use as identification on a listing, or<br />
-just for display on the screen.  Whatever the use, it is usually desirable<br />
-to obtain the most current setting.</P><P>Save the system date and time locations ($BF90-BF93) for possible<br />
-future use, and then clear them.  Next use the GET_TIME call.  If there<br />
-is a clock/calendar card with an installed clock routine, then the<br />
-system date and time locations will become nonzero.  This is the date<br />
-and time you should use.  If the GET_TIME call has no effect, then<br />
-you should either use the values that were previously in the date and<br />
-time locations, or prompt the user for the current date and time.  Since<br />
-the date and time locations are set to 0 when the system is started<br />
-(unless ProDOS recognizes a clock/calendar card), it is reasonable to<br />
-use nonzero values of the date and time locations as a default date<br />
-and time.</P><P>If there is no system time, and the call to GET_TIME returns nothing<br />
-an alternative is to use the GET_FILE_INFO call and to use the last<br />
-modified date and time as a default.  If the user updates the time, and<br />
-you place these values in the system date and time locations, a<br />
-SET_FILE_INFO call will update the time for the next<br />
-GET_FILE_INFO.</P><P>The system updates the date and time at every CREATE, DESTROY,<br />
-RENAME SET_FILE_INFO CLOSE, and FLUSH operation.</P><P>Refer to the GET_TIME call in Chapter<br />
-4, and to the description of<br />
-clock/calendar routines in Chapter 6 for<br />
-more details.</P><a name="page99"></a>
+</PRE>
 
-<A NAME="5.3.3"><H3>5.3.3 - System Program Defaults</H3></A><P>Each file entry in a directory has a two-byte aux_type field.  This field<br />
-contains information such as load address for BASIC programs or<br />
-binary files, and record length for text files; for system files it is<br />
-unused.  If your system program has a small amount of default<br />
-information that you would like to preserve from one execution of the<br />
-program to the next, this field is a good place to store it.</P><P>To alter the contents of this field, use the GET_FILE_INFO call to<br />
-read the current contents of the file's entry, change the values in the<br />
-aux_id field, then use the SET_FILE_INFO call with the same<br />
-parameter list to save the modified values in the file's entry.</P><A NAME="5.3.4"><H3>5.3.4 - Finding a Volume</H3></A><P>Since one does not always know the names of all the online volumes,<br />
-it is sometimes necessary to allow users to specify volumes by slot and<br />
-drive instead of by volume name.  Before the slot and drive information<br />
-can be used to access ProDOS files, it must be converted to a volume<br />
-name.  To convert slot and drive numbers to volume names, you can<br />
-use the following steps:</P><OL>
+<a name="5.3.2"></A>
 
-<LI>Make the slot and drive numbers into a unit_num.  This number is<br />
-used to specify the desired device to the ON_LINE call.  The format<br />
-of a unit_num is given in Section 4.4.6.
+<H3>5.3.2 - Using the Date</H3>
 
-<LI>Use the unit_num in the ON_LINE call.  This call will return a<br />
-count byte followed by the volume name.  This volume name is not<br />
-preceded by a slash.  You must increase the count by one and insert<br />
-a slash preceding the volume name before using this name in other<br />
-ProDOS calls.
+<P>A system program often has reason to use the current date: to mark files with a modification date, to use as identification on a listing, or just for display on the screen.  Whatever the use, it is usually desirable to obtain the most current setting.</P>
+
+<P>Save the system date and time locations ($BF90-BF93) for possible future use, and then clear them.  Next use the GET_TIME call.  If there is a clock/calendar card with an installed clock routine, then the system date and time locations will become nonzero.  This is the date and time you should use.  If the GET_TIME call has no effect, then you should either use the values that were previously in the date and time locations, or prompt the user for the current date and time.  Since the date and time locations are set to 0 when the system is started (unless ProDOS recognizes a clock/calendar card), it is reasonable to use nonzero values of the date and time locations as a default date and time.</P>
+
+<P>If there is no system time, and the call to GET_TIME returns nothing an alternative is to use the GET_FILE_INFO call and to use the last modified date and time as a default.  If the user updates the time, and you place these values in the system date and time locations, a SET_FILE_INFO call will update the time for the next GET_FILE_INFO.</P>
+
+<P>The system updates the date and time at every CREATE, DESTROY, RENAME SET_FILE_INFO CLOSE, and FLUSH operation.</P>
+
+<P>Refer to the GET_TIME call in Chapter 4, and to the description of clock/calendar routines in Chapter 6 for more details.</P>
+
+<A NAME="page99"></a>
+
+<A NAME="5.3.3"></A>
+
+<H3>5.3.3 - System Program Defaults</H3>
+
+<P>Each file entry in a directory has a two-byte aux_type field.  This field contains information such as load address for BASIC programs or binary files, and record length for text files; for system files it is unused.  If your system program has a small amount of default information that you would like to preserve from one execution of the program to the next, this field is a good place to store it.</P>
+
+<P>To alter the contents of this field, use the GET_FILE_INFO call to read the current contents of the file's entry, change the values in the aux_id field, then use the SET_FILE_INFO call with the same parameter list to save the modified values in the file's entry.</P>
+
+<A NAME="5.3.4"></A>
+
+<H3>5.3.4 - Finding a Volume</H3>
+
+<P>Since one does not always know the names of all the online volumes, it is sometimes necessary to allow users to specify volumes by slot and drive instead of by volume name.  Before the slot and drive information can be used to access ProDOS files, it must be converted to a volume name.  To convert slot and drive numbers to volume names, you can use the following steps:</P>
+
+<OL>
+
+<LI>Make the slot and drive numbers into a unit_num.  This number is used to specify the desired device to the ON_LINE call.  The format of a unit_num is given in Section 4.4.6.</li>
+
+<LI>Use the unit_num in the ON_LINE call.  This call will return a count byte followed by the volume name.  This volume name is not preceded by a slash.  You must increase the count by one and insert a slash preceding the volume name before using this name in other ProDOS calls.</li>
 
 </OL>
 
 <a name="page100"></a>
 
-<A NAME="5.3.5"><H3>5.3.5 - Using the RESET Vector</H3></A><P>In the Apple II, pressing [CONTROL]-[RESET] causes an unconditional<br />
-jump to the RESET vector (at $3F2 in memory).  Because the user can<br />
-press [CONTROL]-[RESET] at any time -- including while files are<br />
-open -- ProDOS cannot take responsibility for disk integrity after<br />
-[RESET] has been pressed: the system program must do it.</P><P>Your program should place in the RESET vector the address of a<br />
-routine that displays a message advising that it will be closing any<br />
-open files, and then close the files.  Once this is done, the program may<br />
-take any action required by the application.  It is preferable either to<br />
-jump back to the beginning of the program or to jump directly to the<br />
-quit routine.</P><A NAME="5.4"><H2>5.4 - ProDOS System Program Conventions</H2></A><P>For the sake of consistency from one piece of software to the next<br />
-follow the conventions used in this manual:</P><UL>
+<A NAME="5.3.5"></A>
 
-<LI>Use the same terminology whenever possible.  If your application<br />
-implements any of the functions used by the BASIC system<br />
-program, the Filer, the Convert program, or the Editor/Assembler,<br />
-try to use the same wording.
+<H3>5.3.5 - Using the RESET Vector</H3>
 
-<LI>Use the same catalog format in all software that displays a list of<br />
-files.  It is not necessary to implement both the 40- and 80-column<br />
-formats (see the CAT and CATALOG commands of the BASIC<br />
-system program).
+<P>In the Apple II, pressing [CONTROL]-[RESET] causes an unconditional jump to the RESET vector (at $3F2 in memory).  Because the user can press [CONTROL]-[RESET] at any time -- including while files are open -- ProDOS cannot take responsibility for disk integrity after [RESET] has been pressed: the system program must do it.</P>
 
-<P>If you choose to implement your own version of this command,<br />
-recognize the file types and display the three-letter abbreviations<br />
-that are shown in the quick reference card of this manual.</P><LI>The standard Apple II "Air-raid" bell has been replaced with a<br />
-gentler tone.  Use it to give users some aural feedback that they are<br />
-using a ProDOS program.  The code for it follows.
+<P>Your program should place in the RESET vector the address of a routine that displays a message advising that it will be closing any open files, and then close the files.  Once this is done, the program may take any action required by the application.  It is preferable either to jump back to the beginning of the program or to jump directly to the quit routine.</P>
 
-</UL>
+<A NAME="5.4"></A>
+
+<H2>5.4 - ProDOS System Program Conventions</H2>
+
+<P>For the sake of consistency from one piece of software to the next follow the conventions used in this manual:</P>
+
+<UL>
+
+<LI>Use the same terminology whenever possible.  If your application implements any of the functions used by the BASIC system program, the Filer, the Convert program, or the Editor/Assembler, try to use the same wording.</li>
+
+<LI>Use the same catalog format in all software that displays a list of files.  It is not necessary to implement both the 40- and 80-column formats (see the CAT and CATALOG commands of the BASIC system program).<br /><br />If you choose to implement your own version of this command, recognize the file types and display the three-letter abbreviations that are shown in the quick reference card of this manual.</li>
+
+<LI>The standard Apple II "Air-raid" bell has been replaced with a gentler tone.  Use it to give users some aural feedback that they are using a ProDOS program.  The code for it follows.
+
+<br /><br />
 
 <a name="page101"></a>
 
@@ -941,4 +986,10 @@ using a ProDOS program.  The code for it follows.
            DEC   LENGTH
            BNE   BELL1         ;repeat LENGTH times
            RTS
-</PRE><a name="page102"></a>
+</PRE>
+
+</li>
+
+</UL>
+
+<a name="page102"></a>
