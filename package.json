@@ -1,7 +1,7 @@
 {
   "name": "prodos-8.com",
   "version": "2.0.0",
-  "description": "ProDOS 8 website built using based on jekyll-bootstrap-4 by David Malone <david@souldesign.net.nz>",
+  "description": "ProDOS 8 website built using based on jekyll-bootstrap-4 (https://github.com/soulroll/jekyll-bootstrap-4) by David Malone <david@souldesign.net.nz>",
   "main": "gulpfile.js",
   "author": "John Brooks, Devon Hubner, Oliver Schmidt",
   "license": "GPL-3.0",
