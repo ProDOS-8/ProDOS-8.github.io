@@ -61,6 +61,14 @@ gulp.task('jekyll-build', function (done) {
 });
 
 
+//
+// TASK: push-staging
+//
+gulp.task('push-staging', function (done) {
+  return cp.spawn( 's3_website' , ['push'], {stdio: 'inherit'}).on('close', done);
+});
+
+
 
 //
 // TASK: default
