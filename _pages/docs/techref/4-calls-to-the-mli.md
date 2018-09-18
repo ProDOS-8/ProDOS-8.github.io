@@ -49,12 +49,12 @@ permalink:   /docs/techref/calls-to-the-mli/
 
 <P>A program sends a call to the Machine Language Interface by executing a JSR (jump to subroutine) to address $BF00 (referred to below as MLI).  The call number and a two-byte pointer (low byte first) to the call's parameter list must immediately follow the call.  Here is an example of a call to the MLI:</P>
 
-<PRE>
+{% highlight basic %}
 SYSCALL  JSR MLI         ;Call Command Dispatcher
          DB  CMDNUM      ;This determines which call is being made
          DW  CMDLIST     ;A two-byte pointer to the parameter list
          BNE ERROR       ;Error if nonzero
-</PRE>
+{% endhighlight %}
 
 <P>Upon completion of the call, the MLI returns to the address of the JSR plus 3 (in the above example, the BNE statement); the call number and parameter list pointer are skipped.  If the call is successful, the C-flag is cleared and the Accumulator is set to zero.  If the call is unsuccessful, the C-flag is set and the Accumulator is set to the error code.  The register status upon call completion is summarized below. Note that the value of the N-flag is determined by the Accumulator and that the value of the V-flag is undefined.</P>
 
@@ -69,8 +69,9 @@ Unsuccessful call:  x  0  1  0  x  error  JSR+3  unchanged
 
 <P>Here is an example of a small program that issues calls to the MLI.  It tries to create a text file named NEWFILE on a volume named TESTMLI.  If an error occurs, the Apple II beeps and prints the error code on the screen.  Both the source and the object are given so you can enter it from the Monitor if you wish (remember to use a formatted disk named /TESTMLI).</P>
 
-<PRE>
- ------------------------------------------------------------------------
+------------------------------------------------------------------------
+
+{% highlight nasm %}
  SOURCE   FILE #01 =&#62;TESTCMD
  ----- NEXT OBJECT FILE NAME IS TESTCMD.0
  2000:        2000    1         ORG  $2000
@@ -108,8 +109,9 @@ Unsuccessful call:  x  0  1  0  x  error  JSR+3  unchanged
  2023:10             32 FILENAME DFB ENDNAME-NAME ;Length of name
  2024:2F 54 45 53    33 NAME    ASC  "/TESTMLI/NEWFILE" ;followed by the name
  2034:        2034   34 ENDNAME EQU  *
- ------------------------------------------------------------------------
-</PRE>
+{% endhighlight %}
+
+------------------------------------------------------------------------
 
 <P>The parameters used in <B><TT>TESTCMD</TT></B> are explained in the following sections.  The MLI error codes are summarized in Section 4.7.</P>
 
@@ -154,38 +156,46 @@ As defined above, each MLI call has a two-byte pointer to a parameter list.  A p
 <P>The housekeeping calls perform operations such as creating, deleting, and renaming, which cannot be used on open files.  They are used to change a file's status, but not the information that is in the file.  They refer to files by their pathnames, and each requires a temporary buffer, which is used during execution of the call.  The housekeeping calls are:</P>
 
 <DL>
-  <DT>CREATE
-  <DD>Creates either a standard file or a directory file.  An entry for the file is placed in the proper directory on the disk, and one block of disk space is allocated to the file.</DL>
+  <DT>CREATE</DT>
+  <DD>Creates either a standard file or a directory file.  An entry for the file is placed in the proper directory on the disk, and one block of disk space is allocated to the file.</DD>
+</DL>
 
 <DL>
-  <DT>DESTROY
-  <DD>Removes a standard file or directory file.  The entry for the file is removed from the directory and all the file's disk space is released.  If a directory is to be destroyed, it must be empty.  A volume directory cannot be destroyed except by reformatting the volume.</DL>
+  <DT>DESTROY</DT>
+  <DD>Removes a standard file or directory file.  The entry for the file is removed from the directory and all the file's disk space is released.  If a directory is to be destroyed, it must be empty.  A volume directory cannot be destroyed except by reformatting the volume.</DD>
+</DL>
 
 <DL>
-  <DT>RENAME
-  <DD>Changes the name of a file.  The new name must be in the same directory as the old name.  This call changes the name in the entry that describes that file, and if it is a directory file, also the name in its header entry.</DL>
+  <DT>RENAME</DT>
+  <DD>Changes the name of a file.  The new name must be in the same directory as the old name.  This call changes the name in the entry that describes that file, and if it is a directory file, also the name in its header entry.</DD>
+</DL>
 
 <DL>
-  <DT>SET_FILE_INFO
-  <DD>Sets the file's type, the way it may be accessed, and/or its modification date and time.</DL>
+  <DT>SET_FILE_INFO</DT>
+  <DD>Sets the file's type, the way it may be accessed, and/or its modification date and time.</DD>
+</DL>
 
 <DL>
-  <DT>GET_FILE_INFO
-  <DD>Returns the file's type, the way it may be accessed, the way it is stored on the disk, its size in blocks, and the date and time at which it was created and last modified.</DL>
+  <DT>GET_FILE_INFO</DT>
+  <DD>Returns the file's type, the way it may be accessed, the way it is stored on the disk, its size in blocks, and the date and time at which it was created and last modified.</DD>
+</DL>
 
 <a name="page32"></a>
 
 <DL>
-  <DT>ON_LINE
-  <DD>Returns the slot number, drive number, and volume name of one or all mounted volumes.  This information is placed in a user-supplied buffer.</DL>
+  <DT>ON_LINE</DT>
+  <DD>Returns the slot number, drive number, and volume name of one or all mounted volumes.  This information is placed in a user-supplied buffer.</DD>
+</DL>
 
 <DL>
-  <DT>SET_PREFIX
-  <DD>Sets the pathname that is used by the operating system as a prefix.  The prefix must indicate an existing directory on a mounted volume.</DL>
+  <DT>SET_PREFIX</DT>
+  <DD>Sets the pathname that is used by the operating system as a prefix.  The prefix must indicate an existing directory on a mounted volume.</DD>
+</DL>
 
 <DL>
-  <DT>GET_PREFIX
-  <DD>Returns the value of the current system prefix.</DL>
+  <DT>GET_PREFIX</DT>
+  <DD>Returns the value of the current system prefix.</DD>
+</DL>
 
 <A NAME="4.3.2"></A>
 
@@ -194,54 +204,66 @@ As defined above, each MLI call has a two-byte pointer to a parameter list.  A p
 <P>The filing calls cause the transfer of data to or from files.  The first filing call, OPEN, must be used before any of the others can be used. The OPEN call specifies a file by its pathname; the other filing calls refer to files by the reference number returned by the OPEN call.  In addition, an input/output buffer (io_buffer), is allocated to the open file; subsequent data transfers go through this buffer.  The reference number remains assigned and the buffer remains allocated until the file is closed.  The filing calls are:</P>
 
 <DL>
-  <DT>OPEN
-  <DD>Prepares a file to be accessed.  This call causes a file control block (FCB) to be allocated to the file, and a reference number to be returned (A reference number is really a file control block number).  In addition, an input/output buffer is allocated for data transfers to and from the file.</DL>
+  <DT>OPEN</DT>
+  <DD>Prepares a file to be accessed.  This call causes a file control block (FCB) to be allocated to the file, and a reference number to be returned (A reference number is really a file control block number).  In addition, an input/output buffer is allocated for data transfers to and from the file.</DD>
+</DL>
 
 <DL>
-  <DT>NEWLINE
-  <DD>Sets conditions for reading from the file.  This call turns on and turns off the capability of read requests to terminate when a particular character (such as a carriage return) is read.</DL>
+  <DT>NEWLINE</DT>
+  <DD>Sets conditions for reading from the file.  This call turns on and turns off the capability of read requests to terminate when a particular character (such as a carriage return) is read.</DD>
+</DL>
 
 <DL>
-  <DT>READ
-  <DD>Causes the transfer of a requested number of characters from a file to a specified memory buffer, and updates the current position (MARK) in the file. Characters are read according to the rules set by the NEWLINE call.</DL>
+  <DT>READ</DT>
+  <DD>Causes the transfer of a requested number of characters from a file to a specified memory buffer, and updates the current position (MARK) in the file. Characters are read according to the rules set by the NEWLINE call.</DD>
+</DL>
 
 <a name="page33"></a>
 
 <DL>
-  <DT>WRITE
-  <DD>Causes the transfer of a requested number of characters from a specified buffer to a file, and updates the current position (MARK) in the file and the end of file (EOF), if necessary.</DL>
+  <DT>WRITE</DT>
+  <DD>Causes the transfer of a requested number of characters from a specified buffer to a file, and updates the current position (MARK) in the file and the end of file (EOF), if necessary.</DD>
+</DL>
 
 <DL>
-  <DT>CLOSE
-  <DD>Transfers any unwritten data from a file's input/output buffer to the file, releases the file's io_buffer and file control block, and updates the file's directory entry, if necessary.  The file's reference number is released for use by subsequently opened files.</DL>
+  <DT>CLOSE</DT>
+  <DD>Transfers any unwritten data from a file's input/output buffer to the file, releases the file's io_buffer and file control block, and updates the file's directory entry, if necessary.  The file's reference number is released for use by subsequently opened files.</DD>
+</DL>
 
 <DL>
-  <DT>FLUSH
-  <DD>Transfers any unwritten data from a file's input/output buffer to the file, and updates the file's directory entry, if necessary.</DL>
+  <DT>FLUSH</DT>
+  <DD>Transfers any unwritten data from a file's input/output buffer to the file, and updates the file's directory entry, if necessary.</DD>
+</DL>
 
 <DL>
-  <DT>SET_MARK
-  <DD>Changes the current position in the file.  The current position is the absolute position in the file of the next character to be read or written.</DL>
+  <DT>SET_MARK</DT>
+  <DD>Changes the current position in the file.  The current position is the absolute position in the file of the next character to be read or written.</DD>
+</DL>
 
 <DL>
-  <DT>GET_MARK
-  <DD>Returns the current position in the file. The current position is the absolute position in the file of the next character to be read or written.</DL>
+  <DT>GET_MARK</DT>
+  <DD>Returns the current position in the file. The current position is the absolute position in the file of the next character to be read or written.</DD>
+</DL>
 
 <DL>
-  <DT>SET_EOF
-  <DD>Changes the logical size of the file (the end of file).</DL>
+  <DT>SET_EOF</DT>
+  <DD>Changes the logical size of the file (the end of file).</DD>
+</DL>
 
 <DL>
-  <DT>GET_EOF
-  <DD>Returns the logical size of the file.</DL>
+  <DT>GET_EOF</DT>
+  <DD>Returns the logical size of the file.</DD>
+</DL>
 
 <DL>
-  <DT>SET_BUF
-  <DD>Assigns a new location for the input/output buffer of an open file.</DL>
+  <DT>SET_BUF</DT>
+  <DD>Assigns a new location for the input/output buffer of an open file.</DD>
+</DL>
 
 <DL>
-  <DT>GET_BUF
-  <DD>Returns the current location of the input/output buffer of an open file.</DL>
+  <DT>GET_BUF</DT>
+  <DD>Returns the current location of the input/output buffer of an open file.</DD>
+</DL>
 
 <a name="page34"></a>
 
@@ -252,24 +274,29 @@ As defined above, each MLI call has a two-byte pointer to a parameter list.  A p
 <P>System calls are those calls that are neither housekeeping nor filing calls.  They are used for getting the current date and time, for installing and removing interrupt routines, and for reading and writing specific blocks of a disk.  The system calls are:</P>
 
 <DL>
-  <DT>GET_TIME
-  <DD>If your system has a clock/calendar card, and if a routine that can read from the clock is installed, then it places the current date and time in the system date and time locations.</DL>
+  <DT>GET_TIME</DT>
+  <DD>If your system has a clock/calendar card, and if a routine that can read from the clock is installed, then it places the current date and time in the system date and time locations.</DD>
+</DL>
 
 <DL>
-  <DT>ALLOC_INTERRUPT
-  <DD>Places a pointer to an interrupt-handling routine into the system interrupt vector table.</DL>
+  <DT>ALLOC_INTERRUPT</DT>
+  <DD>Places a pointer to an interrupt-handling routine into the system interrupt vector table.</DD>
+</DL>
 
 <DL>
-  <DT>DEALLOC_INTERRUPT
-  <DD>Removes a pointer to an interrupt handling routine from the system interrupt vector table.</DL>
+  <DT>DEALLOC_INTERRUPT</DT>
+  <DD>Removes a pointer to an interrupt handling routine from the system interrupt vector table.</DD>
+</DL>
 
 <DL>
-  <DT>READ_BLOCK
-  <DD>Reads one specific block (512 bytes) of information from a disk into a user specified data buffer.  This call is file independent.</DL>
+  <DT>READ_BLOCK</DT>
+  <DD>Reads one specific block (512 bytes) of information from a disk into a user specified data buffer.  This call is file independent.</DD>
+</DL>
 
 <DL>
-  <DT>WRITE_BLOCK
-  <DD>Writes a block of information from a user specified data buffer to a specific block of a disk.  This call is file independent.</DL>
+  <DT>WRITE_BLOCK</DT>
+  <DD>Writes a block of information from a user specified data buffer to a specific block of a disk.  This call is file independent.</DD>
+</DL>
 
 <a name="page35"></a>
 
@@ -317,16 +344,19 @@ As defined above, each MLI call has a two-byte pointer to a parameter list.  A p
 <P><B>Parameters</B></P>
 
 <DL>
-  <DT>param_count (1-byte value)
-  <DD>Parameter count: 7 for this call.</DL>
+  <DT>param_count (1-byte value)</DT>
+  <DD>Parameter count: 7 for this call.</DD>
+</DL>
 
 <DL>
-  <DT>pathname (2-byte pointer)
-  <DD>Pathname pointer: A two-byte address (low byte first) that points to an ASCII string.  The string consists of a count byte, followed by the pathname (up to 64 characters).  If the pathname begins with a slash ( / ), it is treated as a full pathname.  If not, it is treated as a partial pathname and the prefix is attached to the front to make a full pathname.  The pathname string is not changed.</DL>
+  <DT>pathname (2-byte pointer)</DT>
+  <DD>Pathname pointer: A two-byte address (low byte first) that points to an ASCII string.  The string consists of a count byte, followed by the pathname (up to 64 characters).  If the pathname begins with a slash ( / ), it is treated as a full pathname.  If not, it is treated as a partial pathname and the prefix is attached to the front to make a full pathname.  The pathname string is not changed.</DD>
+</DL>
 
 <DL>
-  <DT>access (1-byte value)
-  <DD>Access permitted: This byte defines how the file will be accessible.  Its format is:</P>
+  <DT>access (1-byte value)</DT>
+  <DD>Access permitted: This byte defines how the file will be accessible.  Its format is</DD>
+  :</P>
 
 <PRE>
    7  6  5  4  3  2  1  0
@@ -346,8 +376,9 @@ If the file is destroy, rename, and write enabled, it is <B>unlocked</B>.  If al
 The backup bit (B) is always set by this call.<br /></DL>
 
 <DL>
-  <DT>file_type (1-byte value)
-  <DD>File type: This byte describes the contents of the file.  The currently defined file types are listed below.</DL>
+  <DT>file_type (1-byte value)</DT>
+  <DD>File type: This byte describes the contents of the file.  The currently defined file types are listed below.</DD>
+</DL>
 
 <a name="page37"></a>
 
@@ -397,16 +428,19 @@ The backup bit (B) is always set by this call.<br /></DL>
 <a name="page38"></a>
 
 <DL>
-  <DT>aux_type (2-byte value)
-  <DD>Auxiliary type: This two-byte field is used by the system program.  The BASIC system program uses it (low byte first) to store text-file record size or binary-file load address, depending on the file_type.</DL>
+  <DT>aux_type (2-byte value)</DT>
+  <DD>Auxiliary type: This two-byte field is used by the system program.  The BASIC system program uses it (low byte first) to store text-file record size or binary-file load address, depending on the file_type.</DD>
+</DL>
 
 <DL>
-  <DT>storage_type (1-byte value)
-  <DD>File kind: This byte describes the physical organization of the file.  storage_type = $0D is a linked directory file; storage_type = $01 is a standard file.</DL>
+  <DT>storage_type (1-byte value)</DT>
+  <DD>File kind: This byte describes the physical organization of the file.  storage_type = $0D is a linked directory file; storage_type = $01 is a standard file.</DD>
+</DL>
 
 <DL>
-  <DT>create_date (2-byte value)
-  <DD>This 2-byte field may contain the date on which the file was created.  Its format is:
+  <DT>create_date (2-byte value)</DT>
+  <DD>This 2-byte field may contain the date on which the file was created.  Its forma</DD>
+  t is:
 
 <PRE>
        byte 1            byte 0
@@ -418,8 +452,9 @@ The backup bit (B) is always set by this call.<br /></DL>
 </PRE></DL>
 
 <DL>
-  <DT>create_time (2-byte value)
-  <DD>This 2-byte field may contain the time at which the file was created.  Its format is:
+  <DT>create_time (2-byte value)</DT>
+  <DD>This 2-byte field may contain the time at which the file was created.  Its forma</DD>
+  t is:
 
 <PRE>
        byte 1            byte 0
@@ -459,12 +494,14 @@ The backup bit (B) is always set by this call.<br /></DL>
 <P><B>Parameters</B></P>
 
 <DL>
-  <DT>param_count (1-byte value)
-  <DD>Parameter count: 1 for this call.</DL>
+  <DT>param_count (1-byte value)</DT>
+  <DD>Parameter count: 1 for this call.</DD>
+</DL>
 
 <DL>
-  <DT>pathname (2-byte pointer)
-  <DD>Pathname pointer: A two-byte address (low byte first) that points to an ASCII string.  The string consists of a count byte, followed by the pathname (up to 64 characters).  If the pathname begins with a slash ( / ), it is treated as a full pathname.  If not, it is treated as a partial pathname and the prefix is attached to the front to make a full pathname.</DL>
+  <DT>pathname (2-byte pointer)</DT>
+  <DD>Pathname pointer: A two-byte address (low byte first) that points to an ASCII string.  The string consists of a count byte, followed by the pathname (up to 64 characters).  If the pathname begins with a slash ( / ), it is treated as a full pathname.  If not, it is treated as a partial pathname and the prefix is attached to the front to make a full pathname.</DD>
+</DL>
 
 <P><B>Possible Errors</B></P>
 
@@ -494,16 +531,19 @@ The backup bit (B) is always set by this call.<br /></DL>
 <P><B>Parameters</B></P>
 
 <DL>
-  <DT>param_count (1-byte value)
-  <DD>Parameter count: 2 for this call.</DL>
+  <DT>param_count (1-byte value)</DT>
+  <DD>Parameter count: 2 for this call.</DD>
+</DL>
 
 <DL>
-  <DT>pathname (2-byte pointer)
-  <DD>Pathname pointer: A two-byte address (low byte first) that points to an ASCII string.  The string consists of a count byte, followed by the pathname (up to 64 characters).  If the pathname begins with a slash ( / ), it is treated as a full pathname.  If not, it is treated as a partial pathname and the prefix is attached to the front to make a full pathname.</DL>
+  <DT>pathname (2-byte pointer)</DT>
+  <DD>Pathname pointer: A two-byte address (low byte first) that points to an ASCII string.  The string consists of a count byte, followed by the pathname (up to 64 characters).  If the pathname begins with a slash ( / ), it is treated as a full pathname.  If not, it is treated as a partial pathname and the prefix is attached to the front to make a full pathname.</DD>
+</DL>
 
 <DL>
-  <DT>new_pathname (2-byte pointer)
-  <DD>New pathname pointer: This two-byte pointer (low byte first) indicates the location of the new pathname.  It has the same syntax as pathname.</P></DL>
+  <DT>new_pathname (2-byte pointer)</DT>
+  <DD>New pathname pointer: This two-byte pointer (low byte first) indicates the location of the new pathname.  It has the same syntax as pathname.</P></DD>
+</DL>
 
 <P><B>Possible Errors</B></P>
 
@@ -553,16 +593,19 @@ The backup bit (B) is always set by this call.<br /></DL>
 <P><B>Parameters</B></P>
 
 <DL>
-  <DT>param_count (1-byte value)
-  <DD>Parameter count: 7 for this call.</DL>
+  <DT>param_count (1-byte value)</DT>
+  <DD>Parameter count: 7 for this call.</DD>
+</DL>
 
 <DL>
-  <DT>pathname (2-byte pointer)
-  <DD>Pathname pointer: A two-byte address (low byte first) that points to an ASCII string.  The string consists of a count byte, followed by the pathname (up to 64 characters).  If the pathname begins with a slash ( / ), it is treated as a full pathname.  If not, it is treated as a partial pathname and the prefix is attached to the front to make a full pathname.</DL>
+  <DT>pathname (2-byte pointer)</DT>
+  <DD>Pathname pointer: A two-byte address (low byte first) that points to an ASCII string.  The string consists of a count byte, followed by the pathname (up to 64 characters).  If the pathname begins with a slash ( / ), it is treated as a full pathname.  If not, it is treated as a partial pathname and the prefix is attached to the front to make a full pathname.</DD>
+</DL>
 
 <DL>
-  <DT>access (1-byte value)
-  <DD>Access permitted: This byte determines how the file may be accessed.  Its format is:
+  <DT>access (1-byte value)</DT>
+  <DD>Access permitted: This byte determines how the file may be accessed.  Its forma</DD>
+  t is:
 
 <PRE>
    7  6  5  4  3  2  1  0
@@ -582,8 +625,9 @@ If the file is destroy, rename, and write enabled it is <B>unlocked</B>.  If all
 The backup bit (B) is set by this call.</DL>
 
 <DL>
-  <DT>file_type (1-byte value)
-  <DD>File type: This byte describes the contents of a file.  The currently defined file types are listed below.</DL>
+  <DT>file_type (1-byte value)</DT>
+  <DD>File type: This byte describes the contents of a file.  The currently defined file types are listed below.</DD>
+</DL>
 
 <a name="page44"></a>
 
@@ -633,16 +677,19 @@ The backup bit (B) is set by this call.</DL>
 <a name="page45"></a>
 
 <DL>
-  <DT>aux_type (2-byte value)
-  <DD>Auxiliary type: This two-byte field is used by the system program.  The BASIC system program uses it (low byte first) to store record size or load address, depending on the file_type.</DL>
+  <DT>aux_type (2-byte value)</DT>
+  <DD>Auxiliary type: This two-byte field is used by the system program.  The BASIC system program uses it (low byte first) to store record size or load address, depending on the file_type.</DD>
+</DL>
 
 <DL>
-  <DT>null_field (3 bytes)
-  <DD>Null field: These three bytes preserve symmetry between this and the GET_FILE_INFO call.</DL>
+  <DT>null_field (3 bytes)</DT>
+  <DD>Null field: These three bytes preserve symmetry between this and the GET_FILE_INFO call.</DD>
+</DL>
 
 <DL>
-  <DT>mod_date (2-byte value)
-  <DD>This 2-byte field should contain the current date. It has this format:
+  <DT>mod_date (2-byte value)</DT>
+  <DD>This 2-byte field should contain the current date. It has this fo</DD>
+  rmat:
 
 <PRE>
        byte 1            byte 0
@@ -654,8 +701,9 @@ The backup bit (B) is set by this call.</DL>
 </PRE></DL>
 
 <DL>
-  <DT>mod_time (2-byte value)
-  <DD>This 2-byte field should contain the current time. It has this format:
+  <DT>mod_time (2-byte value)</DT>
+  <DD>This 2-byte field should contain the current time. It has this fo</DD>
+  rmat:
 
 <PRE>
        byte 1            byte 0
@@ -721,16 +769,19 @@ The backup bit (B) is set by this call.</DL>
 <P><B>Parameters</B></P>
 
 <DL>
-  <DT>param_count (1-byte value)
-  <DD>Parameter count: $A for this call.</DL>
+  <DT>param_count (1-byte value)</DT>
+  <DD>Parameter count: $A for this call.</DD>
+</DL>
 
 <DL>
-  <DT>pathname (2-byte pointer)
-  <DD>Pathname pointer: A two-byte address (low byte first) that points to an ASCII string.  The string consists of a count byte, followed by the pathname (up to 64 characters).  If the pathname begins with a slash ( / ), it is treated as a full pathname.  If not, it is treated as a partial pathname and the prefix is attached to the front to make a full pathname.</DL>
+  <DT>pathname (2-byte pointer)</DT>
+  <DD>Pathname pointer: A two-byte address (low byte first) that points to an ASCII string.  The string consists of a count byte, followed by the pathname (up to 64 characters).  If the pathname begins with a slash ( / ), it is treated as a full pathname.  If not, it is treated as a partial pathname and the prefix is attached to the front to make a full pathname.</DD>
+</DL>
 
 <DL>
-  <DT>access (1-byte result)
-  <DD>Access permitted: This byte determines how the file may be accessed.  Its format is:
+  <DT>access (1-byte result)</DT>
+  <DD>Access permitted: This byte determines how the file may be accessed.  Its forma</DD>
+  t is:
 
 <PRE>
    7  6  5  4  3  2  1  0
@@ -749,8 +800,9 @@ The backup bit (B) is set by this call.</DL>
 If the file is destroy, rename, and write enabled it is <B>unlocked</B>.  If all three are disabled, it is <B>locked</B>.  Any other combination of access bits is called <B>restricted access</B>.</DL>
 
 <DL>
-  <DT>file_type (1-byte result)
-  <DD>File type: This byte describes the contents of a file.  The currently defined file types are listed below.</P></DL>
+  <DT>file_type (1-byte result)</DT>
+  <DD>File type: This byte describes the contents of a file.  The currently defined file types are listed below.</P></DD>
+</DL>
 
 <a name="page48"></a>
 
@@ -800,20 +852,24 @@ If the file is destroy, rename, and write enabled it is <B>unlocked</B>.  If all
 <a name="page49"></a>
 
 <DL>
-  <DT>aux_type (2-byte result)
-  <DD>Auxiliary type: This two-byte field is used by the system program.  The BASIC system program uses it (low byte first) to store record size or load address, depending on the file_type.  If this call is used on a volume directory file, aux_type will contain the total number of blocks on the volume.</DL>
+  <DT>aux_type (2-byte result)</DT>
+  <DD>Auxiliary type: This two-byte field is used by the system program.  The BASIC system program uses it (low byte first) to store record size or load address, depending on the file_type.  If this call is used on a volume directory file, aux_type will contain the total number of blocks on the volume.</DD>
+</DL>
 
 <DL>
-  <DT>storage_type (1-byte result)
-  <DD>File kind: This byte describes the physical organization of the file.  storage_type = $0F is a volume directory file; storage_type = $0D is a directory file; storage_type = $01, $02, and $03 are seedling, sapling, and tree files, respectively (see Appendix B).  All other values are reserved for future use.</DL>
+  <DT>storage_type (1-byte result)</DT>
+  <DD>File kind: This byte describes the physical organization of the file.  storage_type = $0F is a volume directory file; storage_type = $0D is a directory file; storage_type = $01, $02, and $03 are seedling, sapling, and tree files, respectively (see Appendix B).  All other values are reserved for future use.</DD>
+</DL>
 
 <DL>
-  <DT>blocks_used (2-byte result)
-  <DD>Blocks used by the file: These two bytes contain the total number of blocks used by the file, as stored in the blocks_used parameter of the file's entry.  If this call is used on a volume directory file blocks_used contains the total number of blocks used by all the files on the volume.</DL>
+  <DT>blocks_used (2-byte result)</DT>
+  <DD>Blocks used by the file: These two bytes contain the total number of blocks used by the file, as stored in the blocks_used parameter of the file's entry.  If this call is used on a volume directory file blocks_used contains the total number of blocks used by all the files on the volume.</DD>
+</DL>
 
 <DL>
-  <DT>mod_date (2-byte result)
-  <DD>This 2-byte field returns the date on which the file was last modified.  It has this format:
+  <DT>mod_date (2-byte result)</DT>
+  <DD>This 2-byte field returns the date on which the file was last modified.  It has this fo</DD>
+  rmat:
 
 <PRE>
        byte 1            byte 0
@@ -840,8 +896,9 @@ If the file is destroy, rename, and write enabled it is <B>unlocked</B>.  If all
 <a name="page50"></a>
 
 <DL>
-  <DT>create_date (2-byte result)
-  <DD>This 2-byte field returns the date on which the file was created.  It has this format:
+  <DT>create_date (2-byte result)</DT>
+  <DD>This 2-byte field returns the date on which the file was created.  It has this fo</DD>
+  rmat:
 
 <PRE>
        byte 1            byte 0
@@ -853,8 +910,9 @@ If the file is destroy, rename, and write enabled it is <B>unlocked</B>.  If all
 </PRE></DL>
 
 <DL>
-  <DT>create_time (2-byte result)
-  <DD>This 2-byte field returns the time at which the file was created.  It has this format:
+  <DT>create_time (2-byte result)</DT>
+  <DD>This 2-byte field returns the time at which the file was created.  It has this fo</DD>
+  rmat:
 
 <PRE>
        byte 1            byte 0
@@ -898,12 +956,14 @@ If the file is destroy, rename, and write enabled it is <B>unlocked</B>.  If all
 <P><B>Parameters</B></P>
 
 <DL>
-  <DT>param_count (1-byte value)
-  <DD>Parameter count: Must be 2 for this call.</DL>
+  <DT>param_count (1-byte value)</DT>
+  <DD>Parameter count: Must be 2 for this call.</DD>
+</DL>
 
 <DL>
-  <DT>unit_num (1-byte value)
-  <DD>Device slot and drive number: This one-byte value specifies the hardware slot location of a disk device.  The format is:
+  <DT>unit_num (1-byte value)</DT>
+  <DD>Device slot and drive number: This one-byte value specifies the hardware slot location of a disk device.  The forma</DD>
+  t is:
 
 <PRE>
    7  6  5  4  3  2  1  0
@@ -921,8 +981,9 @@ If the file is destroy, rename, and write enabled it is <B>unlocked</B>.  If all
 </PRE></DL>
 
 <DL>
-  <DT>data_buffer (2-byte pointer)
-  <DD>Data address pointer: This two-byte address (low byte first) points to a buffer for returned data, which is organized into 16 byte records.  If unit_num is 0, the buffer should be 256 bytes long, otherwise 16 bytes is enough.<br /></DL>
+  <DT>data_buffer (2-byte pointer)</DT>
+  <DD>Data address pointer: This two-byte address (low byte first) points to a buffer for returned data, which is organized into 16 byte records.  If unit_num is 0, the buffer should be 256 bytes long, otherwise 16 bytes is enough.<br /></DD>
+</DL>
 
 <a name="page52"></a>
 
@@ -1898,15 +1959,10 @@ The Dr bit specifies either drive 1 (Dr = 0) or drive 2 (Dr = 1).  Slot must con
 <P>Possible causes include</P>
 
 <UL>
-
-<LI>bad RAM</li>
-
-<LI>disk failure</li>
-
-<LI>operating system bug</li>
-
-<LI>unclaimed interrupt.</li>
-
+  <LI>bad RAM</li>
+  <LI>disk failure</li>
+  <LI>operating system bug</li>
+  <LI>unclaimed interrupt.</li>
 </UL>
 
 </BLOCKQUOTE>

@@ -155,22 +155,14 @@ permalink:   /docs/techref/adding-routines-to-prodos/
 <P>To do this, the interrupt handling routine should first check the status of the MLI.  If the flag <B><TT>MLIACTV</TT></B> ($BF9B) has the high bit set, then the MLI was in the middle of a call.  Your routine should then:</P>
 
 <OL>
-
 <LI>Save the return address of the original caller (<B><TT>CMDADR</TT></B>, $BF9C), replacing it with the address to which the MLI should return on completion of the current call.</li>
-
 <LI>Claim the interrupt by disabling interrupts on the hardware, and clearing the carry flag.</li>
-
 <LI>RTS<br /><br />The MLI's interrupt handler believes that the interrupt has been processed, so it completes the current MLI call and returns to the address in <B><TT>CMDADR</TT></B>, which is actually in your routine.  Your routine should now do this:<br />
 <OL>
 <LI>Save the A, X, Y, and P registers as the return state for the routine whose call just completed.</li>
-
 <LI>Use the MLI as needed.</li>
-
 <LI>Restore the A, X, Y, and P registers.</li>
-
 <LI>Jump to the original <B><TT>CMDADR</TT></B>.</li>
-
-</OL>
 </OL>
 
 <P>The original program sees only that its MLI call was successfully completed, and it continues execution.</P><a name="page108"></a>
@@ -386,7 +378,7 @@ permalink:   /docs/techref/adding-routines-to-prodos/
 <P>parameters are passed to the driver are:</P>
 
 <DL>
-  <DT>$42 Command:
+  <DT>$42 Command:</dt>
   <DD>0 = STATUS request 1 = READ request 2 = WRITE request 3 = FORMAT request</dd>
 </DL>
 
@@ -395,7 +387,7 @@ permalink:   /docs/techref/adding-routines-to-prodos/
 <a name="page114"></a>
 
 <DL>
-  <DT>$43 Unit Number:
+  <DT>$43 Unit Number:</dt>
   <DD><PRE>
     7  6  5  4  3  2  1  0
   +--+--+--+--+--+--+--+--+

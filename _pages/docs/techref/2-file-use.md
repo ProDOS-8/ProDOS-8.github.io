@@ -20,11 +20,11 @@ permalink:   /docs/techref/file-use/
 
 <P>A ProDOS <B>filename</B> or <B>volume name</B> is up to 15 characters long.  It may contain capital letters (A-Z), digits (0-9), and periods (.), and it must begin with a letter.  Lowercase letters are automatically converted to uppercase.  A filename must be unique within its directory.  Some examples are</P>
 
-<B><PRE>
+{% highlight basic %}
  LETTERS
  JUNK1
  BASIC.SYSTEM
-</PRE></B>
+{% endhighlight %}
 
 <P><B>By the Way:</B> On the Apple II, an ASCII character is read from the keyboard and printed to the screen with its high bit set.  ProDOS clears this high bit.</P>
 
@@ -34,11 +34,11 @@ permalink:   /docs/techref/file-use/
 
 <P>A ProDOS <B>pathname</B> is a series of filenames, each preceded by a slash (/).  The first filename in a pathname is the name of a volume directory.  Successive filenames indicate the path, from the volume directory to the file, that ProDOS must follow to find a particular file. The maximum length for a pathname is 64 characters, including slashes.  Examples are</P>
 
-<B><PRE>
+{% highlight basic %}
  /PROFILE/GAMES/DISKWARS
  /PROFILE/JUNK1
  /PROFILE/SYSTEMPROGRAMS/FILER
-</PRE></B>
+{% endhighlight %}
 
 <P>All calls that require you to name a file will accept either a pathname or a <B>partial pathname</B>.  A partial pathname is a portion of a pathname that doesn't begin with a slash or a volume name.  The maximum length for a partial pathname is 64 characters, including slashes.  These partial pathnames are all derived from the sample pathnames above.</P>
 
@@ -46,12 +46,12 @@ permalink:   /docs/techref/file-use/
 
 <P>The partial pathnames are</P>
 
-<B><PRE>
+{% highlight basic %}
  DISKWARS
  JUNK1
  SYSTEMPROGRAMS/FILER
  FILER
-</PRE></B>
+{% endhighlight %}
 
 <P>ProDOS automatically adds the <B>prefix</B> to the front of partial pathnames to form full pathnames.  The prefix is a pathname that indicates a directory; it is internally stored by ProDOS.  To locate a file by its pathname, ProDOS must look through each file in the path.  If you specify a partial pathname, however, ProDOS jumps straight to the prefix directory and starts searching from there.  Thus disk accesses are faster when you set the prefix and use partial pathnames.</P>
 

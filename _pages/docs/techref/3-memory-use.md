@@ -67,7 +67,7 @@ permalink:   /docs/techref/memory-use/
 
 <A NAME="3-1">></A>
 
-<P><B>Figure 3-1.  Memory Map</B></P
+<P><B>Figure 3-1.  Memory Map</B></P>
 
 <PRE>
               <B>Main Memory                                 Auxiliary Memory</B>

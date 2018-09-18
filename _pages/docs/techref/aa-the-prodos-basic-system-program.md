@@ -574,7 +574,7 @@ permalink:   /docs/techref/the-prodos-basic-system-program/
 <H3>A.3.2 - Adding Commands to the BASIC System Program</H3>
 
 
-The <B><TT>EXTRNCMD</TT></B> location in the global page allows you to add your own commands to the ProDOS command set.  Once you attach a command, it is treated as if it were one of the BASIC.SYSTEM commands, except that the original commands have preference.  To execute your command in immediate mode, just enter it.  To execute it in deferred mode, preface it with <B><TT>PRINT CHR$(4)</TT></B>.</P>
+<p>The <B><TT>EXTRNCMD</TT></B> location in the global page allows you to add your own commands to the ProDOS command set.  Once you attach a command, it is treated as if it were one of the BASIC.SYSTEM commands, except that the original commands have preference.  To execute your command in immediate mode, just enter it.  To execute it in deferred mode, preface it with <B><TT>PRINT CHR$(4)</TT></B>.</P>
 
 <P>Whenever BASIC.SYSTEM receives a command, it first checks its command list for a match.  If the command is not recognized, BASIC.SYSTEM sends the command to the external command handlers, if any are connected.  If no external command handler claims the command, BASIC.SYSTEM passes control to Applesoft, which returns an error if the command is not recognized.</P>
 
@@ -589,7 +589,7 @@ The <B><TT>EXTRNCMD</TT></B> location in the global page allows you to add your 
 <LI>If the command is yours, you must zero XCNUM ($BE53) to indicate an external command, and set XLEN ($BE52) equal to the length of your command string minus one.
 <br />
 <br />
-If there are no associated parameters (such as slot, drive, A$, and so on) to parse, or if you're going to parse them yourself, you must set all 16 parameter bits in PBITS ($BE54,$BE55) to zero.  And, if you're going to handle everything yourself before returning control to BASIC.SYSTEM, you must point XTRNADDR ($BE50,$BE51) at an RTS instruction.  XRETURN ($BE9E) is a good location.  Now, just fall through to your execution routines.</P>
+If there are no associated parameters (such as slot, drive, A$, and so on) to parse, or if you're going to parse them yourself, you must set all 16 parameter bits in PBITS ($BE54,$BE55) to zero.  And, if you're going to handle everything yourself before returning control to BASIC.SYSTEM, you must point XTRNADDR ($BE50,$BE51) at an RTS instruction.  XRETURN ($BE9E) is a good location.  Now, just fall through to your execution routines.
 <br />
 <br />
 If there are parameters to parse, it is easiest to let BASIC.SYSTEM parse them for you (unless you want to use some undefined parameters).  By setting up the bits in PBITS ($BE54,$BE55), and setting XTRNADDR ($BE50,$BE51) equal to the location where execution of your command begins, you can return control to BASIC.SYSTEM, with an RTS, and let it parse and verify the parameters and return them to you in the global page.</li>
@@ -604,7 +604,9 @@ If there are parameters to parse, it is easiest to let BASIC.SYSTEM parse them f
 
 <A NAME="page135"></a>
 
-<A NAME="A.3.2.1"><H4>A.3.2.1 - BEEP Example</H4></A>
+<A NAME="A.3.2.1"></a>
+
+<H4>A.3.2.1 - BEEP Example</H4>
 
 <PRE>
  **************************************************************
@@ -688,7 +690,9 @@ If there are parameters to parse, it is easiest to let BASIC.SYSTEM parse them f
 
 <a name="page137"></a>
 
-<A NAME="A.3.2.2"><H4>A.3.2.2 - BEEPSLOT Example</H4></A>
+<A NAME="A.3.2.2"></a>
+
+<H4>A.3.2.2 - BEEPSLOT Example</H4>
 
 <PRE>
  *************************************************************

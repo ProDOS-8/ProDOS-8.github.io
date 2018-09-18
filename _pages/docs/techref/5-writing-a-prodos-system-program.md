@@ -18,20 +18,16 @@ permalink:   /docs/techref/writing-a-prodos-system-program/
 <P>A ProDOS system program is any program that makes calls to the ProDOS MLI and that adheres to a set of standard system program rules.  Each system program must have</P>
 
 <UL>
-
-<LI>code to move the program from its load position to its final execution location, if necessary
-
+<LI>code to move the program from its load position to its final execution location, if necessary</li>
 <LI>a version number in the system global page</li>
-
 <LI>the ability to switch to another system program.</li>
-
 </UL>
 
 <P>All other aspects of the system program are up to you.</P>
 
 <A NAME="5.1.1"></A>
 
-><H3>5.1.1 - Placement in Memory</H3
+<H3>5.1.1 - Placement in Memory</H3>
 
 <P>System programs are always loaded into memory starting at location $2000.  When the system is first started up, the system program used is the first file on the startup disk with the name XXX.SYSTEM, and the $FF filetype.  When one system program switches to another, it can load any file of type $FF.</P>
 
@@ -194,11 +190,13 @@ permalink:   /docs/techref/writing-a-prodos-system-program/
          +---------------------------------------------+
 </PRE>
 
-<P>Here is a short routine that accepts the high byte of an address in the Accumulator.  It returns with the carry clear if the memory page is free; the carry is set if the page is already used (or if the page is in the Language Card).  It destroys the values in the A, X, and Y registers.</P>
+<P>Here is a short routine that accepts the high byte of an address in the Accumulator.  It returns with the carry clear if the memory page is free; the carry is set if the page is already used <em>(or if the page is in the Language Card)</em>.  It destroys the values in the A, X, and Y registers.</P>
 
-<PRE>
- ------------------------------------------------------------------------
 
+------------------------------------------------------------------------
+
+
+{% highlight nasm %}
  SOURCE   FILE #01 =&#62;PFREE
  0000:        BF58    1 BITMAP  EQU  $BF58     ;the system bit map
  0000:                2 *
@@ -224,9 +222,10 @@ permalink:   /docs/techref/writing-a-prodos-system-program/
  001C:60             22         RTS
  001D:18             23 ISFREE  CLC            ;page is free
  001E:60             24         RTS
+{% endhighlight %}
 
- ------------------------------------------------------------------------
-</PRE>
+------------------------------------------------------------------------
+
 
 <a name="page85"></a>
 
@@ -283,7 +282,7 @@ permalink:   /docs/techref/writing-a-prodos-system-program/
 
 <LI>Execute a ProDOS system call number $65 as follows: <br /><br />
 
-<PRE>
+{% highlight nasm %}
  EXIT       JSR  PRODOS        ;Call the MLI ($BF00)
             DFB  $65           ;CALL TYPE = QUIT
             DW   PARMTABLE     ;Pointer to parameter table
@@ -292,7 +291,7 @@ permalink:   /docs/techref/writing-a-prodos-system-program/
             DW   0000          ;Pointer reserved for future use
             DFB  0             ;Byte reserved for future use
             DW   0000          ;Pointer reserved for future use
-</PRE>
+{% endhighlight %}
 
 </li>
 
@@ -433,7 +432,7 @@ permalink:   /docs/techref/writing-a-prodos-system-program/
 
 <P>If there is a device in slot 3 drive 2 that is not /RAM, or is a RAM disk with a capacity of more than 64K, the following routine prevents it from being disconnected.</P>
 
-<PRE>
+{% highlight nasm %}
  ORG $1000
  DEVCNT EQU $BF31       ; GLOBAL PAGE DEVICE COUNT
  DEVLST EQU $BF32       ; GLOBAL PAGE DEVICE LIST
@@ -511,7 +510,7 @@ permalink:   /docs/techref/writing-a-prodos-system-program/
  ADDRESS DW $0000      ; STORE THE DEVICE DRIVER ADDRESS HERE
  RAMUNITID DFB $00     ; STORE THE DEVICE'S UNIT NUMBER HERE
  *
-</PRE>
+{% endhighlight %}
 
 <a name="page91"></a>
 
@@ -539,7 +538,7 @@ permalink:   /docs/techref/writing-a-prodos-system-program/
 
 <P>The following is an example of what the reinstallation code might look like.  These routines deal specifically with /RAM but can easily be adapted to any disk driver routines.</P>
 
-<PRE>
+{% highlight nasm %}
  *
  * THIS IS THE EXAMPLE /RAM INSTALL ROUTINE
  *
@@ -598,7 +597,7 @@ permalink:   /docs/techref/writing-a-prodos-system-program/
  *
  ERROR BRK              ; YOUR ERROR HANDLER CODE WOULD GO HERE
   RTS                   ;
-</PRE>
+{% endhighlight %}
 
 <a name="page93"></a>
 
@@ -955,7 +954,7 @@ permalink:   /docs/techref/writing-a-prodos-system-program/
 
 <a name="page101"></a>
 
-<PRE>
+{% highlight nasm %}
  SPKR      EQU   $C030         ;this clicks the speaker
  *
  LENGTH    DS    1             ;duration of tone
@@ -986,7 +985,7 @@ permalink:   /docs/techref/writing-a-prodos-system-program/
            DEC   LENGTH
            BNE   BELL1         ;repeat LENGTH times
            RTS
-</PRE>
+{% endhighlight %}
 
 </li>
 

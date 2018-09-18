@@ -415,25 +415,25 @@ permalink:   /docs/techref/file-organization/
 
 <P>This section deals with the techniques of reading from directory files, not with the specifics.  The ProDOS calls with which these techniques can be implemented are explained in Chapter 4.</P>
 
-<P>Before you can read from a directory, you must know the directory's pathname.  With the directory's pathname, you can open the directory file, and obtain a reference number (<B><TT>RefNum</TT></B>) for that open file. Before you can process the entries in the directory, you must read three values from the directory header:</P><UL>
+<P>Before you can read from a directory, you must know the directory's pathname.  With the directory's pathname, you can open the directory file, and obtain a reference number (<B><TT>RefNum</TT></B>) for that open file. Before you can process the entries in the directory, you must read three values from the directory header:</P>
 
-<LI>the length of each entry in the directory (entry_length)
-
-<LI>the number of entries in each block of the directory (entries_per_block)
-
-<LI>the total number of files in the directory (file_count).
-
+<UL>
+<LI>the length of each entry in the directory (entry_length)</li>
+<LI>the number of entries in each block of the directory (entries_per_block)</li>
+<LI>the total number of files in the directory (file_count).</li>
 </UL>
 
 <a name="page157"></a>
 
-<P>Using the reference number to identify the file, read the first 512 bytes from the file, and into a buffer (<B><TT>ThisBlock</TT></B>).  The buffer contains two two-byte pointers, followed by the entries; the first entry is the directory header.  The three values are at positions $1F through $22 in the header (positions $23 through $26 in the buffer).  In the example below, these values are assigned to the variables <B><TT>EntryLength</TT></B>, <B><TT>EntriesPerBlock</TT></B>, and <B><TT>FileCount</TT></B>.</P><PRE>
+<P>Using the reference number to identify the file, read the first 512 bytes from the file, and into a buffer (<B><TT>ThisBlock</TT></B>).  The buffer contains two two-byte pointers, followed by the entries; the first entry is the directory header.  The three values are at positions $1F through $22 in the header (positions $23 through $26 in the buffer).  In the example below, these values are assigned to the variables <B><TT>EntryLength</TT></B>, <B><TT>EntriesPerBlock</TT></B>, and <B><TT>FileCount</TT></B>.</P>
+
+{% highlight basic %}
  Open(DirPathname, Refnum);               {Get reference number    }
  ThisBlock       := Read512Bytes(RefNum); {Read a block into buffer}
  EntryLength     := ThisBlock[$23];       {Get directory info      }
  EntriesPerBlock := ThisBlock[$24];
  FileCount       := ThisBlock[$25] + (256 * ThisBlock[$26]);
-</PRE>
+{% endhighlight %}
 
 
 <P>Once these values are known, a system program can scan through the entries in the buffer, using a pointer to the beginning of the current entry <B><TT>EntryPointer</TT></B>, a counter <B><TT>BlockEntries</TT></B> that indicates the number of entries that have been examined in the current block, and a second counter <B><TT>ActiveEntries</TT></B> that indicates the number of active entries that have been processed.</P>
@@ -441,7 +441,7 @@ permalink:   /docs/techref/file-organization/
 <P>An entry is active and is processed only if its first byte, the storage_type and name_length, is nonzero.  All entries have been processed when <B><TT>ActiveEntries</TT></B> is equal to <B><TT>FileCount</TT></B>.  If all the entries in the buffer have been processed, and <B><TT>ActiveEntries</TT></B> doesn't equal <B><TT>FileCount</TT></B>, then the next block of the directory is read into the buffer.</P>
 
 
-<PRE>
+{% highlight basic %}
  EntryPoint      := EntryLength + $04;         {Skip header entry}
  BlockEntries    := $02;            {Prepare to process entry two}
  ActiveEntries   := $00;            {No active entries found yet }
@@ -464,7 +464,7 @@ permalink:   /docs/techref/file-organization/
                 end
  end;
  Close(RefNum);
-</PRE>
+{% endhighlight %}
 
 
 <a name="page158"></a>
@@ -508,7 +508,7 @@ permalink:   /docs/techref/file-organization/
 <P>This is a <B>seedling file</B>: its key block contains up to 512 bytes of data. If you write more than 512 bytes of data to the file, the file <I>grows</I> into a <B>sapling file</B>.  As soon as a second block of data becomes necessary, an <B>index block</B> is allocated, and it becomes the file's key block: this index block can point to up to 256 data blocks (two-byte pointers).  A second data block (for the data that won't fit in the first data block) is also allocated.  The volume now looks like this:</P>
 
 
-<PRE>
+{% highlight basic %}
  Index Block 0
  Data Block 0
  Data Block 1
@@ -519,7 +519,7 @@ permalink:   /docs/techref/file-organization/
  --&#62; Block 8         Index block 0
      Block 9         Data block 1
      Blocks 10-279   Unused
-</PRE>
+{% endhighlight %}
 
 
 <P>This sapling file can hold up to 256 data blocks: 128K of data.  If the file becomes any bigger than this, the file <I>grows</I> again, this time into a <B>tree file</B>.  A <B>master index block</B> is allocated, and it becomes the file's key block: the master index block can point to up to 128 index blocks and each of these can point to up to 256 data blocks.  Index block G becomes the first index block pointed to by the master index block.  In addition, a new index block is allocated, and a new data block to which it points.</P>
