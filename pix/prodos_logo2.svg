@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   viewBox="297 518 263 119"
+   width="263pt"
+   height="119pt"
+   id="svg969"
+   sodipodi:docname="prodos_logo2.svg"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1368"
+     inkscape:window-height="859"
+     id="namedview971"
+     showgrid="false"
+     inkscape:zoom="2.6692015"
+     inkscape:cx="175.33333"
+     inkscape:cy="79.333333"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg969" />
+  <metadata
+     id="metadata943"> Produced by OmniGraffle 6.6.2 <dc:date>2018-09-03 21:16:38 +0000</dc:date>
+<rdf:RDF>
+  <cc:Work
+     rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:title></dc:title>
+  </cc:Work>
+</rdf:RDF>
+</metadata>
+  <defs
+     id="defs947">
+    <font-face
+       font-family="Shaston Hi 640"
+       font-size="70"
+       units-per-em="1000"
+       underline-position="-62.5"
+       underline-thickness="62.5"
+       slope="0"
+       x-height="625"
+       cap-height="875"
+       ascent="875"
+       descent="-125"
+       font-weight="600"
+       id="font-face945">
+      <font-face-src>
+        <font-face-name
+           name="ShastonHi640" />
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g
+     stroke="none"
+     stroke-opacity="1"
+     stroke-dasharray="none"
+     fill="none"
+     fill-opacity="1"
+     id="g967">
+    <title
+       id="title949">Canvas 1</title>
+    <g
+       id="g965">
+      <title
+         id="title951">Layer 1</title>
+      <rect
+         x="308.25"
+         y="529.875"
+         width="124.875"
+         height="95.625"
+         fill="black"
+         id="rect953" />
+      <rect
+         x="308.25"
+         y="529.875"
+         width="124.875"
+         height="95.625"
+         stroke="black"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="1"
+         id="rect955" />
+      <g
+         aria-label="ProDOS"
+         transform="translate(321.125 544.125)"
+         style="fill:#beb907"
+         id="text963">
+        <path
+           d="M 4.8125,-0.25 H 24.5 v 4.375 h 4.375 V 8.5 h 2.1875 V 30.375 H 28.875 V 34.75 H 24.5 v 4.375 H 11.375 V 61 H 4.8125 Z M 24.5,12.875 H 22.3125 V 8.5 H 11.375 V 30.375 H 22.3125 V 26 H 24.5 Z"
+           style="font-weight:600;font-size:70px;font-family:'Shaston Hi 640';fill:#beb907"
+           id="path992" />
+        <path
+           d="m 42,17.25 h 6.5625 V 26 H 50.75 v -4.375 h 4.375 V 17.25 h 8.75 V 26 h -8.75 v 4.375 H 52.9375 V 34.75 H 50.75 V 43.5 H 48.5625 V 61 H 42 Z"
+           style="font-weight:600;font-size:70px;font-family:'Shaston Hi 640';fill:#beb907"
+           id="path994" />
+        <path
+           d="M 90.125,61 H 77 V 56.625 H 72.625 V 52.25 H 70.4375 V 26 H 72.625 V 21.625 H 77 V 17.25 h 13.125 v 4.375 H 94.5 V 26 h 2.1875 V 52.25 H 94.5 v 4.375 h -4.375 z m -2.1875,-8.75 v -4.375 h 2.1875 v -17.5 H 87.9375 V 26 h -8.75 v 4.375 H 77 v 17.5 h 2.1875 v 4.375 z"
+           style="font-weight:600;font-size:70px;font-family:'Shaston Hi 640';fill:#beb907"
+           id="path996" />
+        <path
+           d="m 140.4375,47.875 h 2.1875 v -35 h -2.1875 V 8.5 H 129.5 v 43.75 h 10.9375 z m -17.5,-48.125 H 142.625 V 4.125 H 147 V 8.5 h 2.1875 V 52.25 H 147 v 4.375 h -2.1875 V 61 h -21.875 z"
+           style="font-weight:600;font-size:70px;font-family:'Shaston Hi 640'"
+           id="path998" />
+        <path
+           d="M 177.625,61 H 164.5 v -4.375 h -4.375 V 52.25 h -2.1875 V 8.5 h 2.1875 V 4.125 H 164.5 V -0.25 h 13.125 V 4.125 H 182 V 8.5 h 2.1875 V 52.25 H 182 v 4.375 h -4.375 z m 0,-48.125 h -2.1875 V 8.5 h -8.75 v 4.375 H 164.5 v 35 h 2.1875 v 4.375 h 8.75 v -4.375 h 2.1875 z"
+           style="font-weight:600;font-size:70px;font-family:'Shaston Hi 640'"
+           id="path1000" />
+        <path
+           d="M 212.625,61 H 199.5 v -4.375 h -4.375 V 52.25 h -2.1875 V 43.5 H 199.5 v 4.375 h 2.1875 v 4.375 h 8.75 v -4.375 h 2.1875 v -8.75 H 208.25 V 34.75 h -8.75 v -4.375 h -4.375 V 26 h -2.1875 V 8.5 h 2.1875 V 4.125 H 199.5 V -0.25 h 13.125 V 4.125 H 217 V 8.5 h 2.1875 v 8.75 h -6.5625 v -4.375 h -2.1875 V 8.5 h -8.75 v 4.375 H 199.5 v 8.75 h 4.375 V 26 h 8.75 v 4.375 H 217 v 4.375 h 2.1875 v 17.5 H 217 v 4.375 h -4.375 z"
+           style="font-weight:600;font-size:70px;font-family:'Shaston Hi 640'"
+           id="path1002" />
+      </g>
+    </g>
+  </g>
+</svg>

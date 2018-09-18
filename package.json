@@ -1,0 +1,40 @@
+{
+  "name": "prodos-8.com",
+  "version": "2.0.0",
+  "description": "ProDOS 8 website built using based on jekyll-bootstrap-4 (https://github.com/soulroll/jekyll-bootstrap-4) by David Malone <david@souldesign.net.nz>",
+  "main": "gulpfile.js",
+  "author": "John Brooks, Devon Hubner, Oliver Schmidt",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:DevoKun/ProDOS-8.github.io.git"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "bootstrap": "latest",
+    "browser-sync": "latest",
+    "browserify": "latest",
+    "cssnano": "latest",
+    "es6-promise": "latest",
+    "event-stream": "latest",
+    "font-awesome": "latest",
+    "glob": "latest",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "latest",
+    "gulp-flatten": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-uglify": "latest",
+    "install": "latest",
+    "jquery": "latest",
+    "jquery-match-height": "latest",
+    "magnific-popup": "latest",
+    "popper.js": "latest",
+    "vinyl-buffer": "latest",
+    "vinyl-source-stream": "latest"
+  },
+  "dependencies": {
+    "gulp-cli": "^2.0.1"
+  }
+}

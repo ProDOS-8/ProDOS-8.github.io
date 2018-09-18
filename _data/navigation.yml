@@ -1,0 +1,37 @@
+- title: "About"
+  href:  /about/
+
+- title: "Docs"
+  href:  /docs/
+  subcategories:
+    - subtitle: ProDOS 8 Technical Notes
+      subhref:  /docs/technote/
+    - subtitle: ProDOS 8 Technical Reference Manual
+      subhref:  /docs/techref/
+
+- title: "Releases"
+  href:  /releases/
+  subcategories:
+    - subtitle: "ProDOS 2.5"
+      subhref: "/releases/prodos-25/"
+
+    - subtitle: "ProDOS 2.4.2"
+      subhref: "/releases/prodos-242/"
+
+    - subtitle: "ProDOS 2.4.1"
+      subhref: "/releases/prodos-241/"
+
+    - subtitle: "ProDOS 2.4"
+      subhref: "/releases/prodos-24/"
+
+    - subtitle: "ProDOS 2.0.3"
+      subhref: "/releases/prodos-203/"
+
+    - subtitle: "ProDOS 1.0"
+      subhref: "/releases/prodos-10/"
+
+- title: "Contribute"
+  href: /contribute/
+
+- title: "Contact"
+  href: /contact/
