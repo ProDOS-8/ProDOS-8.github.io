@@ -6,7 +6,13 @@ permalink: /releases/prodos-24/
 
 <img src="/pix/prodos_24_logo2.svg" onerror="this.onerror=null; this.src='/pix/prodos_24_logo.png'" />
 
-<p>&nbsp;</p>
+<div class="vertical-spacer"></div>
+
+* **<a href="/about/#johnbrooks">John Brooks</a>** announced **ProDOS 2.4** at <a href="https://www.youtube.com/watch?v=Sm4D1wtWPck">KansasFest 2017</a>
+
+<iframe style="margin-left:50px;" src="http://www.youtube.com/embed/Sm4D1wtWPck" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+
+<div class="vertical-spacer"></div>
 
 ## Announcing ProDOS 2.4 for all Apple II computers
 
@@ -17,7 +23,7 @@ permalink: /releases/prodos-24/
 <p>ProDOS 2.4 adds new features for all Apple II computers, including the 1977 Integer ROM Apple II.</p>
 
 
-<p>&nbsp;</p>
+<div class="vertical-spacer"></div>
 
 ## Apple IIGS features of ProDOS 2.4
 
@@ -29,7 +35,7 @@ permalink: /releases/prodos-24/
 * **ProDOS 2.4 is smaller than ProDOS 2.0.3 and loads faster.**
 * The ProDOS 2.4 interrupt manager reduces latency and memory-use, resulting in faster, consistent interrupt response.
 
-<p>&nbsp;</p>
+<div class="vertical-spacer"></div>
 
 ## Apple II features of ProDOS 2.4
 
@@ -38,7 +44,7 @@ permalink: /releases/prodos-24/
 * Unlike earlier versions of Basic.System which hang on Integer ROM Apple ][ computers. The new Basic.System 1.6 reports that ProDOS Basic requires an Apple ][+ and then quits back to the Bitsy Bye program launcher.
 * ProDOS splash screen date of 16-8-16 because Woz.
 
-<p>&nbsp;</p>
+<div class="vertical-spacer"></div>
 
 ## Bitsy Bye program launcher
 
@@ -57,7 +63,7 @@ permalink: /releases/prodos-24/
 
 <p><img src="/pix/prodos24/ProDOS-2.4-Bitsy-Bye.png"></p>
 
-<p>&nbsp;</p>
+<div class="vertical-spacer"></div>
 
 ## Bitsy Boot utility
 
@@ -72,7 +78,7 @@ _Bitsy Boot is a small system program which allows quick and easy booting of App
 
 <p><img src="/pix/prodos24/ProDOS-2.4-Bitsy-Boot.png"></p>
 
-<p>&nbsp;</p>
+<div class="vertical-spacer"></div>
 
 ## Utilities
 
@@ -95,31 +101,31 @@ _The 140k 5.25" disk image of ProDOS 2.4 disk also includes these useful utiliti
 
 
 
-<p>&nbsp;</p>
+<div class="vertical-spacer"></div>
 
 <div style="width:100%">
 Enjoy.
 </div>
 
-<p>&nbsp;</p>
+<div class="vertical-spacer"></div>
 
 <div style="width:100%">
 &mdash; John Brooks
 </div>
 
-<p>&nbsp;</p>
+<div class="vertical-spacer"></div>
 
 <div style="width:100%">
 Twitter: <a href="https://www.twitter.com/JBrooksBSI">@JBrooksBSI</a>
 </div>
 
-<p>&nbsp;</p>
+<div class="vertical-spacer"></div>
 
 <div style="width:100%">
 Download <a href="https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/masters/prodos/ProDOS_2_4.dsk">ProDOS_2_4.dsk</a>
 </div>
 
-<p>&nbsp;</p>
+<div class="vertical-spacer"></div>
 
 <div style="width:100%">
 If you'd like to support John Brook's efforts to improve the Apple II, donations are welcome using: <a href="https://www.paypal.me/JBrooksBSI">PayPal</a>
