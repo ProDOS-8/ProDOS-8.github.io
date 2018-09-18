@@ -140,3 +140,85 @@ jekyll serve
 
 
 
+
+
+## Publishing to staging using s3_website
+
+* **s3_website** is a tool designed to publish the **_site** directory, *that Jekyll creates*, to S3 and optionally perform invalidations on cloudfront.
+
+
+
+### Install s3_website
+
+* **s3_website** is a **Ruby**-based command that must be installed using **gem**
+
+```bash
+gem install s3_website
+```
+
+
+
+### s3_website configuration
+
+* **s3_website** uses a configuration file, *s3_website.yml*, which is used by s3_website.
+
+
+
+FILE: **s3_website.yml**
+
+```yaml
+s3_id:     <%= ENV['AWS_ACCESS_KEY_ID'] %>
+s3_secret: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+s3_bucket: prodos8-staging
+
+gzip:
+  - .html
+  - .css
+  - .md
+gzip_zopfli: false
+```
+
+
+
+
+
+### AWS Environment Variables
+
+* The s3_website.yml configuration file expects to pull the AWS credentials from two environment variables: **AWS_ACCESS_KEY_ID** and **AWS_SECRET_ACCESS_KEY**
+* The easiest way to populate those environment variables is to place them in the ~/.bash_profile.
+
+
+
+FILE: **~/.bash_profile**
+
+```bash
+export AWS_ACCESS_KEY_ID="AKIxxxxxxxxxxxxx"
+export AWS_SECRET_ACCESS_KEY="xxxxxxxxxxxx"
+export AWS_REGION="us-east-1"
+export AWS_DEFAULT_REGION="us-east-1"
+```
+
+
+
+* The variables can be set before running s3_website
+
+```bash
+export AWS_ACCESS_KEY_ID="AKIxxxxxxxxxxxxx"
+export AWS_SECRET_ACCESS_KEY="xxxxxxxxxxxx"
+
+s3_website push
+```
+
+
+
+### Use s3_website to publish
+
+* With the environment variables set, run the **s3_website push** command
+
+```bash
+export AWS_ACCESS_KEY_ID="AKIxxxxxxxxxxxxx"
+export AWS_SECRET_ACCESS_KEY="xxxxxxxxxxxx"
+
+s3_website push
+```
+
