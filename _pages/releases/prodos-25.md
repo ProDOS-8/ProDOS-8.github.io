@@ -60,6 +60,7 @@ PREFIX ../..
 ### 51-file limit on the root directory removed
 
 * The new ProDOS 2.5 boot loader will find the ProDOS file anywhere in the root directory linked-list.
+* ProDOS 2.5 should allow unlimited files in the root directory level.
 
 
 <div class="vertical-spacer"></div>
