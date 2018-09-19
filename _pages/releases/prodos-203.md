@@ -6,6 +6,7 @@ permalink: /releases/prodos-203/
 
 <h2>Announcing ProDOS 2.0.3 for all Apple IIe, IIc, and IIgs computers</h2>
 
+<p><img src="/pix/prodos203/ProDOS-2.0.3.png"></p>
 
 * This is the final release of ProDOS from Apple Computer.
 

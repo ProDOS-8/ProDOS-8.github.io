@@ -31,6 +31,11 @@ $fa-font-path: "../fonts/FontAwesome";
 
 /* customizations */
 
+div.table        { display:table;      width:100%; padding-bottom:10px; }
+div.table-row    { display:table-row;  text-align: left; vertical-align: top; }
+div.table-cell   { display:table-cell; text-align: left; vertical-align: top; }
+
+
 @font-face {
   font-family: "Apple2Forever";
   src: url("/fonts/Apple2ForeverFont/Apple2Forever80.eot");

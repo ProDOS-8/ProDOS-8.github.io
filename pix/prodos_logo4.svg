@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   viewBox="697 518 267 119"
+   width="267pt"
+   height="119pt"
+   id="svg1174"
+   sodipodi:docname="prodos_logo4.svg"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1440"
+     inkscape:window-height="852"
+     id="namedview1176"
+     showgrid="false"
+     inkscape:zoom="1.2870932"
+     inkscape:cx="162.46111"
+     inkscape:cy="79.333333"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1174" />
+  <metadata
+     id="metadata1146"> Produced by OmniGraffle 6.6.2 <dc:date>2018-09-19 00:19:43 +0000</dc:date>
+<rdf:RDF>
+  <cc:Work
+     rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+  </cc:Work>
+</rdf:RDF>
+</metadata>
+  <defs
+     id="defs1152">
+    <font-face
+       font-family="Apple2Forever80"
+       font-size="70"
+       units-per-em="1000"
+       underline-position="-100"
+       underline-thickness="50"
+       slope="0"
+       x-height="561"
+       cap-height="811"
+       ascent="936.00464"
+       descent="0"
+       font-weight="500"
+       id="font-face1148">
+      <font-face-src>
+        <font-face-name
+           name="Apple2Forever80" />
+      </font-face-src>
+    </font-face>
+    <font-face
+       font-family="Shaston Hi 640"
+       font-size="70"
+       units-per-em="1000"
+       underline-position="-62.5"
+       underline-thickness="62.5"
+       slope="0"
+       x-height="625"
+       cap-height="875"
+       ascent="875"
+       descent="-125"
+       font-weight="600"
+       id="font-face1150">
+      <font-face-src>
+        <font-face-name
+           name="ShastonHi640" />
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g
+     stroke="none"
+     stroke-opacity="1"
+     stroke-dasharray="none"
+     fill="none"
+     fill-opacity="1"
+     id="g1172">
+    <title
+       id="title1154">Canvas 1</title>
+    <g
+       id="g1170">
+      <title
+         id="title1156">Layer 1</title>
+      <rect
+         x="708.75"
+         y="529.875"
+         width="124.875"
+         height="95.625"
+         fill="black"
+         id="rect1158" />
+      <rect
+         x="708.75"
+         y="529.875"
+         width="124.875"
+         height="95.625"
+         stroke="black"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="1"
+         id="rect1160" />
+      <g
+         aria-label="Pro"
+         transform="translate(725.1875 543.8099)"
+         style="fill:#65f584"
+         id="text1164">
+        <path
+           d="m 4.34,52.91 v 4.34 H 8.75 V 52.91 H 4.34 Z m 0,-8.75 V 48.5 H 8.75 V 44.16 H 4.34 Z m 0,-8.75 v 4.41 H 8.75 V 35.41 H 4.34 Z m 0,-8.75 v 4.41 h 17.5 V 26.66 H 4.34 Z m 0,-8.68 v 4.34 H 8.75 V 17.98 H 4.34 Z m 17.5,0 v 4.34 h 4.34 V 17.98 H 21.84 Z M 4.34,9.23 v 4.34 H 8.75 V 9.23 H 4.34 Z m 17.5,0 v 4.34 h 4.34 V 9.23 H 21.84 Z M 4.34,0.48 v 4.34 h 17.5 V 0.48 H 4.34 Z"
+           style="font-weight:500;font-size:70px;font-family:Apple2Forever80;fill:#65f584"
+           id="path1728" />
+        <path
+           d="m 34.965,52.91 v 4.34 h 4.41 v -4.34 h -4.41 z m 0,-8.75 v 4.34 h 4.41 v -4.34 h -4.41 z m 0,-8.75 v 4.41 h 4.41 v -4.41 h -4.41 z m 0,-8.75 v 4.41 h 8.75 v -4.41 h -8.75 z m 0,-8.68 v 4.34 h 4.41 v -4.34 h -4.41 z m 8.75,0 v 4.34 h 13.09 v -4.34 h -13.09 z"
+           style="font-weight:500;font-size:70px;font-family:Apple2Forever80;fill:#65f584"
+           id="path1730" />
+        <path
+           d="m 70,52.91 v 4.34 H 83.09 V 52.91 H 70 Z M 65.59,44.16 V 48.5 H 70 v -4.34 h -4.41 z m 17.5,0 v 4.34 h 4.34 v -4.34 h -4.34 z m -17.5,-8.75 v 4.41 H 70 v -4.41 h -4.41 z m 17.5,0 v 4.41 h 4.34 v -4.41 h -4.34 z m -17.5,-8.75 v 4.41 H 70 v -4.41 h -4.41 z m 17.5,0 v 4.41 h 4.34 V 26.66 H 83.09 Z M 70,17.98 v 4.34 H 83.09 V 17.98 H 70 Z"
+           style="font-weight:500;font-size:70px;font-family:Apple2Forever80;fill:#65f584"
+           id="path1732" />
+      </g>
+      <g
+         aria-label="DOS"
+         transform="translate(844.25 544.125)"
+         style="fill:#000000"
+         id="text1168">
+        <path
+           d="m 21.875,47.875 h 2.1875 v -35 H 21.875 V 8.5 H 10.9375 V 52.25 H 21.875 Z M 4.375,-0.25 h 19.6875 v 4.375 h 4.375 V 8.5 h 2.1875 v 43.75 h -2.1875 v 4.375 H 26.25 V 61 H 4.375 Z"
+           style="font-weight:600;font-size:70px;font-family:'Shaston Hi 640'"
+           id="path1721" />
+        <path
+           d="m 59.0625,61 h -13.125 v -4.375 h -4.375 V 52.25 H 39.375 V 8.5 h 2.1875 V 4.125 h 4.375 V -0.25 h 13.125 v 4.375 h 4.375 V 8.5 h 2.1875 v 43.75 h -2.1875 v 4.375 h -4.375 z m 0,-48.125 H 56.875 V 8.5 h -8.75 v 4.375 h -2.1875 v 35 h 2.1875 v 4.375 h 8.75 v -4.375 h 2.1875 z"
+           style="font-weight:600;font-size:70px;font-family:'Shaston Hi 640'"
+           id="path1723" />
+        <path
+           d="m 94.0625,61 h -13.125 v -4.375 h -4.375 V 52.25 H 74.375 V 43.5 h 6.5625 v 4.375 h 2.1875 v 4.375 h 8.75 v -4.375 h 2.1875 v -8.75 h -4.375 V 34.75 h -8.75 v -4.375 h -4.375 V 26 H 74.375 V 8.5 h 2.1875 V 4.125 h 4.375 V -0.25 h 13.125 v 4.375 h 4.375 V 8.5 h 2.1875 v 8.75 H 94.0625 V 12.875 H 91.875 V 8.5 h -8.75 v 4.375 h -2.1875 v 8.75 h 4.375 V 26 h 8.75 v 4.375 h 4.375 v 4.375 h 2.1875 v 17.5 h -2.1875 v 4.375 h -4.375 z"
+           style="font-weight:600;font-size:70px;font-family:'Shaston Hi 640'"
+           id="path1725" />
+      </g>
+    </g>
+  </g>
+</svg>
