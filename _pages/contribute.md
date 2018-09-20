@@ -8,7 +8,7 @@ permalink: /contribute/
 
 * The project is lead by **<a href="/contact/#johnbrooks">John Brooks</a>**.
 
-* <a href="/contact/#johnbrooks">Contat John Brooks to help with the project</a>
+* <a href="/contact/#johnbrooks">Contact John Brooks to help with the project</a>
 
 
 
