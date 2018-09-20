@@ -6,12 +6,13 @@ permalink: /releases/prodos-25/
 
 <img src="/pix/prodos_25_logo2.svg" onerror="this.onerror=null; this.src='/pix/prodos_25_logo.png'" />
 
+<img src="/pix/prodos25/ProDOS-2.5.png" />
+
 * **<a href="/about/#johnbrooks">John Brooks</a>** announced **ProDOS 2.5** at <a href="https://www.youtube.com/watch?v=vcYunzxu-0w">KansasFest 2018</a>
 
 <iframe style="margin-left:50px;" src="http://www.youtube.com/embed/vcYunzxu-0w" width="560" height="315" frameborder="0" allowfullscreen></iframe>
 
 * _No downloable disk image is available yet._
-
 
 <div class="vertical-spacer"></div>
 
@@ -70,7 +71,7 @@ PREFIX ../..
 * ProDOS 2.5 includes a new Boot Loader that works on Apple ///.
 * With this new Boot Loader, _along with some future development work,_ ProDOS could **potentially** run on the Apple /// !
 
-<img style="margin-left:100px;" src="/pix/prodos25/still_life_in_the_old_lady_yet.gif" />
+<img style="margin-left:100px;" src="/pix/prodos25/prodos-2.5_on_appleiii.png" />
 
 <div class="vertical-spacer"></div>
 
