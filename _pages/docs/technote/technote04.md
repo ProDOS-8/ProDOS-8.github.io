@@ -2,7 +2,7 @@
 layout:      page
 title:       ProDOS 8 Technical Note #4 - I/O Redirection in DOS and ProDOS
 description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/01/
+permalink:   /docs/technote/04/
 ---
 
 
