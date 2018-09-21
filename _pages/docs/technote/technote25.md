@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #25 - Non-Standard Storage Types
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/25/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #25'
+description: 'Non-Standard Storage Types'
+permalink:   '/docs/technote/25/'
 ---
 
 

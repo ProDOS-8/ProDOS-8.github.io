@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #30 - Sparse Station
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/30/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #30'
+description: 'Sparse Station'
+permalink:   '/docs/technote/30/'
 ---
 
 

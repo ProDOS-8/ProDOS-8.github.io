@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #5 - ProDOS Block Device Formatting
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/05/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #5'
+description: 'ProDOS Block Device Formatting'
+permalink:   '/docs/technote/05/'
 ---
 
 

@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #11 - The ProDOS 8 MACHID Byte
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/11/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #11'
+description: 'The ProDOS 8 MACHID Byte'
+permalink:   '/docs/technote/11/'
 ---
 
 

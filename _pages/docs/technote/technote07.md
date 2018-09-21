@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #7 - Starting and Quitting Interpreter Conventions
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/07/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #7'
+description: 'Starting and Quitting Interpreter Conventions'
+permalink:   '/docs/technote/07/'
 ---
 
 

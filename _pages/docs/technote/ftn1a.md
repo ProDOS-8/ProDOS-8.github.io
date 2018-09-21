@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       File Type $1A (26) - All Auxiliary Types
-description: AppleWorks Word Processor File
-permalink:   /docs/technote/ftn1a/
+layout:      'page'
+title:       'File Type $1A (26) - All Auxiliary Types'
+description: 'AppleWorks Word Processor File'
+permalink:   '/docs/technote/ftn1a/'
 ---
 
 <h2>Full Name: AppleWorks Word Processor File<br>Short Name:  AppleWorks

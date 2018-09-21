@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #16 - How to Format a ProDOS Disk Device
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/16/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #16'
+description: 'How to Format a ProDOS Disk Device'
+permalink:   '/docs/technote/16/'
 ---
 
 

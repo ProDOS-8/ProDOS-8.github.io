@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #15 - How ProDOS 8 Treats Slot 3
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/15/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #15'
+description: 'How ProDOS 8 Treats Slot 3'
+permalink:   '/docs/technote/15/'
 ---
 
 

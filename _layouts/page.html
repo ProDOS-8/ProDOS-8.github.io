@@ -8,6 +8,14 @@ layout: default
   </div>
 </div>
 
+{% if page.description %}
+<div class="container-full page-banner-background">
+  <div class="container page-banner-description">
+    {{ page.description }}
+  </div>
+</div>
+{% endif %}
+
 <div class="container-full page-background">
   <div class="container">
     <div class="page">

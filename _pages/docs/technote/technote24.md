@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #24 - BASIC.SYSTEM Revisions
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/24/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #24'
+description: 'BASIC.SYSTEM Revisions'
+permalink:   '/docs/technote/24/'
 ---
 
 

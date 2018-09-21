@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #17 - Recursive ProDOS Catalog Routine
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/17/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #17'
+description: 'Recursive ProDOS Catalog Routine'
+permalink:   '/docs/technote/17/'
 ---
 
 

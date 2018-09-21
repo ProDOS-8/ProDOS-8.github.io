@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       File Type $19 (25) - All Auxiliary Types
-description: AppleWorks Data Base File
-permalink:   /docs/technote/ftn19/
+layout:      'page'
+title:       'File Type $19 (25) - All Auxiliary Types'
+description: 'AppleWorks Data Base File'
+permalink:   '/docs/technote/ftn19/'
 ---
 
 

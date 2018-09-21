@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #9 - Buffer Management Using BASIC.SYSTEM
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/09/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #9'
+description: 'Buffer Management Using BASIC.SYSTEM'
+permalink:   '/docs/technote/09/'
 ---
 
 

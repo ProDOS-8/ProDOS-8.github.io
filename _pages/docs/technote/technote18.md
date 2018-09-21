@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #18 - /RAM Memory Map
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/18/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #18'
+description: '/RAM Memory Map'
+permalink:   '/docs/technote/18/'
 ---
 
 

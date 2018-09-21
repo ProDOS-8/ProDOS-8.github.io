@@ -10,7 +10,8 @@ permalink: /releases/prodos-24/
 
 * **<a href="/about/#johnbrooks">John Brooks</a>** spoke about the development of **ProDOS 2.4** at <a href="https://www.youtube.com/watch?v=Sm4D1wtWPck">KansasFest 2017</a>
 
-<iframe style="margin-left:50px;" src="http://www.youtube.com/embed/Sm4D1wtWPck" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+<!-- iframe style="margin-left:50px; border:0.5px #dddddd solid;" src="http://www.youtube.com/embed/Sm4D1wtWPck" width="560" height="315" frameborder="0" allowfullscreen></iframe -->
+<a href="https://www.youtube.com/watch?v=Sm4D1wtWPck"><img style="margin-left:50px; border:0.5px #dddddd solid; width:560px; height:315px;" src="/pix/prodos24/youtube_kansasfest_presentation.png" /></a>
 
 <div class="vertical-spacer"></div>
 

@@ -1,7 +1,6 @@
 ---
 layout:      page
 title:       Technical Notes
-description: Technical Notes
 permalink:   /docs/technote/
 ---
 

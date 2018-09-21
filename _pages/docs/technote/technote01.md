@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #1 - The GETLN Buffer and a ProDOS Clock Card
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/01/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #1'
+description: 'The GETLN Buffer and a ProDOS Clock Card'
+permalink:   '/docs/technote/01/'
 ---
 
 

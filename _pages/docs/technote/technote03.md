@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #3 - Device Search, Identification, and Driver Conventions
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/03/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #3'
+description: 'Device Search, Identification, and Driver Conventions'
+permalink:   '/docs/technote/03/'
 ---
 
 

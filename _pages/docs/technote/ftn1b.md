@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       File Type $1B (27) - All Auxiliary Types
-description: AppleWorks Spreadsheet File
-permalink:   /docs/technote/ftn1b/
+layout:      'page'
+title:       'File Type $1B (27) - All Auxiliary Types'
+description: 'AppleWorks Spreadsheet File'
+permalink:   '/docs/technote/ftn1b/'
 ---
 
 
