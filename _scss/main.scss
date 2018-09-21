@@ -34,6 +34,7 @@ $fa-font-path: "../fonts/FontAwesome";
 
 $apple-green:  #00ff95;
 $apple-orange: #ffae36;
+$apple-blue:   #007bff;
 
 
 div.table        { display:table;      width:100%; padding-bottom:10px; }
@@ -77,7 +78,7 @@ div.highlight pre code,
 code.language-basic,
 figure.highlight pre,
 figure.highlight pre code {
-  color: $apple-green;
+  color:       $apple-green;
   font-family: "Apple2Forever80";
 }
 
@@ -86,10 +87,28 @@ div.vertical-spacer { width:100%; height:50px; }
 div.page-banner-description {
   font-family: "Apple2Forever80";
   font-size:   21pt;
-  color: $apple-orange;
+  color:       $apple-orange;
 }
 
+a.btn {
+  font-family: "Apple2Forever80" !important;
+  color:       #ffffff !important;
+}
+a.btn-secondary,
+a.btn-secondary:active,
+a.btn-secondary:visited {
+  background-color: $apple-blue !important;
+}
+a.btn-secondary:hover {
+  color:            $apple-green !important;
+  background-color: #333333 !important;
+  border-color:     $apple-green;
+}
+
+
+/* *************** */
 /* technote credit */
+/* *************** */
 
 div#credit {
   background-color:#efefef;

@@ -2,6 +2,7 @@
 layout: page
 title: ProDOS 2.4
 permalink: /releases/prodos-24/
+download_link: 'https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/masters/prodos/ProDOS_2_4.dsk'
 ---
 
 <img src="/pix/prodos_24_logo2.svg" onerror="this.onerror=null; this.src='/pix/prodos_24_logo.png'" />
@@ -123,8 +124,7 @@ Twitter: <a href="https://www.twitter.com/JBrooksBSI">@JBrooksBSI</a>
 <div class="vertical-spacer"></div>
 
 <div style="width:100%">
-Download <a href="https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/masters/prodos/ProDOS_2_4.dsk">ProDOS_2_4.dsk</a>
-</div>
+<a href="{{ page.download_link }}" class="btn btn-lg btn-secondary">Download {{ page.title }}</a></div>
 
 <div class="vertical-spacer"></div>
 
