@@ -1,7 +1,7 @@
 ---
 layout:      page
 title:       ProDOS 8 Technical Reference Manual
-description: ProDOS 8 Technical Reference Manual 6502 assembly language programming
+description: 6502 assembly language programming
 permalink:   /docs/techref/
 ---
 

@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #19 - File Auxiliary Type Assignment
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/19/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #19'
+description: 'File Auxiliary Type Assignment'
+permalink:   '/docs/technote/19/'
 ---
 
 

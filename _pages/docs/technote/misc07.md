@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       Apple II Miscellaneous Technical Note #7
-description: Miscellaneous #7 - Apple II Family Identification
-permalink:   /docs/technote/misc07/
+layout:      'page'
+title:       'Apple II Miscellaneous Technical Note #7'
+description: 'Apple II Family Identification'
+permalink:   '/docs/technote/misc07/'
 ---
 
 

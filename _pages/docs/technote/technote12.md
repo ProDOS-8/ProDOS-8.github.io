@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #12 - Interrupt Handling
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/12/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #12'
+description: 'Interrupt Handling'
+permalink:   '/docs/technote/12/'
 ---
 
 

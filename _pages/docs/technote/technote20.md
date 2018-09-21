@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note 20 - Mirrored Devices and SmartPort
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/20/
+layout:      'page'
+title:       'ProDOS 8 Technical Note 20'
+description: 'Mirrored Devices and SmartPort'
+permalink:   '/docs/technote/20/'
 ---
 
 

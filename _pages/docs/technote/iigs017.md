@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       Apple IIgs Technical Note #17
-description: Apple IIgs #17 - Application Memory Management and the MMStartUp User ID
-permalink:   /docs/technote/iigs17/
+layout:      'page'
+title:       'Apple IIgs Technical Note #17'
+description: 'Apple IIgs #17 - Application Memory Management and the MMStartUp User ID'
+permalink:   '/docs/technote/iigs17/'
 ---
 
 

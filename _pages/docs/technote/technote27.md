@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #27 - Hybrid Applications
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/27/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #27'
+description: 'Hybrid Applications'
+permalink:   '/docs/technote/27/'
 ---
 
 

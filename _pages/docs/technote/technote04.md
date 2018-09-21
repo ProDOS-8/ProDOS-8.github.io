@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #4 - I/O Redirection in DOS and ProDOS
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/04/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #4'
+description: 'I/O Redirection in DOS and ProDOS'
+permalink:   '/docs/technote/04/'
 ---
 
 

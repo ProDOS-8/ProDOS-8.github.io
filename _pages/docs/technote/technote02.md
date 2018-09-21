@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #2 - Porting DOS 3.3 Programs to ProDOS and BASIC.SYSTEM
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/02/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #2'
+description: 'Porting DOS 3.3 Programs to ProDOS and BASIC.SYSTEM'
+permalink:   '/docs/technote/02/'
 ---
 
 

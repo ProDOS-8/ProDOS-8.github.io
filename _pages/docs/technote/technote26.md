@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #26 - Polite Use of Auxiliary Memory
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/26/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #26'
+description: 'Polite Use of Auxiliary Memory'
+permalink:   '/docs/technote/26/'
 ---
 
 

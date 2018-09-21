@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #29 - Clearing the Backup Needed Bit
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/29/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #29'
+description: 'Clearing the Backup Needed Bit'
+permalink:   '/docs/technote/29/'
 ---
 
 <h2>Written by Jim Luther (September 1990)</h2>

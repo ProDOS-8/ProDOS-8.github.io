@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       File Type Note $08 (8) - Auxiliary Types $0000-$3FFF
-description: Apple II Graphics File
-permalink:   /docs/technote/ftn08/
+layout:      'page'
+title:       'File Type Note $08 (8) - Auxiliary Types $0000-$3FFF'
+description: 'Apple II Graphics File'
+permalink:   '/docs/technote/ftn08/'
 ---
 
 

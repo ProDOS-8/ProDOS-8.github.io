@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #8 - Dealing with /RAM
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/08/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #8 - '
+description: 'Dealing with /RAM'
+permalink:   '/docs/technote/08/'
 ---
 
 <h2>Revised by Matt Deatherage (November 1988)

@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #21 - Identifying ProDOS Devices
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/21/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #21'
+description: 'Identifying ProDOS Devices'
+permalink:   '/docs/technote/21/'
 ---
 
 

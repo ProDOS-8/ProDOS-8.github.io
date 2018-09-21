@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #22 - Don't Put Parameter Blocks on Zero Page
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/22/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #22'
+description: 'Do not Put Parameter Blocks on Zero Pages'
+permalink:   '/docs/technote/22/'
 ---
 
 

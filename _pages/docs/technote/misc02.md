@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       Apple II Miscellaneous Technical Note #2
-description: Miscellaneous #2 - Apple II Family Identification Routines 2.2
-permalink:   /docs/technote/misc02/
+layout:      'page'
+title:       'Apple II Miscellaneous Technical Note #2'
+description: 'Apple II Family Identification Routines 2.2'
+permalink:   '/docs/technote/misc02/'
 ---
 
 

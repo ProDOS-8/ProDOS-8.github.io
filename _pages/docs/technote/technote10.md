@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #10 - Installing Clock Driver Routines
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/10/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #10'
+description: 'Installing Clock Driver Routines'
+permalink:   '/docs/technote/10/'
 ---
 
 

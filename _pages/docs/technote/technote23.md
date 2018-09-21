@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #23 - ProDOS 8 Changes and Minutia
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/23/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #23'
+description: 'ProDOS 8 Changes and Minutia'
+permalink:   '/docs/technote/23/'
 ---
 
 

@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #14 - Selector and Dispatcher Conventions
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/14/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #14'
+description: 'Selector and Dispatcher Conventions'
+permalink:   '/docs/technote/14/'
 ---
 
 

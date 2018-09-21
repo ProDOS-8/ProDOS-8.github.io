@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #13 - Double High-Resolution Graphics Files
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/13/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #13'
+description: 'Double High-Resolution Graphics Files'
+permalink:   '/docs/technote/13/'
 ---
 
 <h2>Revised by Matt Deatherage (November 1988)

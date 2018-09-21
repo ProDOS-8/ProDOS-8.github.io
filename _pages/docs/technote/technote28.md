@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #28 - ProDOS Dates -- 2000 and Beyond
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/28/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #28'
+description: 'ProDOS Dates -- 2000 and Beyond'
+permalink:   '/docs/technote/28/'
 ---
 
 

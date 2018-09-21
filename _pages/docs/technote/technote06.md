@@ -1,8 +1,8 @@
 ---
-layout:      page
-title:       ProDOS 8 Technical Note #6 - Attaching External Commands to BASIC.SYSTEM
-description: ProDOS 8 Technical Notes
-permalink:   /docs/technote/06/
+layout:      'page'
+title:       'ProDOS 8 Technical Note #6'
+description: 'Attaching External Commands to BASIC.SYSTEM'
+permalink:   '/docs/technote/06/'
 ---
 
 
