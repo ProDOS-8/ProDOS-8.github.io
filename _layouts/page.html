@@ -5,6 +5,9 @@ layout: default
 <div class="container-full page-banner-background">
   <div class="container page-banner">
     <h1>{{ page.title }}</h1>
+    {% if page.download_link %}
+      <span class="phone" style="top:-50px !important;"><a href="{{ page.download_link }}" class="btn btn-lg btn-secondary">Download {{ page.title }}</a></span>
+    {% endif %}
   </div>
 </div>
 

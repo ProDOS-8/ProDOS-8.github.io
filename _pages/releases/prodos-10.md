@@ -2,6 +2,7 @@
 layout: page
 title: ProDOS 1.0
 permalink: /releases/prodos-10/
+download_link: 'https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/masters/prodos/prodos_all_versions.zip'
 ---
 
 <h2>Announcing ProDOS 1.0 for all Apple II computers</h2>
@@ -16,6 +17,5 @@ permalink: /releases/prodos-10/
 
 * Memory can be protected from being overwritten by the actions of ProDOS.
 
-* Download <a href="https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/masters/prodos/prodos_all_versions.zip">ProDOS 1.0</a>
-
+<a href="{{ page.download_link }}" class="btn btn-lg btn-secondary">Download {{ page.title }}</a>
 

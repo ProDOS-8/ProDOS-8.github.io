@@ -2,6 +2,7 @@
 layout: page
 title: ProDOS 2.4.1
 permalink: /releases/prodos-241/
+download_link: 'https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/masters/prodos/ProDOS_2_4_1.dsk'
 ---
 
 ## Announcing ProDOS 2.4.1 for all Apple II and compatible computers
@@ -49,8 +50,7 @@ Twitter: <a href="https://www.twitter.com/JBrooksBSI">@JBrooksBSI</a>
 <p>&nbsp;</p>
 
 <div style="width:100%">
-Download <a href="https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/masters/prodos/ProDOS_2_4_1.dsk">ProDOS_2_4_1.dsk</a>
-</div>
+<a href="{{ page.download_link }}" class="btn btn-lg btn-secondary">Download {{ page.title }}</a></div>
 
 <p>&nbsp;</p>
 
