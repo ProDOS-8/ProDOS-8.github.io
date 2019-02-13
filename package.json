@@ -16,7 +16,7 @@
     "browserify": "latest",
     "cssnano": "latest",
     "es6-promise": "latest",
-    "event-stream": "latest",
+    "event-stream": "^3.3.4",
     "font-awesome": "latest",
     "glob": "latest",
     "gulp": "^4.0.0",
