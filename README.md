@@ -222,3 +222,83 @@ export AWS_SECRET_ACCESS_KEY="xxxxxxxxxxxx"
 s3_website push
 ```
 
+
+
+
+## Sync a fork of a repository to keep it up-to-date with the upstream repository.
+
+### This BIG-gotcha difference between Stash Bitbucket and GitHub
+
+* BitBucket auto-syncs repo changes from the original to the forked repo.
+* Which means once we merge something, everybody gets it automatically and just pulls the latest.
+* However, GitHub **does not** do that.
+* So your personal fork can get out of sync
+* The instructions below will allow you to resync from the upstream master.
+
+### Configure a remote for a fork
+
+* Before you can sync your fork with an upstream repository, you must configure a remote that points to the upstream repository in Git.
+* You must configure a remote that points to the upstream repository in Git to sync changes you make in a fork with the original repository.
+* This also allows you to sync changes made in the original repository with the fork.
+
+```bash
+##
+## List the current configured remote repository for your fork.
+##
+git remote -v
+
+# origin  git@github.com:DevoKun/ProDOS-8.github.io.git (fetch)
+# origin  git@github.com:DevoKun/ProDOS-8.github.io.git (push)
+
+##
+## Specify a new remote upstream repository that will be synced with the fork.
+##
+git remote add upstream git@github.com:ProDOS-8/ProDOS-8.github.io.git
+
+##
+## Verify the new upstream repository you've specified for your fork.
+##
+git remote -v
+
+# origin    git@github.com:DevoKun/ProDOS-8.github.io.git (fetch)
+# origin    git@github.com:DevoKun/ProDOS-8.github.io.git (push)
+# upstream  git@github.com:ProDOS-8/ProDOS-8.github.io.git (fetch)
+# upstream  git@github.com:ProDOS-8/ProDOS-8.github.io.git (push)
+```
+
+### Fetch from upstream and merge to local master
+
+```bash
+git fetch upstream
+
+##
+## If not on master, switch to master
+## master is not the same as upstream/master
+## upstream/master is on github
+## master is local to your laptop
+##
+git branch
+git checkout master
+git branch
+git merge upstream/master
+```
+
+### Create a script to resync the branch for you
+
+* Create the file: ~/bin/gitresync
+* The contents will be:
+
+```bash
+git remote -v
+
+git fetch upstream
+git branch
+git checkout master
+git branch
+git merge upstream/master
+```
+
+
+
+
+
