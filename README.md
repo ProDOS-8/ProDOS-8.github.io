@@ -22,7 +22,7 @@ ProDOS-8 Website
 * The static site is lightning fast to load as there isn't any server-side processing of the page.
 * ***To build the site you will need to have Jekyll installed.***
 * Jekyll is a ruby-based app, so **Ruby will need to be installed** to support Jekyll.
-* Not all versions of Ruby are created equal, *so ensure Ruby is a recent version using **[RVM][http://www.rvm.io/]**.*
+* Not all versions of Ruby are created equal, *so ensure Ruby is a recent version using **[RVM](http://www.rvm.io/)**.*
 
 ```bash
 gpg --keyserver hkp://keys.gnupg.net \
@@ -45,9 +45,9 @@ gem install bundler jekyll
 
 ### Required for rebuilding the CSS using SASS
 
-* SASS is a CSS pre-compiler.
+* **SASS** is a CSS pre-compiler.
 * SASS allows CSS to be built in a sophisticated way allowing re-usable code instead of having redundancies everywhere.
-* The CSS is compiled from the source in the **_scss** directory using the [sass precompiler](http://sass-lang.com/).
+* The CSS is compiled from the source in the `_scss` directory using the [sass precompiler](http://sass-lang.com/).
 * SASS is javascript based and **requires [NodeJS](https://nodejs.org/)** to be installed.
 * After installing [NodeJS](https://nodejs.org/),  using **npm** to install all the dependencies:
 
