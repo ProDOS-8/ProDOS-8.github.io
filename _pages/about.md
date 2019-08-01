@@ -42,7 +42,7 @@ permalink: /about/
 
 * ProDOS includes RAM disk support on machines with 128kB or more RAM.
 
-* ProDOS supports the RTC (Real Time Clock), however only the Apple IIgs has a RTC built-in.
+* ProDOS supports the RTC _(Real Time Clock)_, however only the Apple IIgs has a RTC built-in.
 
 
 
@@ -56,7 +56,7 @@ permalink: /about/
 
 * On September 15th, 2016 **John Brooks** released the 2.4 version of ProDOS on the 30th anniversary of the introduction of the Apple IIgs.
 
-* Originally ProDOS did not include support for the original Apple ][ or the ][+, however This release added support for the Apple ][ and ][+ models, making it the first release of ProDOS that would run on *ALL* Apple II's.
+* Originally ProDOS did not include support for the original Apple ][ or the ][+, however This release added support for the Apple ][ and ][+ models, making it the first release of ProDOS that would run on **ALL** Apple II's.
 
 * The release includes **Bitsy Bye**, a menu-driven program launcher that allows for navigation through files on multiple floppy drives.
 
