@@ -54,4 +54,12 @@ permalink: /bitsy-bye/
 * **Bitsy Bye** needs `BASIC.SYSTEM` if you want to use Bitsy to run **BAS**, **BIN**, or **TXT** _(exec)_ files. 
 
 
+## Can Bitsy-Bye operate in 80-column mode?
+
+* Bitsy-Bye is a super lean piece of assembly code.
+* `Line 1` of the code for Bitsy-Bye **enables 40-column mode**,<br />followed by `line 2` which **disables 80-column mode**.
+
+* A feature request for a version of **Bitsy-Bye** with 80-column mode support has been submitted, however there is **no 80-column support** version of **Bitsy-Bye** available at this time.
+
+
 
