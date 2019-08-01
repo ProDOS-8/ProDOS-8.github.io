@@ -13,13 +13,13 @@ download_link: 'https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/master
 
 
 * Includes ROM ID detection for many Apple II clones, and workarounds for clone firmware bugs.
-  * Franklin Ace
-  * Laser 128
-  * Unitron
-  * Pravetz
+  - Franklin Ace
+  - Laser 128
+  - Unitron
+  - Pravetz
 
 * Updates MiniBas to version 1.2.
-* Fixes a bug when launching ProDOS 2.4 from GS/OS using Closed-Apple to activate Bitsy Bye.
+* Fixes a bug when launching ProDOS 2.4 from GS/OS using {% ClosedAppleButton %} _(Closed-Apple)_ to activate Bitsy Bye.
 * Fixes a ROM bug in un-enhanced Apple //e when quitting to Bitsy Bye with 80-column mode enabled.
 * Files on disk have been organized for faster booting and file access.
 * ProDOS 2.4.1 moves GS/OS support code to the end of the file. This allows PRODOS to be shortened by 1K when used on compilation disks or other 8-bit use-cases where PRODOS will not be used as SYSTEM/P8.

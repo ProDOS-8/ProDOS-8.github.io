@@ -5,8 +5,6 @@ permalink: /releases/prodos-242/
 download_link: 'https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/masters/prodos/ProDOS_2_4_2.dsk'
 ---
 
-
-
 ## Announcing ProDOS 2.4.2 for all Apple II computers
 
 <img src="/pix/prodos242/ProDOS-2.4.2-title.png">
@@ -18,18 +16,18 @@ download_link: 'https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/master
 
 ## Bugs fixed:
 
-* If a directory with more than 255 files was used, and then a different disk was used, a Bad Dir Error $51 was reported.
-* Bitsy Bye was not compatible with the Appletalk Workstation card.
-* Bitsy Bye was not compatible with the Mac LC Apple IIe card.
+* If a directory with more than 255 files was used, and then a different disk was used, a `Bad Dir Error $51` was reported.
+* Bitsy Bye was not compatible with the **Appletalk Workstation card**.
+* Bitsy Bye was not compatible with the **Mac LC Apple IIe card**.
 
 <p>&nbsp;</p>
 
 ## Updates:
 
-* Thunderclock driver is updated for years 2018 – 2023
-* ADT Pro v2.0.2
-* Copy II Plus v8.4
-* Added Cat Doctor's extended utilities
+* **Thunderclock driver** is updated for years **2018 – 2023**
+* **ADT Pro** v2.0.2
+* **Copy II Plus** v8.4
+* Added **Cat Doctor's extended utilities**
 
 
 <img src="/pix/prodos242/ProDOS-2.4.2-apps.png">
