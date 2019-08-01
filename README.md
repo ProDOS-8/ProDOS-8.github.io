@@ -45,9 +45,9 @@ gem install bundler jekyll
 
 ### Required for rebuilding the CSS using SASS
 
-* SASS is a CSS pre-compiler.
+* **SASS** is a CSS pre-compiler.
 * SASS allows CSS to be built in a sophisticated way allowing re-usable code instead of having redundancies everywhere.
-* The CSS is compiled from the source in the **_scss** directory using the [sass precompiler](http://sass-lang.com/).
+* The CSS is compiled from the source in the `_scss` directory using the [sass precompiler](http://sass-lang.com/).
 * SASS is javascript based and **requires [NodeJS](https://nodejs.org/)** to be installed.
 * After installing [NodeJS](https://nodejs.org/),  using **npm** to install all the dependencies:
 
