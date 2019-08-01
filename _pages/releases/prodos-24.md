@@ -33,7 +33,7 @@ download_link: 'https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/master
 * New **Bitsy Boot** utility allows programs to quit to the 8-bit launcher or return to the 16-bit GS/OS Finder.
 * New **Bitsy Bye** program launcher is built into ProDOS 2.4 and allows users to run SYS, S16, BIN, BAS, and TXT files.
 * ProDOS 2.4 includes both the **6502 compatibility of ProDOS 1.x** and the **slot remapping functionality of ProDOS 2.x**. Now Apple II programs can use a single version of ProDOS to boot any Apple II and access all storage volumes.
-* When run from the Finder, the Solid-Apple key selects whether ProDOS 2.4 will Quit to Bitsy Bye or the Finder.
+* When run from the Finder, the {% ClosedAppleButton %} _(Solid-Apple)_ key selects whether ProDOS 2.4 will Quit to Bitsy Bye or the Finder.
 * **ProDOS 2.4 is smaller than ProDOS 2.0.3 and loads faster.**
 * The ProDOS 2.4 interrupt manager reduces latency and memory-use, resulting in faster, consistent interrupt response.
 
@@ -65,16 +65,41 @@ download_link: 'https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/master
 
 <p><img src="/pix/prodos24/ProDOS-2.4-Bitsy-Bye.png"></p>
 
+_If you are a **ProSel** user, see the **[Bitsy Boot](/bitsy-bye/#using-prosel-with-bitsy-boot)** page for information about using ProSel instead of **Bitsy Bye**.
+
+
+### Quit-Initiation Logic
+
+<!-- https://groups.google.com/forum/#!topic/comp.sys.apple2/mO1EHhqXTVc -->
+
+* ProDOS 2.4.x uses the same quit-initiation logic as earlier versions of ProDOS:
+
+  - If no `.SYSTEM` file is found at boot in the root dir, the bye/quit code is called
+  - If a **MLI** _(machine language interface)_ `CALL $65` _(quit)_ is made, the bye/quit code is called
+
+### If you want to boot directly in to Bitsy Bye at startup _(the fastest boot speed)_
+
+* Have **NO** `.SYSTEM` file in the root directory
+_or_
+* Have the first `.SYSTEM` file in the root dir be `QUIT.SYSTEM`.<br />See the **[Bitsy Bye](/bitsy-bye/#how-the-system-launches-bitsy-bye-on-boot)** for more information about ordering `.SYSTEM` files in the boot disk catalog.
+
+### The benefit of using **QUIT.SYSTEM** vs. Something like **ProSel**
+
+* It allows you to also have `BASIC.SYSTEM` in the root dir.
+* **Bitsy Bye** needs `BASIC.SYSTEM` if you want to use Bitsy to run **BAS**, **BIN**, or **TXT** _(exec)_ files. 
+
+
+
 <div class="vertical-spacer"></div>
 
-## Bitsy Boot utility
+## [Bitsy Boot utility](/bitsy-boot)
 
 _Bitsy Boot is a small system program which allows quick and easy booting of Apple II devices in various slots:_
 
 * Displays all slots which contain active ProDOS devices.
 * Allows one-press booting of slots 1-7.
 * The most recently-used ProDOS device can be booted using Return or Space.
-* If GS/OS was previously booted and is dormant, Open-Apple-Q or Open-Apple-Escape will quit back to GS/OS.
+* If GS/OS was previously booted and is dormant, {% OpenAppleButton %}{% QAppleButton %} _(Open-Apple-Q)_ or {% OpenAppleButton %}{% EscAppleButton %} _(Open-Apple-Escape)_ will quit back to GS/OS.
 * Bitsy Boot takes only 1 block on disk. Code and data are under 400 bytes.
 
 
