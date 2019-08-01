@@ -12,7 +12,7 @@ permalink: /bitsy-boot/
 * Displays all slots which contain active ProDOS devices.
 * Allows one-press booting of slots 1-7.
 * The most recently-used ProDOS device can be booted using Return or Space.
-* If GS/OS was previously booted and is dormant, {% OpenAppleButton %}{% QAppleButton %} _(Open-Apple-Q)_ or {% OpenAppleButton %}{% EscAppleButton %} _(Open-Apple-Escape)_ will quit back to GS/OS.
+* If GS/OS was previously booted and is dormant, <img style="width:24px; height:24px;" src="/pix/OpenAppleButton.svg" onerror="this.onerror=null; this.src='/pix/OpenAppleButton-24x24.png'" /><img style="width:24px; height:24px;" src="/pix/QAppleButton.svg" onerror="this.onerror=null; this.src='/pix/QAppleButton-24x24.png'" /> _(Open-Apple-Q)_ or <img style="width:24px; height:24px;" src="/pix/OpenAppleButton.svg" onerror="this.onerror=null; this.src='/pix/OpenAppleButton-24x24.png'" /><img style="width:24px; height:24px;" src="/pix/EscAppleButton.svg" onerror="this.onerror=null; this.src='/pix/EscAppleButton-24x24.png'" /> _(Open-Apple-Escape)_ will quit back to GS/OS.
 * Bitsy Boot takes only 1 block on disk. Code and data are under 400 bytes.
 
 

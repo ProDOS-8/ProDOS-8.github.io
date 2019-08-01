@@ -33,7 +33,7 @@ download_link: 'https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/master
 * New **Bitsy Boot** utility allows programs to quit to the 8-bit launcher or return to the 16-bit GS/OS Finder.
 * New **Bitsy Bye** program launcher is built into ProDOS 2.4 and allows users to run SYS, S16, BIN, BAS, and TXT files.
 * ProDOS 2.4 includes both the **6502 compatibility of ProDOS 1.x** and the **slot remapping functionality of ProDOS 2.x**. Now Apple II programs can use a single version of ProDOS to boot any Apple II and access all storage volumes.
-* When run from the Finder, the {% ClosedAppleButton %} _(Solid-Apple)_ key selects whether ProDOS 2.4 will Quit to Bitsy Bye or the Finder.
+* When run from the Finder, the <img style="width:24px; height:24px;" src="/pix/ClosedAppleButton.svg" onerror="this.onerror=null; this.src='/pix/ClosedAppleButton-24x24.png'" /> _(Solid-Apple)_ key selects whether ProDOS 2.4 will Quit to Bitsy Bye or the Finder.
 * **ProDOS 2.4 is smaller than ProDOS 2.0.3 and loads faster.**
 * The ProDOS 2.4 interrupt manager reduces latency and memory-use, resulting in faster, consistent interrupt response.
 
@@ -99,7 +99,7 @@ _Bitsy Boot is a small system program which allows quick and easy booting of App
 * Displays all slots which contain active ProDOS devices.
 * Allows one-press booting of slots 1-7.
 * The most recently-used ProDOS device can be booted using Return or Space.
-* If GS/OS was previously booted and is dormant, {% OpenAppleButton %}{% QAppleButton %} _(Open-Apple-Q)_ or {% OpenAppleButton %}{% EscAppleButton %} _(Open-Apple-Escape)_ will quit back to GS/OS.
+* If GS/OS was previously booted and is dormant, <img style="width:24px; height:24px;" src="/pix/OpenAppleButton.svg" onerror="this.onerror=null; this.src='/pix/OpenAppleButton-24x24.png'" /><img style="width:24px; height:24px;" src="/pix/QAppleButton.svg" onerror="this.onerror=null; this.src='/pix/QAppleButton-24x24.png'" /> _(Open-Apple-Q)_ or <img style="width:24px; height:24px;" src="/pix/OpenAppleButton.svg" onerror="this.onerror=null; this.src='/pix/OpenAppleButton-24x24.png'" /><img style="width:24px; height:24px;" src="/pix/EscAppleButton.svg" onerror="this.onerror=null; this.src='/pix/EscAppleButton-24x24.png'" /> _(Open-Apple-Escape)_ will quit back to GS/OS.
 * Bitsy Boot takes only 1 block on disk. Code and data are under 400 bytes.
 
 
