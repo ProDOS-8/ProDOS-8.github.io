@@ -57,6 +57,22 @@ npm install
 ```
 
 
+## Making changes to the Navigation Bar
+
+* The data for _what_ goes in to the navigation bar come from `_data/navigation.yml`.
+* edit `navigation.yml` appropriately and the primary navigation will change.
+* The primary navigation is rendered by `_includes/header.html` which reads in the variable `site.data.navigation` set within `_data/navigation.yml`.
+* Only edit `_includes/header.html` if you want to change the formatting of how the navbar appears.<br />Edit `_data/navigation.yml` to change the contents of that navbar.
+
+
+## Changing the home page content, slides, and promos
+
+* The content of the homepage comes from: `_layouts/home.html`
+* Jekyll uses _layouts_ to determine what a page format will look like.
+* All pages, that are not the home page, use the `page` layout.<br />The home page has its own custom `home` layout to accomodate how the page is different.
+* The layout itself is capable of using another layout, and so the `home` and `page` layouts both include the `default` layout, which holds the overall site wrapper.
+
+
 
 ## Using Gulp to perform functions in a repeatable way
 
