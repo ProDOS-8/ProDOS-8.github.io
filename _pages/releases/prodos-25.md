@@ -13,7 +13,7 @@ download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDO
 
 <img src="/pix/prodos25/ProDOS-2.5a3_orange.png" />
 
-* Download the [ProDOS 2.5 Alpha 2](http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a3_143k.po) _(143k)_ image
+* Download the [ProDOS 2.5 Alpha 3](http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a3_143k.po) _(143k)_ image
 
 ### Please help testing!
 
