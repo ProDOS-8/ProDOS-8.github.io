@@ -18,7 +18,7 @@ permalink: /bitsy-bye/
 * Displays file types and allows launching Applesoft Basic, Binary, Text exec, and GS/OS S16 files via Basic.System.
 * Displays the slot and drive of each device.
 * Does not abort on drive errors, but instead lists and allows launching of all readable files.
-* The code and data size for Bitsy Bye is less than 1KB, with room to spare (thanks qkumba).
+* The code and data size for Bitsy Bye is less than 1KB, with room to spare thanks to **Peter Ferrie** _(qkumba)_.
 * **Bitsy Bye** is only `$300` bytes long yet _**hides an Easter egg**_.<br />Look for it in `QUIT.SYSTEM` on the **ProDOS 2.4**, _and later,_ disks.
 
 
