@@ -1,19 +1,19 @@
 ---
 layout: page
-title: ProDOS 2.5 alpha 2
+title: ProDOS 2.5 alpha 3
 permalink: /releases/prodos-25/
-download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a2_143k.po'
+download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a3_143k.po'
 ---
 
 <img src="/pix/prodos_25_logo2.svg" onerror="this.onerror=null; this.src='/pix/prodos_25_logo.png'" />
 
 <div class="vertical-spacer"></div>
 
-## 2.5 Alpha 2
+## 2.5 Alpha 3
 
-<img src="/pix/prodos25/ProDOS-2.5a2_orange.png" />
+<img src="/pix/prodos25/ProDOS-2.5a3_orange.png" />
 
-* Download the [ProDOS 2.5 Alpha 2](http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a2_143k.po) _(143k)_ image
+* Download the [ProDOS 2.5 Alpha 3](http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a3_143k.po) _(143k)_ image
 
 ### Please help testing!
 
@@ -21,7 +21,7 @@ download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDO
 
 
 
-#### There _may_ be a lurking problem in 2.5a2 with using **EXEC** to load Applesoft source code into memory.
+#### There _may_ be a lurking problem in 2.5a3 with using **EXEC** to load Applesoft source code into memory.
 
 {% highlight basic %}
 LOAD TEST
@@ -143,9 +143,9 @@ PRINT PEEK(49048)
 
 
 
-### The 2.5 alpha2 Pre-Release includes
+### The 2.5 alpha3 Pre-Release includes
 
-* ProDOS 2.5a2 Kernel
+* ProDOS 2.5a3 Kernel
 * Latest [Bitsy-Bye](/bitsy-bye/) _(QUIT.system)_
 * ProDOS BASIC.system 1.7d8
 * `BITSY.BOOT` now built-in to [Bitsy-Bye](/bitsy-bye/).

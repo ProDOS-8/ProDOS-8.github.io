@@ -60,7 +60,7 @@ download_link: 'https://mirrors.apple2.org.za/ftp.apple.asimov.net/images/master
 * Displays file types and allows launching Applesoft Basic, Binary, Text exec, and GS/OS S16 files via Basic.System.
 * Displays the slot and drive of each device.
 * Does not abort on drive errors, but instead lists and allows launching of all readable files.
-* The code and data size for Bitsy Bye is less than 1KB, with room to spare (thanks qkumba).
+* The code and data size for Bitsy Bye is less than 1KB, with room to spare, thanks to **Peter Ferrie** _(qkumba)_.
 
 
 <p><img src="/pix/prodos24/ProDOS-2.4-Bitsy-Bye.png"></p>
