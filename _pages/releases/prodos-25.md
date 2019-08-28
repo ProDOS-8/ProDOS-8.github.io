@@ -2,7 +2,7 @@
 layout: page
 title: ProDOS 2.5 alpha 3
 permalink: /releases/prodos-25/
-download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a3_143k.po'
+download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a3r2_143k.po'
 ---
 
 <img src="/pix/prodos_25_logo2.svg" onerror="this.onerror=null; this.src='/pix/prodos_25_logo.png'" />
@@ -13,7 +13,7 @@ download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDO
 
 <img src="/pix/prodos25/ProDOS-2.5a3_orange.png" />
 
-* Download the [ProDOS 2.5 Alpha 3](http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a3_143k.po) _(143k)_ image
+* Download the [ProDOS 2.5 Alpha 3r2]({{ page.download_link }}) _(143k)_ image
 
 ### Please help testing!
 
