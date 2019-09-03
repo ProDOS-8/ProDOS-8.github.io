@@ -111,7 +111,7 @@ POKE 49048,99
 
 {% endhighlight %}
 
-* ProDOS memory location 49048 _(`$BF98`)_ stores the Machine ID, which can be altered using a BASIC **PEEK** command:
+* ProDOS memory location 49048 _(`$BF98`)_ stores the Machine ID, which can be altered using a BASIC **POKE** command:
 
 {% highlight basic %}
 PRINT PEEK(49048)
@@ -119,6 +119,7 @@ POKE 49048,99
 PRINT PEEK(49048)
 {% endhighlight %}
 
+_In the example above, only the **POKE** command is required. Use the **PEEK** commands to view the contents of memory location 49048 before and after the **POKE**_
 
 <img class="indented" src="/pix/prodos25/basic_poke_49048_99_orange.png" />
 
@@ -256,7 +257,7 @@ _<a href="/contact/#johnbrooks">Please contact John Brooks to get involved.</a>_
 
 ## In-Progress Features
 
-* Modify Global Page so it's easier to turn on/off features without changing the machine type.<br />_Features like ike the large-date support or the lowercase filenames could then easily be disabled to support apps which do not play nice with those features._
+* Modify Global Page so it's easier to turn on/off features without changing the machine type.<br />_Features like the large-date support or the lowercase filenames could then easily be disabled to support apps which do not play nice with those features._
 * Modify COPY+ and Cat Doctor to support lowercase filenames and the longer-date.<br />_When COPY+ doesn't see a normal ProDOS filename it assumes that the disk is DOS3.3 and tries to use the DOS3.3 parser._
 
 
