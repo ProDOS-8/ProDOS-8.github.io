@@ -2,18 +2,19 @@
 layout: page
 title: ProDOS 2.5 alpha 3
 permalink: /releases/prodos-25/
-download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a3r2_143k.po'
+download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a4_143k.po'
+alpha_title:   "ProDOS 2.5 Alpha 4"
 ---
 
 <img src="/pix/prodos_25_logo2.svg" onerror="this.onerror=null; this.src='/pix/prodos_25_logo.png'" />
 
 <div class="vertical-spacer"></div>
 
-## 2.5 Alpha 3
+## {{ alpha_title }}
 
 <img src="/pix/prodos25/ProDOS-2.5a3_orange.png" />
 
-* Download the [ProDOS 2.5 Alpha 3r2]({{ page.download_link }}) _(143k)_ image
+* Download the [{{ alpha_title }}]({{ page.download_link }}) _(143k)_ image
 
 ### Please help testing!
 
