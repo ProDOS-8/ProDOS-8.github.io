@@ -2,8 +2,8 @@
 layout: page
 title: ProDOS 2.5 alpha 3
 permalink: /releases/prodos-25/
-download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a4_143k.po'
-alpha_title:   "ProDOS 2.5 Alpha 4"
+download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a5_143k.po'
+alpha_title:   "ProDOS 2.5 Alpha 5"
 ---
 
 <img src="/pix/prodos_25_logo2.svg" onerror="this.onerror=null; this.src='/pix/prodos_25_logo.png'" />
@@ -223,6 +223,16 @@ PREFIX ../..
 * The new ProDOS 2.5 boot loader will find the ProDOS file anywhere in the root directory linked-list.
 * ProDOS 2.5 should allow unlimited files in the root directory level.
 
+#### GS/OS support for more than 51 files in the root directory
+
+* There is a new GS/OS **PRO.FST** driver to support the removal of the 51 files restriction.
+
+
+### No More Wacky Slot Remapping and Raised Max Drive Count
+
+_As of ProDOS 2.5 alpha5:_
+* Support has been added for up to 8 drives per slot.
+* Up to 37 total drives can be mounted at once.
 
 <div class="vertical-spacer"></div>
 
