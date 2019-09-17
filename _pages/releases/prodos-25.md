@@ -1,9 +1,9 @@
 ---
 layout: page
-title: ProDOS 2.5 alpha 3
+title: ProDOS 2.5 Alpha 6
 permalink: /releases/prodos-25/
-download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a5_143k.po'
-alpha_title:   "ProDOS 2.5 Alpha 5"
+download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a6_143k.po'
+alpha_title:   "ProDOS 2.5 Alpha 6"
 ---
 
 <img src="/pix/prodos_25_logo2.svg" onerror="this.onerror=null; this.src='/pix/prodos_25_logo.png'" />
@@ -235,6 +235,58 @@ _As of ProDOS 2.5 alpha5:_
 * Up to 37 total drives can be mounted at once.
 
 <div class="vertical-spacer"></div>
+
+
+### Extended Date format
+_As seen in ProDOS Alpha 4_
+
+
+#### Legacy P8 date format:
+```
+
+        49041 ($BF91)     49040 ($BF90)
+       7 6 5 4 3 2 1 0   7 6 5 4 3 2 1 0 
+      +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
+DATE: |    year     |  month  |   day   |
+      +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
+
+        49043 ($BF93)     49042 ($BF92)
+       7 6 5 4 3 2 1 0   7 6 5 4 3 2 1 0 
+      +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
+TIME: |0 0 0|   hour  | |0 0|  minute   |
+      +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
+```
+
+
+
+
+#### 2.5.0a4 Extended time/date returned by Clock driver:
+
+```
+        49039 ($BF8F)     49038 ($BF8E)  
+       7 6 5 4 3 2 1 0   7 6 5 4 3 2 1 0 
+      +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
+SEC:  |0 0|  seconds  | |milliseconds*4 |
+      +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
+      seconds = 0-59, milliseconds = 0-249
+
+        49041 ($BF91)     49040 ($BF90)
+       7 6 5 4 3 2 1 0   7 6 5 4 3 2 1 0 
+      +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
+TIME: |  day    |    hour   |  minute   |
+      +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
+      day = 1-31, hour = 0-23, minute = 0-59
+
+        49043 ($BF93)     49042 ($BF92)
+       7 6 5 4 3 2 1 0   7 6 5 4 3 2 1 0 
+      +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
+DATE: | month |     year from 0 CE      |
+      +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+
+      month = 2-13, year = 0-4095
+      * month +1 keeps top 3 bits from being 0,
+        differentiating it from pre-2.5 format
+```
+
 
 ### ProDOS 2.5 on the Apple /// ?
 
