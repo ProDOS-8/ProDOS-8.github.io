@@ -69,7 +69,7 @@ npm install
 
 * The content of the homepage comes from: `_layouts/home.html`
 * Jekyll uses _layouts_ to determine what a page format will look like.
-* All pages, that are not the home page, use the `page` layout.<br />The home page has its own custom `home` layout to accomodate how the page is different.
+* All pages, that are not the home page, use the `page` layout.<br />The home page has its own custom `home` layout to accommodate how the page is different.
 * The layout itself is capable of using another layout, and so the `home` and `page` layouts both include the `default` layout, which holds the overall site wrapper.
 
 
