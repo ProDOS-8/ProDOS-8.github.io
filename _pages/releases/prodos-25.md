@@ -231,8 +231,13 @@ PREFIX ../..
 ### No More Wacky Slot Remapping and Raised Max Drive Count
 
 _As of ProDOS 2.5 alpha5:_
-* Support has been added for up to 8 drives per slot.
+* Support has been added for up to **8 drives per slot**.
 * Up to 37 total drives can be mounted at once.
+
+#### Application support for 37 drives
+
+* It is likely that Applications which directly call a drive's card ROM driver, _such as Total Replay_, will need an update, _or modification,_ to take advantage of drives 3-8 on ProDOS 2.5.
+* In addition to mounting up to 37 drives, a goal of the new **8 drives per slot** feature is to make it easier and more reliable for applications which use **[ProRWTS](https://github.com/peterferrie/prorwts)** to find the **SmartPort Driver** and device from which they are being launched.
 
 <div class="vertical-spacer"></div>
 
