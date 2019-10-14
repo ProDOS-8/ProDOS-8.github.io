@@ -10,11 +10,11 @@ alpha_title:   "ProDOS 2.5 Alpha 7"
 
 <div class="vertical-spacer"></div>
 
-## {{ alpha_title }}
+## {{ page.alpha_title }}
 
 <img src="/pix/prodos25/ProDOS-2.5a3_orange.png" />
 
-* Download the [{{ alpha_title }}]({{ page.download_link }}) _(143k)_ image
+* Download the [{{ page.alpha_title }}]({{ page.download_link }}) _(143k)_ image
 
 ### Please help testing!
 
