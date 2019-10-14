@@ -2,7 +2,7 @@
 layout: page
 title: ProDOS 2.5 Alpha 7
 permalink: /releases/prodos-25/
-download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a7_143k.po'
+download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a7_143k.dsk'
 alpha_title:   "ProDOS 2.5 Alpha 7"
 ---
 
