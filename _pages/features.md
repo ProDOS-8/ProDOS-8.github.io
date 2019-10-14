@@ -66,7 +66,7 @@ permalink: /features/
 
 ### File and Disk Utilities
 
-* Copy II Plus
+* [Copy II Plus](/copy-ii-plus)
 * [Cat Doctor's extended utilities](/cat.doctor/)
 * Shrinkit archive expander
 

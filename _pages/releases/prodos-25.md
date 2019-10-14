@@ -149,8 +149,23 @@ _In the example above, only the **POKE** command is required. Use the **PEEK** c
 
 * ProDOS 2.5a3 Kernel
 * Latest [Bitsy-Bye](/bitsy-bye/) _(QUIT.system)_
-* ProDOS BASIC.system 1.7d8
+* ProDOS BASIC.system 1.7a8
 * `BITSY.BOOT` now built-in to [Bitsy-Bye](/bitsy-bye/).
+
+
+
+### The 2.5 alpha7 Pre-Release includes
+
+* ProDOS 2.5a7 kernel
+* ProDOS BASIC.system 1.7a10
+* [Copy II Plus 8.5a1](/copy-ii-plus/)
+
+
+
+
+### [Copy II Plus 8.5a1](/copy-ii-plus/)
+
+* Patched to work with ProDOS 2.5's multi-case filesystem and dates.
 
 
 ### Apple III Kernel
