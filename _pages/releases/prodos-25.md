@@ -9,10 +9,9 @@ alpha_title:   "ProDOS 2.5 Alpha 7"
 <img src="/pix/prodos_25_logo2.svg" onerror="this.onerror=null; this.src='/pix/prodos_25_logo.png'" />
 
 <div class="vertical-spacer"></div>
-
 ## {{ page.alpha_title }}
 
-<img src="/pix/prodos25/ProDOS-2.5a3_orange.png" />
+<img src="/pix/prodos25/ProDOS-2.5a7_orange.png" />
 
 * Download the [{{ page.alpha_title }}]({{ page.download_link }}) _(143k)_ image
 
@@ -144,6 +143,32 @@ _In the example above, only the **POKE** command is required. Use the **PEEK** c
 <img class="indented" src="/pix/prodos25/bitsy-bye-uppercase_orange.png" />
 
 
+#### [FASTChip](http://www.a2heaven.com/webshop/index.php?rt=product/product&product_id=147) Compatibility
+
+* The [FASTChip](http://www.a2heaven.com/webshop/index.php?rt=product/product&product_id=147) //e accelerates the Apple //e up to 16.6 Mhz by replacing the microprocessor with a faster one.
+* There is a known issue with **[FASTChip](http://www.a2heaven.com/webshop/index.php?rt=product/product&product_id=147) //e NTSC** _(firmware 0.5b)_ in slot 1.
+* When booting the machine, with the [FASTChip](http://www.a2heaven.com/webshop/index.php?rt=product/product&product_id=147) //e installed, the machine will drop to the monitor.
+* **ProDOS** leverages a CPU call to determine if you are using an Apple IIe, IIc, or IIgs.
+* Specifically, the `REP #2` CPU call is used in **Bitsy Bye** to determine if `$C029` can be safely changed because the machine is not a **//c+**.
+```asm
+    ldx   #$ff-$20
+
+:ZpLoop
+lda InitZpEnd-$FF,x ;Init ZP vars
+sta ZpMoveEnd-$FF&$FF,x
+inx
+bne :ZpLoop ;Loop ends with Z=1
+rep #2  ;Clr Z. Test for 65816 CPU
+beq :NotGS
+trb IoNewVideo ;Disable SHR
+:NotGS
+```
+* That CPU call, `REP #2`, has documented behavior on the **65c02** and **65816** chips.<br />On the **6502** it is undocumented but effectively a NOP.
+* The problem is that **[FASTChip](http://www.a2heaven.com/webshop/index.php?rt=product/product&product_id=147)** does not execute this instruction as documented and instead uses it for internal purposes.
+* Unfortunately, the **[FASTChip](http://www.a2heaven.com/webshop/index.php?rt=product/product&product_id=147)** is not 100% compatible with the official processors.
+* It has been reported that machines with the **[FASTChip](http://www.a2heaven.com/webshop/index.php?rt=product/product&product_id=147)** will boot successfully on ProDOS 2.5a7 or later, although no code changes were made in ProDOS to accomodate the **[FASTChip](http://www.a2heaven.com/webshop/index.php?rt=product/product&product_id=147)**, so your mileage may vary.
+
+
 
 ### The 2.5 alpha3 Pre-Release includes
 
@@ -232,23 +257,54 @@ PREFIX ../..
 
 
 <div class="vertical-spacer"></div>
-
 ### 51-file limit on the root directory removed
 
 * The new ProDOS 2.5 boot loader will find the ProDOS file anywhere in the root directory linked-list.
 * ProDOS 2.5 should allow unlimited files in the root directory level.
 
+<div class="vertical-spacer"></div>
 #### GS/OS support for more than 51 files in the root directory
 
 * There is a new GS/OS **PRO.FST** driver to support the removal of the 51 files restriction.
 
 
+<div class="vertical-spacer"></div>
 ### No More Wacky Slot Remapping and Raised Max Drive Count
 
 _As of ProDOS 2.5 alpha5:_
 * Support has been added for up to **8 drives per slot**.
 * Up to 37 total drives can be mounted at once.
 
+<div class="vertical-spacer"></div>
+#### _How_ ProDOS 2.5 supports 8 drives per slot
+
+**Bit layout for P8 2.5 unitnum:**
+* `76543210`
+* `DSSS00XY`
+
+**Where**
+
+|DSSS|00|X|Y|
+|----:|--|:-|:-|
+|**Drive bit 0** and **Slot bits 2:0** like previous ProDOS versions|&nsbp;|Drive bit 2|Drive bit 1|
+
+**To calculate the drive number _(1-8)_ from a ProDOS 2.5 unitnum in Acc:**
+```
+ASL
+AND #7
+ADC #1
+```
+
+* The internal `/RAM` drive in slot 3, drive 2 has a unitnum of `$B0` _(vs `$BF` in 2.4)_.
+
+* ProDOS 2.5 now supports up to 37 drives stored at `$BF32-$BF56`, with a `$00` terminator at `$BF57`.
+
+* All 8 drives per slot use the per-slot driver handler at `$BF12-$BF1F` with the 'drive 2' driver unused. 
+* However the internal `/RAM` driver is still called through the 'slot 3, drive 2' handler at `$BF26` for compatibility with apps which disconnect `/RAM` in order to use **aux memory**.
+
+
+
+<div class="vertical-spacer"></div>
 #### Application support for 37 drives
 
 * It is likely that Applications which directly call a drive's card ROM driver, _such as Total Replay_, will need an update, _or modification,_ to take advantage of drives 3-8 on ProDOS 2.5.
@@ -329,7 +385,7 @@ TIME: |0 0 0|   hour  | |0 0|  minute   |
 <table id="extended-date-format">
 <tr class="extended-date-format-memory-location"><td class="nobo">&nbsp;</td><td id="memory-location-49041" colspan="8">49041 ($BF91)</td><td id="memory-location-49040" colspan="8">49040 ($BF90)</td></tr>
 <tr><td class="nobo">&nbsp;</td><td class="ml49041">7</td><td class="ml49041">6</td><td class="ml49041">5</td><td class="ml49041">4</td><td class="ml49041">3</td><td class="ml49041">2</td><td class="ml49041">1</td><td class="ml49041">0</td><td class="ml49040">7</td><td class="ml49040">6</td><td class="ml49040">5</td><td class="ml49040">4</td><td class="ml49040">3</td><td class="ml49040">2</td><td class="ml49040">1</td><td class="ml49040">0</td></tr>
-<tr><td class="memory-location-datetime">DATE</td><td colspan="7"  id="memory-location-year">year</td><td style="border-right:none !important;" colspan="1"  id="memory-location-year">m</td><td style="border-left:none !important;" colspan="4"  id="memory-location-month">onth</td><td colspan="5"  id="memory-location-day">day</td></tr>
+<tr><td class="memory-location-datetime">DATE</td><td colspan="7"  id="memory-location-year">year</td><td style="border-right:none !important;" colspan="1"  id="memory-location-year">m</td><td style="border-left:none !important;" colspan="3"  id="memory-location-month">onth</td><td colspan="5"  id="memory-location-day">day</td></tr>
 <tr><td class="nobo">&nbsp;</td></tr>
 <tr class="extended-date-format-memory-location"><td class="nobo">&nbsp;</td><td id="memory-location-49043" colspan="8">49043 ($BF93)</td><td id="memory-location-49042" colspan="8">49042 ($BF92)</td></tr>
 <tr><td class="nobo">&nbsp;</td><td class="ml49043">7</td><td class="ml49043">6</td><td class="ml49043">5</td><td class="ml49043">4</td><td class="ml49043">3</td><td class="ml49043">2</td><td class="ml49043">1</td><td class="ml49043">0</td><td class="ml49042">7</td><td class="ml49042">6</td><td class="ml49042">5</td><td class="ml49042">4</td><td class="ml49042">3</td><td class="ml49042">2</td><td class="ml49042">1</td><td class="ml49042">0</td></tr>
