@@ -143,6 +143,7 @@ _In the example above, only the **POKE** command is required. Use the **PEEK** c
 <img class="indented" src="/pix/prodos25/bitsy-bye-uppercase_orange.png" />
 
 
+<div class="vertical-spacer"></div>
 #### [FASTChip](http://www.a2heaven.com/webshop/index.php?rt=product/product&product_id=147) Compatibility
 
 * The [FASTChip](http://www.a2heaven.com/webshop/index.php?rt=product/product&product_id=147) //e accelerates the Apple //e up to 16.6 Mhz by replacing the microprocessor with a faster one.
@@ -152,7 +153,7 @@ _In the example above, only the **POKE** command is required. Use the **PEEK** c
 * Specifically, the `REP #2` CPU call is used in **Bitsy Bye** to determine if `$C029` can be safely changed because the machine is not a **//c+**.
 
 {% highlight asm %}
-    ldx   #$ff-$20
+ldx   #$ff-$20
 
 :ZpLoop
 lda InitZpEnd-$FF,x ;Init ZP vars
@@ -171,7 +172,7 @@ trb IoNewVideo ;Disable SHR
 * It has been reported that machines with the **[FASTChip](http://www.a2heaven.com/webshop/index.php?rt=product/product&product_id=147)** will boot successfully on ProDOS 2.5a7 or later, although no code changes were made in ProDOS to accomodate the **[FASTChip](http://www.a2heaven.com/webshop/index.php?rt=product/product&product_id=147)**, so your mileage may vary.
 
 
-
+<!--
 ### The 2.5 alpha3 Pre-Release includes
 
 * ProDOS 2.5a3 Kernel
@@ -186,7 +187,7 @@ trb IoNewVideo ;Disable SHR
 * ProDOS 2.5a7 kernel
 * ProDOS BASIC.system 1.7a10
 * [Copy II Plus 8.5a1](/copy-ii-plus/)
-
+-->
 
 
 
@@ -249,7 +250,7 @@ PREFIX ../..
 * Previously, _on the Apple IIe or IIc,_ if you hit the DELETE key you would get the checkerboard. Now if you hit the delete key it will actualy delete the character.
 * New **online** command will list devices in the system showing the slot, drive, volume name, and free space.
 * Dash _(-)_ will run ProCMD files
-  * Runs **CMD** files at $4000 _(ProCMD)_
+  * Runs **CMD** files at `$4000` _(ProCMD)_
   * Now allows for file arguments
 
 {% highlight basic %}
@@ -280,17 +281,28 @@ _As of ProDOS 2.5 alpha5:_
 <div class="vertical-spacer"></div>
 #### _How_ ProDOS 2.5 supports 8 drives per slot
 
-**Bit layout for P8 2.5 unitnum:**
+<div class="vertical-spacer"></div>
+##### **Bit layout for the ProDOS 2.5 unitnum:**
 * `76543210`
 * `DSSS00XY`
 
-**Where**
 
-|DSSS|00|X|Y|
-|----:|--|:-|:-|
-|**Drive bit 0** and **Slot bits 2:0** like previous ProDOS versions|&nsbp;|Drive bit 2|Drive bit 1|
+<div class="vertical-spacer"></div>
+##### **Where**
 
-**To calculate the drive number _(1-8)_ from a ProDOS 2.5 unitnum in Acc:**
+<div class="vertical-spacer"></div>
+<table id="case-compatibility-issues">
+<tr class="table-header-top-row"><th>DSSS</th><th>00</th><th>X</th><th>Y</th></tr>
+<tr><td><strong>Drive bit 0</strong> and <strong>Slot bits 2:0</strong> like previous ProDOS versions</td><td></td><td>Drive bit 2</td><td>Drive bit 1</td></tr>
+</table>
+
+
+
+
+
+
+<div class="vertical-spacer"></div>
+##### **To calculate the drive number _(1-8)_ from a ProDOS 2.5 unitnum in Acc:**
 
 {% highlight asm %}
 ASL
@@ -302,8 +314,8 @@ ADC #1
 
 * ProDOS 2.5 now supports up to 37 drives stored at `$BF32-$BF56`, with a `$00` terminator at `$BF57`.
 
-* All 8 drives per slot use the per-slot driver handler at `$BF12-$BF1F` with the 'drive 2' driver unused. 
-* However the internal `/RAM` driver is still called through the 'slot 3, drive 2' handler at `$BF26` for compatibility with apps which disconnect `/RAM` in order to use **aux memory**.
+* All 8 drives per slot use the per-slot driver handler at `$BF12-$BF1F` with the **drive 2** driver unused. 
+* However the internal `/RAM` driver is still called through the **slot 3, drive 2** handler at `$BF26` for compatibility with apps which disconnect `/RAM` in order to use **aux memory**.
 
 
 
