@@ -150,7 +150,8 @@ _In the example above, only the **POKE** command is required. Use the **PEEK** c
 * When booting the machine, with the [FASTChip](http://www.a2heaven.com/webshop/index.php?rt=product/product&product_id=147) //e installed, the machine will drop to the monitor.
 * **ProDOS** leverages a CPU call to determine if you are using an Apple IIe, IIc, or IIgs.
 * Specifically, the `REP #2` CPU call is used in **Bitsy Bye** to determine if `$C029` can be safely changed because the machine is not a **//c+**.
-```asm
+
+{% highlight asm %}
     ldx   #$ff-$20
 
 :ZpLoop
@@ -162,7 +163,8 @@ rep #2  ;Clr Z. Test for 65816 CPU
 beq :NotGS
 trb IoNewVideo ;Disable SHR
 :NotGS
-```
+{% endhighlight %}
+
 * That CPU call, `REP #2`, has documented behavior on the **65c02** and **65816** chips.<br />On the **6502** it is undocumented but effectively a NOP.
 * The problem is that **[FASTChip](http://www.a2heaven.com/webshop/index.php?rt=product/product&product_id=147)** does not execute this instruction as documented and instead uses it for internal purposes.
 * Unfortunately, the **[FASTChip](http://www.a2heaven.com/webshop/index.php?rt=product/product&product_id=147)** is not 100% compatible with the official processors.
@@ -289,11 +291,12 @@ _As of ProDOS 2.5 alpha5:_
 |**Drive bit 0** and **Slot bits 2:0** like previous ProDOS versions|&nsbp;|Drive bit 2|Drive bit 1|
 
 **To calculate the drive number _(1-8)_ from a ProDOS 2.5 unitnum in Acc:**
-```
+
+{% highlight asm %}
 ASL
 AND #7
 ADC #1
-```
+{% endhighlight %}
 
 * The internal `/RAM` drive in slot 3, drive 2 has a unitnum of `$B0` _(vs `$BF` in 2.4)_.
 
