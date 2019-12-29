@@ -64,7 +64,7 @@ permalink:   /docs/technote/
 
 ## Other
 
-* [Apple IIgs Technical Note #17 - Application Memory Management and the MMStartUp User ID](/docs/technote/iigs017/)
+* [Apple IIgs Technical Note #17 - Application Memory Management and the MMStartUp User ID](/docs/technote/iigs17/)
 
 
 
