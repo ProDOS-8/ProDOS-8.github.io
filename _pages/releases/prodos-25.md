@@ -172,6 +172,21 @@ trb IoNewVideo ;Disable SHR
 * It has been reported that machines with the **[FASTChip](http://www.a2heaven.com/webshop/index.php?rt=product/product&product_id=147)** will boot successfully on ProDOS 2.5a7 or later, although no code changes were made in ProDOS to accomodate the **[FASTChip](http://www.a2heaven.com/webshop/index.php?rt=product/product&product_id=147)**, so your mileage may vary.
 
 
+<div class="vertical-spacer"></div>
+#### [Disk II card connected to an SVD (Semi Virtual Diskette) drive emulator](http://thesvd.com/) Compatibility
+
+
+* [The SVD card](http://thesvd.com/apple.php) is not 100% compatible with the Disk ][.
+* The new ProDOS 2.5 boot loader steps the head through 1/4 tracks and 1/2 tracks, and so requires 5.25 drives with 1/4 track compatibility.
+* [The SVD page for Apple II](http://thesvd.com/apple.php) states that [the SVD drive](http://thesvd.com/apple.php) is currently incompatible with half-track seeks.
+* ProDOS 2.5.x will boot using older boot blocks, so if you copy ProDOS 2.4 boot blocks to a ProDOS 2.5.x disk it _may_ boot on SVD.
+
+
+
+
+
+
+
 <!--
 ### The 2.5 alpha3 Pre-Release includes
 
