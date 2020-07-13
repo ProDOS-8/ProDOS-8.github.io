@@ -9,7 +9,7 @@
 *.tar.gz
 *.tar.bz2
 .project
-
+.jekyll-cache
 _sites
 _site
 node_modules
