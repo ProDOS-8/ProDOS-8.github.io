@@ -4,6 +4,8 @@ title: ProDOS 2.5 Alpha 8
 permalink: /releases/prodos-25/
 download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a8_143k.dsk'
 alpha_title:   "ProDOS 2.5 Alpha 8"
+a3_download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a7_143k.dsk'
+a3_alpha_title:   "ProDOS 2.5 Alpha 7"
 ---
 
 <img src="/pix/prodos_25_logo2.svg" onerror="this.onerror=null; this.src='/pix/prodos_25_logo.png'" />
@@ -11,7 +13,7 @@ alpha_title:   "ProDOS 2.5 Alpha 8"
 <div class="vertical-spacer"></div>
 ## {{ page.alpha_title }}
 
-<img src="/pix/prodos25/ProDOS-2.5a7_orange.png" />
+<img src="/pix/prodos25/ProDOS-2.5a8_orange.png" />
 
 * Download the [{{ page.alpha_title }}]({{ page.download_link }}) _(143k)_ image
 
@@ -54,7 +56,6 @@ alpha_title:   "ProDOS 2.5 Alpha 8"
 
 {% include_relative _prodos25/copy2plus.md %}
 
-{% include_relative _prodos25/apple3-kernel.md %}
 
 
 {% include_relative _prodos25/kansasfest-2018.md %}
