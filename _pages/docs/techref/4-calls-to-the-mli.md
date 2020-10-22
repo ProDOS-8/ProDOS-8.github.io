@@ -1128,7 +1128,7 @@ byte first) points to the buffer into which the prefix should be placed.  It sho
   <DD>Buffer address pointer: This two byte-address (low byte first) indicates the starting address of a 1024-byte input/output buffer.  The buffer must start on a page boundary (a multiple of $100) that is not already used by the system. If a standard file is being accessed, the first 512 bytes of io_buffer contain the current block of data being read or written; the second 512 bytes contain the current index block, if there is one.  If a directory file is being accessed, the first 512 bytes contain the current directory file block; the rest are unused.</DL>
 
 <DL>
-  <DT>ref_num (2-byte result)
+  <DT>ref_num (1-byte result)
   <DD>Reference number: When a file is opened, the filing system assigns this one-byte value.  All subsequent commands to the open file use this reference number.</DL>
 
 <P>Refer to Appendix B for more information on directory file blocks, index blocks, and data blocks.</P>
