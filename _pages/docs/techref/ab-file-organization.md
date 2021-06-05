@@ -1046,7 +1046,7 @@ permalink:   /docs/techref/file-organization/
 
 <A NAME="B.5"></A>
 
-<H2>B.5 - DOS 3.3 Disk Organization</H3>
+<H2>B.5 - DOS 3.3 Disk Organization</H2>
 
 
 <P>Both DOS 3.3 and ProDOS 140K flexible disks are formatted using the same 16-sector layout.  As a consequence, the ProDOS READ_BLOCK and WRITE_BLOCK calls are able to access DOS 3.3 disks too.  These calls know nothing about the organization of files on either type of disk.</P>
