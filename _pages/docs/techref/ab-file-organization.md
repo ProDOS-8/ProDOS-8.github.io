@@ -754,8 +754,8 @@ permalink:   /docs/techref/file-organization/
 
 <h3>B.3.8 - Maximum sizes</h3>
 
-<p>The maximum size of a volume is 32MB-512 bytes: if pointers are 16 bits and sectors are 512 bytes, the math gives 256 * 256 * 512 = 32MB. Because the number of blocks needs to fit in 2 bytes (total_blocks in Figure B-3), only 65,535 are usable, or 32,767.5 KB.</p>
-<p>The maximum size of a file is 16MB-1: in theory a tree could represent 32MB: 256 pointers in the master block and 256 in each index block: 256 * 256 * 512 = 32MB. The 16MB limit comes from the EOF value in the File Entry (see Figure B-5) which is 3 bytes with maximum value 0xFFFFFF = 16MB-1.</p>
+<p>The maximum size of a volume is 32 MB - 512 (total_blocks = 0xFFFF of 512 bytes each = 32,767.5 KB, see Figure B-3), of which 2 are reserved for the boot loader, and the rest for the filesystem.</p>
+<p>The maximum size of a file is 16 MB - 1: in theory a tree could represent 32 MB: 256 pointers in the master block and 256 in each index block: 256 * 256 * 512 = 32MB. The 16 MB limit comes from the EOF value in the File Entry (see Figure B-5) which is 3 bytes with maximum value 0xFFFFFF = 16 MB - 1. This means that only half of the master block can be used (128 pointers).</p>
 
 
 
