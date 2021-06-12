@@ -200,7 +200,7 @@ permalink:   /docs/techref/file-organization/
 
 <a name="page150"></a>
 
-<p>The bit map has one bit for each block on the volume: a value of 1 means the block is free; 0 means it is in use.  If the number of blocks used by all files on the volume is not the same as the number recorded in the bit map, the directory structure of the volume has been damaged.</p>
+<p>The bit map has one bit for each block on the volume: a value of 1 means the block is free; 0 means it is in use.  If the number of blocks used by all files on the volume is not the same as the number recorded in the bit map, the directory structure of the volume has been damaged. In each byte of the bitmap, the blocks are represented from left to right. For example, the first block is represented by the high bit in the first byte of the bitmap.</p>
 
 <p><b>total_blocks</b> (2 bytes): The total number of blocks on the volume.</p>
 
@@ -584,7 +584,7 @@ permalink:   /docs/techref/file-organization/
 <h3>B.3.3 - Sapling Files</h3>
 
 
-<p>A <b>sapling file</b> is a standard file that contains more than 512 and no more than 128K bytes ($200 &#60; <b>EOF</b> &#60;= $20000).  A sapling file comprises an index block and 1 to 256 data blocks.  The index block contains the block addresses of the data blocks.  See Figure B-7.</p>
+<p>A <b>sapling file</b> is a standard file that contains more than 512 and no more than 128K bytes ($200 &#60; <b>EOF</b> &#60;= $20000).  A sapling file comprises an index block and 1 to 256 data blocks.  The index block contains the block addresses of the data blocks.  The low bytes for each block pointer are in bytes 0 - 127 of the index block. The high bytes for each block pointer are in bytes 128 - 255 of the index block.  See Figure B-7.</p>
 
 <a name="B-7"></a>
 
@@ -623,7 +623,7 @@ permalink:   /docs/techref/file-organization/
 <h3>B.3.4 - Tree Files</h3>
 
 
-<p>A <b>tree file</b> contains more than 128K bytes, and less than 16M bytes ($20000 &#60; <b>EOF</b> &#60; $1000000).  A tree file consists of a master index block, 1 to 128 index blocks, and 1 to 32,768 data blocks.  The master index block contains the addresses of the index blocks, and each index block contains the addresses of up to 256 data blocks.  The structure of a tree file is shown in Figure B-8.</p>
+<p>A <b>tree file</b> contains more than 128K bytes, and less than 16M bytes ($20000 &#60; <b>EOF</b> &#60; $1000000).  A tree file consists of a master index block, 1 to 128 index blocks, and 1 to 32,768 data blocks.  The low bytes of block pointers on all index blocks are in bytes 0 - 127 and the high bytes in 128 - 255.  The master index block contains the addresses of the index blocks, and each index block contains the addresses of up to 256 data blocks.  The structure of a tree file is shown in Figure B-8.</p>
 
 <a name="B-8"></a>
 
