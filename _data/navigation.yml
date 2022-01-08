@@ -1,6 +1,9 @@
 - title: "About"
   href:  /about/
 
+- title: "Applications"
+  href:  /applications/
+
 - title: "Docs"
   href:  /docs/
   subcategories:
