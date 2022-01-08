@@ -350,7 +350,7 @@ Unsuccessful call:  x  0  1  0  x  error  JSR+3  unchanged
 
 <dl>
   <dt>access (1-byte value)</dt>
-  <dd>Access permitted: This byte defines how the file will be accessible.  Its format is:</dd>
+  <dd>Access permitted: This byte defines how the file will be accessible.  Its format is:
 
   <pre>
      7  6  5  4  3  2  1  0
@@ -369,6 +369,7 @@ Unsuccessful call:  x  0  1  0  x  error  JSR+3  unchanged
   If the file is destroy, rename, and write enabled, it is <b>unlocked</b>.  If all three are disabled, it is <b>locked</b>.  Any other combination of access bits is called <b>restricted access</b>. 
   The backup bit (B) is always set by this call.
   <br />
+</dd>
 </dl>
 
 <dl>
