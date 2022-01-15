@@ -8,61 +8,28 @@ permalink:   '/docs/technote/21/'
 
 
 <h2>Revised by Dave Lyons & Matt Deatherage (March 1990)
-<br>Written by Matt Deatherage & Dan Strnad (November 1988)</h2>
+<br />Written by Matt Deatherage & Dan Strnad (November 1988)</h2>
 
-<p>This Technical Note describes how to identify ProDOS devices and their 
-characteristics given the ProDOS unit number.  This scheme should only be used 
-under ProDOS 8.</p>
+<p>This Technical Note describes how to identify ProDOS devices and their characteristics given the ProDOS unit number.  This scheme should only be used under ProDOS 8.</p>
 
-<p><em>Changes since January 1990:</em> Modified AppleTalk call code for
-compatibility with ProDOS 8 versions earlier than 1.5 and network-booted
-version 1.4.</p>
+<p><em>Changes since January 1990:</em> Modified AppleTalk call code for compatibility with ProDOS 8 versions earlier than 1.5 and network-booted version 1.4.</p>
 
 <hr>
 
-<p>There are various reasons why an application would want to identify ProDOS 
-devices.  Although ProDOS itself takes great pains to treat all devices 
-equally, it has internal drivers for two types of devices: Disk II drives and 
-the /RAM drive provided on 128K or greater machines.  Because all devices 
-really are not equal (i.e., some cannot format while others are read-only, 
-etc.), a developer may need to know how to identify a ProDOS device.</p>
+<p>There are various reasons why an application would want to identify ProDOS devices.  Although ProDOS itself takes great pains to treat all devices equally, it has internal drivers for two types of devices: Disk II drives and the /RAM drive provided on 128K or greater machines.  Because all devices really are not equal (i.e., some cannot format while others are read-only, etc.), a developer may need to know how to identify a ProDOS device.</p>
 
-<p>Although the question of how much identification is subjective for each 
-developer, ProDOS 8 offers a fair level of identification; the only devices 
-which cannot be conclusively identified are those devices with RAM-based 
-drivers, and they could be anything.  The vast majority of ProDOS devices can 
-be identified, however, so you could prompt the user to insert a disk in 
-UniDisk 3.5 #2, instead of Slot 2, Drive 2, which could be confusing if the 
-user has a IIc or IIGS.</p>
+<p>Although the question of how much identification is subjective for each  developer, ProDOS 8 offers a fair level of identification; the only devices  which cannot be conclusively identified are those devices with RAM-based  drivers, and they could be anything.  The vast majority of ProDOS devices can  be identified, however, so you could prompt the user to insert a disk in  UniDisk 3.5 #2, instead of Slot 2, Drive 2, which could be confusing if the  user has a IIc or IIGS.</p>
 
-<p>Note that for the majority of applications, this level of identification is 
-unnecessary.  Most applications simply prompt the user to insert a disk by its 
-name, and the user can place it in any drive which is capable of working with 
-the media of the disk.  You should avoid requiring a certain disk to be in a 
-specific drive since doing so defeats much of the device-independence which 
-gives ProDOS 8 its strength.</p>
+<p>Note that for the majority of applications, this level of identification is  unnecessary.  Most applications simply prompt the user to insert a disk by its  name, and the user can place it in any drive which is capable of working with  the media of the disk.  You should avoid requiring a certain disk to be in a  specific drive since doing so defeats much of the device-independence which  gives ProDOS 8 its strength.</p>
 
-<p>When you do need to identify a device (i.e., if you need to format media in 
-a Disk II or /RAM device), however, the process is fairly straightforward.  
-This process consists of a series of tests, any one of which could end with a 
-conclusive device identification.  It is not possible to look at a single ID 
-byte to determine a particular device type.  You may determine rather quickly 
-that a device is a SmartPort device, or you may go all the way through the 
-procedure to identify a third-party network device.  For those developers who 
-absolutely must identify devices, DTS presents the following discussion.</p>
+<p>When you do need to identify a device (i.e., if you need to format media in  a Disk II or /RAM device), however, the process is fairly straightforward.   This process consists of a series of tests, any one of which could end with a  conclusive device identification.  It is not possible to look at a single ID  byte to determine a particular device type.  You may determine rather quickly  that a device is a SmartPort device, or you may go all the way through the  procedure to identify a third-party network device.  For those developers who  absolutely must identify devices, DTS presents the following discussion.</p>
 
 
 <h2>Isn't There Some Kind of "ID Nibble?"</h2>
 
-<p>ProDOS 8 does not support an "ID nibble."  Section 5.2.4 of the ProDOS 8 
-Technical Reference Manual states that the low nibble of each unit number in 
-the device list "is a device identification:  0 = Disk II, 4 = Profile, 
-$F = /RAM."</p>
+<p>ProDOS 8 does not support an "ID nibble."  Section 5.2.4 of the ProDOS 8  Technical Reference Manual states that the low nibble of each unit number in  the device list "is a device identification:  0 = Disk II, 4 = Profile,  $F = /RAM."</p>
 
-<p>When ProDOS 8 finds a "smart" ProDOS block device while doing its search of 
-the slots and ports, it copies the high nibble of $CnFE (where n is the slot 
-number) into the low nibble of the unit number in the global page.  The low 
-nibble then has the following definition:</p>
+<p>When ProDOS 8 finds a "smart" ProDOS block device while doing its search of the slots and ports, it copies the high nibble of $CnFE (where n is the slot number) into the low nibble of the unit number in the global page.  The low nibble then has the following definition:</p>
 
 <dl>
 <dt>Bit 3:</dt><dd>Medium is removable</dd>
@@ -116,7 +83,7 @@ are mapped to slot 2; this mapping gives these two devices unit numbers of
 $20 and $A0 respectively, but the device's driver entry point is still in
 the $C5xx address space.</p>
 
-<p><a href="tn.pdos.20.html">ProDOS 8 Technical Note #20</a>, Mirrored
+<p><a href="/docs/technote/20/">ProDOS 8 Technical Note #20</a>, Mirrored
 Devices and SmartPort, discusses this kind of mapping in detail.  It also
 presents a code example which gives you the correct device-driver entry
 point (from the global page) given the unit number as input.  Here is the
@@ -278,7 +245,7 @@ third-party network device.</li>
 <p>Auxiliary-slot RAM disks are identified by convention.  Any device in
 slot 3, drive 2 (unit number $B0) is assumed to be an auxiliary-slot RAM
 disk since ProDOS 8 does not recognize any card which is not an 80-column
-card in slot 3 (see <a href="tn.pdos.15.html">ProDOS 8 Technical Note
+card in slot 3 (see <a href="/docs/technote/15/">ProDOS 8 Technical Note
 #15</a>, How ProDOS 8 Treats Slot 3).  There is a chance that some other
 kind of device could be installed with unit number $B0, but it is not
 likely.</p>
@@ -376,8 +343,9 @@ This call returns the ASCII name of the device, a device type and subtype,
 as well as the size of the device.  Some SmartPort device types and
 subtypes are listed in the referenced manuals, with a more complete list
 located in the Apple IIGS Firmware Reference.  A list containing SmartPort
-device types only is provided in <a href="../smpt/tn.smpt.4.html">SmartPort 
+device types only is provided in <a href="/docs/technote/smartport/04/">SmartPort 
 Technical Note #4</a>, SmartPort Device Types.</p>
+
 
 
 <h2>RAM-Based Drivers</h2>
@@ -470,7 +438,7 @@ Changes and Minutia</li>
 of Auxiliary Memory</li>
 </ul>
 
-<hr>
+<hr />
 
 
 

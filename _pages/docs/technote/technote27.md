@@ -71,7 +71,7 @@ occupies first.</p>
 <h2>Further Reference</h2>
 
 <ul>
-<li><a href="/docs/technote/iigs17/">Apple IIGS Technical Note #17</a>, Application Startup and the MMStartUp User ID</li>
+<li><a href="/docs/technote/iigs/17/">Apple IIGS Technical Note #17</a>, Application Startup and the MMStartUp User ID</li>
 </ul>
 
 <hr>

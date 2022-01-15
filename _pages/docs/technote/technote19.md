@@ -20,9 +20,9 @@ primary file type.  For example, the auxiliary type field for a text file
 random-access file, or zero if it is a sequential file.  The auxiliary
 type field for an AppleWorks(TM) file contains information about the case
 of letters in the filename (see Apple II File Type Notes, File Types <a
-href="/docs/technote/ftn19/">$19</a>, <a
-href="/docs/technote/ftn1a/">$1A</a>, and <a
-href="/docs/technote/ftn1b/">$1B</a>).  The auxiliary type field for a
+href="/docs/technote/ftn/19/">$19</a>, <a
+href="/docs/technote/ftn/1a/">$1A</a>, and <a
+href="/docs/technote/ftn/1b/">$1B</a>).  The auxiliary type field for a
 binary file (BIN, $06) contains the loading address of the file, if one
 exists.</p>
 

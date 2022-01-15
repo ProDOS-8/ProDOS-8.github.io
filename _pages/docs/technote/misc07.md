@@ -2,7 +2,7 @@
 layout:      'page'
 title:       'Apple II Miscellaneous Technical Note #7'
 description: 'Apple II Family Identification'
-permalink:   '/docs/technote/misc07/'
+permalink:   '/docs/technote/misc/07/'
 ---
 
 
@@ -118,7 +118,7 @@ correctly before returning from this call.</p>
 <h2>Further Reference</h2>
 
 <ul>
-<li><a href="/docs/technote/misc02/">Apple II Miscellaneous Technical Note #2</a>, Apple II Family Identification Routines 2.2</li>
+<li><a href="/docs/technote/misc/02/">Apple II Miscellaneous Technical Note #2</a>, Apple II Family Identification Routines 2.2</li>
 </ul>
 
 <hr>

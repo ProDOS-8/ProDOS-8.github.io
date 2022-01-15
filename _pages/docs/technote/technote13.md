@@ -18,13 +18,13 @@ online.  <em>-- AH</em></blockquote>
 <hr>
 
 <p>The information formerly in this Note, the proposed file format for Apple II 
-double high-resolution graphics images, is now covered in the <a href="/docs/technote/ftn08/">Apple II Type Notes, File Type $08</a>.</p>
+double high-resolution graphics images, is now covered in the <a href="/docs/technote/ftn/08/">Apple II Type Notes, File Type $08</a>.</p>
 
 
 <h2>Further Reference</h2>
 
 <ul>
-<li><a href="/docs/technote/ftn08/">Apple II File Type Notes, File Type $08</a></li>
+<li><a href="/docs/technote/ftn/08/">Apple II File Type Notes, File Type $08</a></li>
 </ul>
 
 <hr>

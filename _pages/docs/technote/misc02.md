@@ -2,7 +2,7 @@
 layout:      'page'
 title:       'Apple II Miscellaneous Technical Note #2'
 description: 'Apple II Family Identification Routines 2.2'
-permalink:   '/docs/technote/misc02/'
+permalink:   '/docs/technote/misc/02/'
 ---
 
 
@@ -32,7 +32,7 @@ I got it off of the archives online. <em>-- AH</em></blockquote>
 <h2>Why Identification Routines?</h2>
 
 <p>Although we present the Apple II family identification bytes in <a
-href="/docs/technote/misc07/">Apple II Miscellaneous Technical Note #7</a>, many
+href="/docs/technote/misc/07/">Apple II Miscellaneous Technical Note #7</a>, many
 people would prefer a routine they can simply plug into their own program
 and call.  In addition, this routine serves as a small piece of sample
 code, and there is no reason for you to reinvent the wheel.</p>
@@ -550,7 +550,7 @@ release)
 <h2>Further Reference</h2>
 
 <ul>
-<li><a href="/docs/technote/misc07/">Apple II Miscellaneous Technical Note #7</a>, Apple II Family Identification</li>
+<li><a href="/docs/technote/misc/07/">Apple II Miscellaneous Technical Note #7</a>, Apple II Family Identification</li>
 </ul>
 
 <hr>

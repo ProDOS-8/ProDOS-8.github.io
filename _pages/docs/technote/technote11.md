@@ -54,7 +54,7 @@ and a clock card.</p>
 <li>Apple IIGS Hardware Reference Manual</li>
 <li><a href="/docs/technote/15/">ProDOS 8 Technical Note #15</a>, How ProDOS 
 8 Treats Slot 3</li>
-<li><a href="/docs/technote/misc07/">Miscellaneous Technical Note #7</a>, Apple II Family Identification</li>
+<li><a href="/docs/technote/misc/07/">Miscellaneous Technical Note #7</a>, Apple II Family Identification</li>
 </ul>
 
 <hr>
