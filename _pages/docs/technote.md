@@ -49,22 +49,23 @@ permalink:   /docs/technote/
 
 ## File Types
 
-* [File Type $08 (8) - Auxiliary Types $0000-$3FFF (Apple II Graphics File)](/docs/technote/ftn08/)
-* [File Type $19 (25) - All Auxiliary Types (AppleWorks Data Base File)](/docs/technote/ftn19/)
-* [File Type $1A (26) - All Auxiliary Types (AppleWorks Word Processor File)](/docs/technote/ftn1a/)
-* [File Type $1B (27) - All Auxiliary Types (AppleWorks Spreadsheet File)](/docs/technote/ftn1b/)
+* [File Type $08 (8) - Auxiliary Types $0000-$3FFF (Apple II Graphics File)](/docs/technote/ftn/08/)
+* [File Type $19 (25) - All Auxiliary Types (AppleWorks Data Base File)](/docs/technote/ftn/19/)
+* [File Type $1A (26) - All Auxiliary Types (AppleWorks Word Processor File)](/docs/technote/ftn/1a/)
+* [File Type $1B (27) - All Auxiliary Types (AppleWorks Spreadsheet File)](/docs/technote/ftn/1b/)
 
 
 
 ## Misc
 
-* [Apple II Miscellaneous Technical Note #2 - Apple II Family Identification Routines 2.2](/docs/technote/misc02/)
-* [Apple II Miscellaneous Technical Note #7 - Apple II Family Identification](/docs/technote/misc07/)
+* [Apple II Miscellaneous Technical Note #2 - Apple II Family Identification Routines 2.2](/docs/technote/misc/02/)
+* [Apple II Miscellaneous Technical Note #7 - Apple II Family Identification](/docs/technote/misc/07/)
 
 
 ## Other
 
-* [Apple IIgs Technical Note #17 - Application Memory Management and the MMStartUp User ID](/docs/technote/iigs17/)
+* [GS/OS Technical Note #8 - Filenames With More Than CAPS and Numerals](/docs/technote/gsos/08/)
+* [Apple IIgs Technical Note #17 - Application Memory Management and the MMStartUp User ID](/docs/technote/iigs/17/)
 
 
 
