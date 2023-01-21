@@ -180,7 +180,7 @@ permalink:   /docs/techref/file-organization/
 
 <p><b>file_name</b> (15 bytes): The first n bytes of this field, where n is specified by name_length, contain the volume's name.  This name must conform to the filename (volume name) syntax explained in Chapter 2. The name does not begin with the slash that usually precedes volume names.  This field can be changed by the RENAME call.</p>
 
-<p>reserved (8 bytes): Reserved for future expansion of the file system.</p>
+<p><b>reserved</b> (8 bytes): Reserved for future expansion of the file system. The reserved bytes must be set in order to prevent I/O ERROR on read. The bytes are as follows: $75, version ($23 in the last version released by Apple), min_version (up to ProDOS 2.4 this is $00), $00, $C3, $27, $0D, $00</p>
 
 <p><b>creation</b> (4 bytes): The date and time at which this volume was initialized.  The format of these bytes is described in Section B.4.2.2.</p>
 
