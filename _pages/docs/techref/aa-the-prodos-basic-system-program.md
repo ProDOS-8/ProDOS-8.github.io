@@ -377,7 +377,7 @@ permalink:   /docs/techref/the-prodos-basic-system-program/
  BE92:            DEX
  BE93:            BPL MLIERR1
  BE95:            LDX #$13        ;If not recognized, make it I/O error
- BE97:  MLIERR2   LDA BIERRTBL,X  ;return error in Accumulator
+ BE97:  MLIERR2   LDA CIERRTBL,X  ;return error in Accumulator
  BE9A:            LDX CALLX       ;Restore X register
  BE9D:            SEC             ;Set Carry to indicate error
  BE9E:  XRETURN   RTS
