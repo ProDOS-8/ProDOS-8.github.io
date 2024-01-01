@@ -18,6 +18,9 @@
     - subtitle: "ProDOS 2.5 alpha 8"
       subhref: "/releases/prodos-25/"
 
+    - subtitle: "ProDOS 2.4.3"
+      subhref: "/releases/prodos-243/"
+
     - subtitle: "ProDOS 2.4.2"
       subhref: "/releases/prodos-242/"
 
