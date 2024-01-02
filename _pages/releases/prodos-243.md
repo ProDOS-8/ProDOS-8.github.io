@@ -33,22 +33,24 @@ download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDO
 
 ## Updates:
 
-- Thunderclock driver updated for years 2023-2028, _([issue 72](https://github.com/ProDOS-8/ProDOS8-Testing/issues/72))_.
+<img src="/pix/prodos243/ProDOS-2.4.3-apps.png">
+
+* ADT Pro removed from the disk image because of size constraints
+
+* Thunderclock driver updated for years 2023-2028, _([issue 72](https://github.com/ProDOS-8/ProDOS8-Testing/issues/72))_.
 
 ### `BASIC.SYSTEM` changed from 1.6 to 1.7:
 
 * Delete key is mapped to left arrow.
-* `RENAME` command supports using space _(new)_ or comma _(as before)_ between the filenames, e.g. `RENAME f1 f2`".
+* `RENAME` command supports using space _(new)_ or comma _(as before)_ between the filenames, e.g. `RENAME f1 f2`.
 * Bump `IVERSION` to `7` at globals `$BFFD`
 
 
 
-<img src="/pix/prodos243/ProDOS-2.4.3-apps.png">
-
 <p>&nbsp;</p>
 
 <div style="width:100%">
-Please file bug reports at: [github.com/ProDOS-8/ProDOS8-Testing](https://github.com/ProDOS-8/ProDOS8-Testing/issues)
+Please file bug reports at: <a href="https://github.com/ProDOS-8/ProDOS8-Testing/issues">github.com/ProDOS-8/ProDOS8-Testing</a>
 </div>
 
 <p>&nbsp;</p>
