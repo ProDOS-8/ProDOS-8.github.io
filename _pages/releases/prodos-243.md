@@ -2,7 +2,7 @@
 layout: page
 title: ProDOS 2.4.3
 permalink: /releases/prodos-243/
-download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_4_3.po'
+download_link: 'https://releases.prodos8.com/ProDOS_2_4_3.po'
 ---
 
 ## Announcing ProDOS 2.4.3 for all Apple II computers

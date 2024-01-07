@@ -13,7 +13,10 @@
    height="202pt"
    id="svg3518"
    sodipodi:docname="prodos_243_logo.svg"
-   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   inkscape:export-filename="/Users/devon/code/ProDOS-8.github.io/pix/prodos_243_logo.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -43,7 +46,7 @@
     <dc:format>image/svg+xml</dc:format>
     <dc:type
        rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-    <dc:title></dc:title>
+    <dc:title />
   </cc:Work>
 </rdf:RDF>
 </metadata>

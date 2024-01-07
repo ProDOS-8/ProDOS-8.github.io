@@ -2,10 +2,8 @@
 layout: page
 title: ProDOS 2.5 Alpha 8
 permalink: /releases/prodos-25/
-download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a8_143k.dsk'
+download_link: 'https://releases.prodos8.com/ProDOS_2_5_a8_143k.dsk'
 alpha_title:   "ProDOS 2.5 Alpha 8"
-a3_download_link: 'http://prodos8-releases.s3-website-us-east-1.amazonaws.com/ProDOS_2_5_a7_143k.dsk'
-a3_alpha_title:   "ProDOS 2.5 Alpha 7"
 ---
 
 <img src="/pix/prodos_25_logo2.svg" onerror="this.onerror=null; this.src='/pix/prodos_25_logo.png'" />
